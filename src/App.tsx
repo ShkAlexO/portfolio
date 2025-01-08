@@ -24,7 +24,7 @@ function App() {
 const StyledApp = styled.div`
     position: relative;
     display: grid;
-    grid-template: 1fr auto / 300px 1fr 60px;
+    grid-template: 1fr auto / 400px 1fr 100px;
     padding: 15px;
     gap: 15px;
     height: 100vh;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {Card} from "./Card.tsx";
-import {SectionTitle} from "../../../../components/SectionTitle.tsx";
+import {SectionTitle} from "../SectionTitle.tsx";
 
 export const Skills = () => {
     return (
@@ -16,5 +16,5 @@ export const Skills = () => {
 }
 
 const StyledSkills = styled.section`
-    background-color: darkgrey;
+ 
 `
