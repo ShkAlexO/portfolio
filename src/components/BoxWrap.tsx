@@ -1,29 +1,38 @@
 import styled from "styled-components";
-import { ReactNode } from "react";
+import {ReactNode} from "react";
 
 type BoxWrapPropsType = {
-    children:  ReactNode
+    children: ReactNode
     padding?: string
     borderWidth?: string
     bgColor?: string
     boxShadow?: string
+    className?: string
 }
 
-export const BoxWrap = ({children, padding='15px', borderWidth= '1px', bgColor='#1d212d', boxShadow='0px 1px 5px 0px rgb(53 59 78)'}:BoxWrapPropsType) => {
+export const BoxWrap = (
+    {
+        children, padding = '15px',
+        borderWidth = '1px',
+        bgColor = '#1d212d',
+        boxShadow = '0px 1px 5px 0px rgb(53 59 78)',
+        className
+    }: BoxWrapPropsType) => {
 
     return (
-        <StyledBoxWrap padding={padding} borderWidth={borderWidth} bgColor={bgColor} boxShadow={boxShadow}>
+        <StyledBoxWrap padding={padding} borderWidth={borderWidth} bgColor={bgColor} boxShadow={boxShadow}
+                       className={className}>
             {children}
         </StyledBoxWrap>
     );
 };
 
 const StyledBoxWrap = styled.div<BoxWrapPropsType>`
-    padding: ${({ padding }) => padding};
+    padding: ${({padding}) => padding};
     border-radius: 8px;
     width: 100%;
     height: 100%;
-    border: ${({ borderWidth }) => borderWidth} solid #234155;
-    background-color: ${({ bgColor }) => bgColor};
-    box-shadow: ${({ boxShadow }) => boxShadow };
+    border: ${({borderWidth}) => borderWidth} solid #23ACD8;
+    background-color: ${({bgColor}) => bgColor};
+    box-shadow: ${({boxShadow}) => boxShadow};
 `

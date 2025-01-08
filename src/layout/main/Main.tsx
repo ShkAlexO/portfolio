@@ -23,12 +23,13 @@ const StyledMainWrap = styled.div`
     height: 100%;
     padding: 40px 5px;
     border-radius: 8px;
-    border: 4px solid  #234155;
+    border: 1px solid  #23ACD8;
     background-color: rgba(29, 33, 45, .6);
     &::before,
     &::after {
         content: '';
         display: block;
+        border-radius: 8px;
         position: absolute;
         left: 0;
         width: 100%;

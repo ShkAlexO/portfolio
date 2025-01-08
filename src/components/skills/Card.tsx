@@ -4,20 +4,24 @@ import {Icon} from "../icon/Icon.tsx";
 type CardPropsType = {
     iconId: string
     title: string
-    text: string
 }
-export const Card = ({iconId, title, text}: CardPropsType) => {
+export const Card = ({iconId, title}: CardPropsType) => {
     return (
         <StyledCard>
-            <Icon iconId={iconId}/>
-            <h3>{title}</h3>
-            <p>{text}</p>
+            <StyledIcon iconId={iconId}/>
+            <span>{title}</span>
         </StyledCard>
     );
 };
 
 const StyledCard = styled.div`
-    padding: 10px;
-    border: 1px solid green;
-    background-color: aquamarine;
+ display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+`
+
+const StyledIcon = styled(Icon)`
+    height: 60px;
+    width: auto;
 `
