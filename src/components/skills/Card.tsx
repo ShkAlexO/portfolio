@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Icon} from "../icon/Icon.tsx";
+import {Icon, StyledIcon} from "../icon/Icon.tsx";
 
 type CardPropsType = {
     iconId: string
@@ -8,20 +8,21 @@ type CardPropsType = {
 export const Card = ({iconId, title}: CardPropsType) => {
     return (
         <StyledCard>
-            <StyledIcon iconId={iconId}/>
+            <Icon iconId={iconId}/>
             <span>{title}</span>
         </StyledCard>
     );
 };
 
 const StyledCard = styled.div`
- display: flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+
+    ${StyledIcon} {
+        height: 60px;
+        width: auto;
+    }
 `
 
-const StyledIcon = styled(Icon)`
-    height: 60px;
-    width: auto;
-`

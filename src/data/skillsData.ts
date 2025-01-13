@@ -1,9 +1,9 @@
-export  type SkillPostType = {
+export  type SkillPropsType = {
     iconId: string;
     title: string;
 };
 
-export const skillsData: SkillPostType[] = [
+export const skillsData: SkillPropsType[] = [
     { iconId: 'html-svg', title: 'HTML' },
     { iconId: 'sass-svg', title: 'Sass' },
     { iconId: 'bootstrap-svg', title: 'Bootstrap' },

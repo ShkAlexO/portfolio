@@ -1,18 +1,18 @@
 import styled from "styled-components";
 import {Menu} from "../../components/menu/Menu";
-import {BoxWrap} from "../../components/BoxWrap.tsx";
+import {BoxWrapStyles} from "../../components/BoxWrapStyles.ts";
 
 export const Header = () => {
 
     return (
         <StyledHeader>
-             <BoxWrap>
+             {/*<BoxWrap>*/}
                  <Menu/>
-             </BoxWrap>
+             {/*</BoxWrap>*/}
         </StyledHeader>
     );
 };
 
 const StyledHeader = styled.header`
- 
+ ${BoxWrapStyles}
 `

@@ -1,17 +1,17 @@
 import styled from "styled-components";
-import {BoxWrap} from "../../components/BoxWrap.tsx";
+import {BoxWrapStyles} from "../../components/BoxWrapStyles.ts";
 
 export const Sidebar = () => {
 
     return (
         <StyledSidebar>
-            <BoxWrap>
+            {/*<BoxWrap>*/}
                 sidebar
-            </BoxWrap>
+            {/*</BoxWrap>*/}
         </StyledSidebar>
     );
 };
 
 const StyledSidebar = styled.aside`
-     
+     ${BoxWrapStyles}
 `

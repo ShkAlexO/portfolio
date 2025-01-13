@@ -1,17 +1,17 @@
 import styled from "styled-components";
-import {BoxWrap} from "../../components/BoxWrap.tsx";
+import {BoxWrapStyles} from "../../components/BoxWrapStyles.ts";
 
 export const Footer = () => {
 
     return (
         <StyledFooter>
-             <BoxWrap>
+             {/*<BoxWrap>*/}
                  Footer
-             </BoxWrap>
+             {/*</BoxWrap>*/}
         </StyledFooter>
     );
 };
 
 const StyledFooter = styled.footer`
-     
+     ${BoxWrapStyles}
 `
