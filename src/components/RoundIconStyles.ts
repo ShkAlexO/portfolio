@@ -4,15 +4,15 @@ export const RoundIconStyles = css`
     position: relative;
     isolation: isolate;
     overflow: hidden;
+    font-size: 1.1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    padding: 12px;
-    padding: 3%;
+    padding: 5px;
     width: 45px;
     aspect-ratio: 1/1;
-    color: #fff;
+    color: ${({theme}) => theme.colors.white};
     transition: all .3s ease;
 
     &::before {
@@ -21,13 +21,13 @@ export const RoundIconStyles = css`
         position: absolute;
         z-index: -1;
         inset: 0;
-        background: linear-gradient(90deg, #1381a4 0%, #264B65 100%);
+        background: linear-gradient(90deg, ${({theme}) => theme.colors.darkBlue} 0%, ${({theme}) => theme.colors.primaryDark} 100%);
         transition: all .3s ease;
     }
 
     &:hover {
         color: currentColor;
-        box-shadow: 0px 0px 3px 2px rgba(255,176,124,0.5);
+        box-shadow: 0px 0px 3px 2px rgba(${({theme}) => theme.colors.secondaryRgb},0.3);
 
         &::before {
             transform: rotate(45deg);
@@ -36,7 +36,7 @@ export const RoundIconStyles = css`
 
     svg {
         display: block;
-        width: 100%;
+        width: auto;
         height: auto;
 
         path {

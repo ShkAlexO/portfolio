@@ -29,7 +29,7 @@ const Name = styled(Heading)`
 
 const StyledAboutMe = styled.div`
     ${Name} {
-        color: #fff;
+        color: ${({theme}) => theme.colors.white};
     }
 
     ${StyledSocialLinks} {
@@ -38,14 +38,14 @@ const StyledAboutMe = styled.div`
     }
 
     ${StyledSocialItem} {
-        //padding: 9px;
+      font-size: .9rem;
         width: 35px;
     }
 `
 const Image = styled.div`
     ${BoxWrapStyles};
     background-color: transparent;
-    box-shadow: 0px 3px 5px 0px rgb(255, 255, 255, .3);
+    box-shadow: 0px 3px 5px 0px rgba(${({theme}) => theme.colors.whiteRgb} , .3);
     border-width: 2px;
     border-radius: 100%;
     width: 200px;

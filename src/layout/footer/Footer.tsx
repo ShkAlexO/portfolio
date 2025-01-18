@@ -20,6 +20,7 @@ const StyledFooter = styled.footer`
     display: grid;
     grid-template-columns:  400px 1fr 100px;
     gap: 15px;
+    box-shadow: 0px -3px 6px 3px ${({theme}) => theme.colors.primaryDark};
 `
 
 const Inner = styled.div`

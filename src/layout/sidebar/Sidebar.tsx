@@ -32,7 +32,7 @@ const SidebarInner = styled.div`
     padding: 0 30px;
     > div {
         padding: 25px 8px;
-        border-bottom: 1px solid rgb(255 255 255 / 40%);
+        border-bottom: 1px solid rgba(${({theme}) => theme.colors.whiteRgb} , .4);
 
         &:first-of-type {
             padding-top: 0;

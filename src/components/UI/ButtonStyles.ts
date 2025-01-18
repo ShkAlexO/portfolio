@@ -7,7 +7,7 @@ export const ButtonStyles = css`
     font-size: 20px;
     font-weight: 500;
     line-height: 1;
-    color: #fff;
+    color: ${({theme}) => theme.colors.white};
     text-align: center;
     padding: 15px 25px;
     max-width: 220px;
@@ -16,7 +16,7 @@ export const ButtonStyles = css`
     border-radius: 8px;
     overflow: hidden;
     background-color: transparent;
-    border: 1px solid #23ACD8;
+    border: 1px solid ${({ theme }) => theme.colors.primary};
     transition: all .3s ease;
     &::before {
         content: '';
@@ -24,12 +24,12 @@ export const ButtonStyles = css`
         position: absolute;
         z-index: -1;
         inset: 0;
-        background: linear-gradient(90deg, #1381a4 0%, #264B65 100%);
+        background: linear-gradient(90deg, ${({theme}) => theme.colors.darkBlue} 0%, ${({theme}) => theme.colors.primaryDark} 100%);
         transition: all .3s ease;
     }
 
     &:hover {
-        color: #fff;
+        color: ${({theme}) => theme.colors.white};
        &::before {
            opacity: 0;
        }

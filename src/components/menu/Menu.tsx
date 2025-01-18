@@ -27,12 +27,14 @@ const StyledMenu = styled.nav`
 
         a {
             ${RoundIconStyles};
+            font-size: 1rem;
             width: 40px;
 
+            &:hover,
             &.active {
-                color: currentColor;
-                box-shadow: 0px 0px 3px 2px rgba(255, 176, 124, 0.5);
-
+                color: ${({theme}) => theme.colors.secondary};
+                box-shadow: 0px 0px 3px 2px rgba(${({theme}) => theme.colors.secondaryRgb},0.3);
+                
                 &::before {
                     transform: rotate(45deg);
                 }

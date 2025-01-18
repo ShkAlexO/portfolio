@@ -12,5 +12,6 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header`
- ${BoxWrapStyles}
+    ${BoxWrapStyles};
+    align-content: center;
 `

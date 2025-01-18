@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import {userData} from "@/data/userData.ts";
 
-const formatPhoneNumber = (phone:string) => {
+const formatPhoneNumber = (phone: string) => {
     return phone.replace(/[^0-9+]/g, '');
 };
 
 export const PersonalDetails = () => {
-    const { age, email, phone, address } = userData;
+    const {age, email, phone, address} = userData;
     const formattedPhone = formatPhoneNumber(phone);
 
     return (
@@ -30,30 +30,21 @@ const StyledPersonalDetails = styled.div`
         gap: 30px;
         padding: 10px 12px;
         border-radius: 8px;
-        background: linear-gradient(to right, #264B65 30%, rgba(35, 172, 216, .5) 100%);
+        background: linear-gradient(to right,
+        ${({theme}) => theme.colors.primaryDark} 30%,
+        rgba(${({theme}) => theme.colors.primaryRgb}, .5) 100%);
     }
 
     a {
-        color: #fff;
+        color: ${({theme}) => theme.colors.white};
 
         &:hover {
-            color: #FFB07C;
+            color: ${({theme}) => theme.colors.secondary};
         }
     }
 `;
 
-const Age = styled.div`
-  
-`;
-
-const Email = styled.div`
-  
-`;
-
-const Phone = styled.div`
-  
-`;
-
-const Address = styled.div`
- 
-`;
+const Age = styled.div``;
+const Email = styled.div``;
+const Phone = styled.div``;
+const Address = styled.div``;

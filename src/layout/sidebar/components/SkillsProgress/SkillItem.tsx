@@ -26,17 +26,20 @@ const Percentages = styled.span`
 const Progress = styled.div<{ percentages: number }>`
     position: relative;
     padding: 2px;
-    border: 1px solid #23ACD8;
+    border: 1px solid ${({theme}) => theme.colors.primary};
     border-radius: 4px;
     grid-column: 1/-1;
 
     &::before {
         content: '';
         display: block;
-        width: ${({ percentages }) => percentages}%;
+        width: ${({percentages}) => percentages}%;
         height: 4px;
         border-radius: 4px;
-        background: linear-gradient(to right, #1381a4 90%, #264B65 100%);
+        background: linear-gradient(
+                to right,
+                ${({theme}) => theme.colors.darkBlue} 90%,
+                ${({theme}) => theme.colors.primaryDark} 100%);
     }
 `
 

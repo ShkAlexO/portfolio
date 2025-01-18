@@ -31,7 +31,7 @@ export const Title = styled.h2`
         left: 50%;
         transform: translateX(-50%);
         width: 100px;
-        border-bottom: 2px solid #FFB07C;
+        border-bottom: 2px solid ${({theme}) => theme.colors.secondary};
     }
 `
 export const Subtitle = styled.p`

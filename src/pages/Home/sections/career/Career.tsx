@@ -19,7 +19,7 @@ const InfoEducation = ({title, subtitle, start, end}: ProfessionalBackgroundProp
     return (
         <StyledInfoEducation>
             <InfoTitle as='h3'>
-                {title} <ColorText color='#fff' fontWeight='400'>course</ColorText>
+                {title} <ColorText colorName='white' fontWeight='400'>course</ColorText>
             </InfoTitle>
             <Company as='h4' fontSize='h5'>
                 <CompanyName> {subtitle}</CompanyName>
@@ -35,7 +35,7 @@ const InfoWork = ({title, subtitle, mode, start, end}: ProfessionalBackgroundPro
     return (
         <StyledInfoWork>
             <InfoTitle as='h3'>
-                <ColorText color='#fff'>Position</ColorText> {title}
+                <ColorText colorName='white'>Position</ColorText> {title}
             </InfoTitle>
             <Company as='h4' fontSize='h5'>
                 <CompanyName> {subtitle}</CompanyName>
@@ -92,7 +92,7 @@ const StyledItem = styled.div`
     align-items: center;
     gap: 50px;
     padding: 35px 25px;
-    border-bottom: 1px solid #23ACD8;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.primary};
     &:first-of-type {
         padding-top: 0;
     }
@@ -140,7 +140,7 @@ const Company = styled(Heading)`
 `
 
 const CompanyName = styled.span`
-    color: #FFB07C;
+    color: ${({theme}) => theme.colors.secondary};
 `
 
 const Mode = styled.span`
@@ -153,7 +153,7 @@ const Period = styled.div`
     width: fit-content;
     font-size: .9rem;
     padding: 8px 20px;
-    border: 1px solid #23ACD8;
+    border: 1px solid ${({ theme }) => theme.colors.primary};
     border-radius: 8px;
     
     span {
@@ -172,7 +172,7 @@ ${Heading} {
         position: absolute;
         left: 0;
         bottom: 0;
-        border-bottom: 1px solid #23ACD8;
+        border-bottom: 1px solid ${({ theme }) => theme.colors.primary};
     }
 }
 `

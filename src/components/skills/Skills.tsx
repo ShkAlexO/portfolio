@@ -21,11 +21,12 @@ export const Skills = () => {
 const StyledSkills = styled.div`
     ${BoxWrapStyles};
     grid-column: 1 / -1;
-    background: linear-gradient(90deg, #1381a4 0%, #264B65 100%);
+    background: linear-gradient(90deg, ${({theme}) => theme.colors.darkBlue} 0%, ${({theme}) => theme.colors.primaryDark} 100%);
 `
 const Title = styled.h3`
     color: inherit;
     width: fit-content;
+    margin-bottom: 0;
 `
 
 const StyledSkillsInner = styled.div`

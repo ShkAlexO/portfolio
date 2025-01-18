@@ -9,7 +9,7 @@ export const Hero = () => {
     return (
         <StyledHero>
             <Content>
-                <Title>I’m Nick. <ColorText color='#23ACD8' fontWeight="800">Front-End Developer</ColorText> Focused on
+                <Title>I’m Nick. <ColorText colorName="primary" fontWeight="800">Front-End Developer</ColorText> Focused on
                     Clean Code</Title>
 
                 <Text>
@@ -44,7 +44,7 @@ const Title = styled.h1`
     font-size: 42px;
     font-weight: 500;
     line-height: 1.2;
-    color: #fff;
+    color: ${({theme}) => theme.colors.white};
     margin-bottom: 20px;
 
     ${ColorText} {
@@ -60,10 +60,10 @@ const Text = styled.p`
 
 const ImageBox = styled.div`
     position: relative;
+    align-self: end;
 
     img {
         display: block;
-        align-self: end;
         width: 100%;
         max-width: 380px;
         margin: 0 auto;
@@ -79,6 +79,7 @@ const ImageBox = styled.div`
         transform: translateX(-55%);
         width: 700px;
         height: 620px;
+        stroke: ${({ theme }) => theme.colors.primary};
     }
 `
 
