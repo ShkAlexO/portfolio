@@ -1,15 +1,17 @@
 import {BrowserRouter} from 'react-router-dom';
-import {Header} from "./layout/header/Header";
-import {Main} from "./layout/main/Main.tsx";
-import {Footer} from "./layout/footer/Footer.tsx";
-import {Sidebar} from "./layout/sidebar/Sidebar.tsx";
 import styled from "styled-components";
-import {GlobalStyle} from "./styles/GlobalStyles.tsx";
+import {GlobalStyle} from "@/styles/GlobalStyles.tsx";
+import {Header} from "@/layout/header/Header";
+import {Main} from "@/layout/main/Main.tsx";
+import {Footer} from "@/layout/footer/Footer.tsx";
+import {Sidebar} from "@/layout/sidebar/Sidebar.tsx";
 import './App.css';
 
 function App() {
+    const baseUrl =  process.env.NODE_ENV === 'production' ? '/portfolio/' : '/';
+
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={baseUrl}>
             <StyledApp>
                 <GlobalStyle/>
                 <Header/>
@@ -24,9 +26,10 @@ function App() {
 const StyledApp = styled.div`
     position: relative;
     display: grid;
-    grid-template: 1fr auto / 400px 1fr 100px;
-    padding: 15px;
+    grid-template-rows: 1fr auto;
+    grid-template-columns:  400px 1fr auto;
     gap: 15px;
+    padding: 15px;
     height: 100vh;
 
     header {

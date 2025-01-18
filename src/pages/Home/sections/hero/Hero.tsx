@@ -1,14 +1,17 @@
-import heroImage from '../../../../assets/images/man.webp';
 import styled from "styled-components";
-import {Skills} from "../../../../components/skills/Skills.tsx";
-import {ButtonLink} from "../../../../components/UI/ButtonLink.ts";
-import {Icon, StyledIcon} from "../../../../components/icon/Icon.tsx";
+import heroImage from '@/assets/images/man.webp';
+import {Skills} from "@c/Skills/Skills.tsx";
+import {Icon, StyledIcon} from "@c/Icon/Icon.tsx";
+import {ButtonLink} from "@c/UI/ButtonLink.ts";
+import {ColorText} from "@c/ColorText.ts";
 
 export const Hero = () => {
     return (
         <StyledHero>
             <Content>
-                <Title>I’m Alexandr. <ColorText>Front-End Developer</ColorText> Focused on Clean Code</Title>
+                <Title>I’m Nick. <ColorText color='#23ACD8' fontWeight="800">Front-End Developer</ColorText> Focused on
+                    Clean Code</Title>
+
                 <Text>
                     Dedicated to building modern, responsive, and visually engaging web solutions that prioritize
                     usability and design.
@@ -20,7 +23,6 @@ export const Hero = () => {
                 <img src={heroImage} alt="Hero Image"/>
                 <Icon iconId='decoration-svg'/>
             </ImageBox>
-
             <Skills/>
         </StyledHero>
     );
@@ -44,6 +46,10 @@ const Title = styled.h1`
     line-height: 1.2;
     color: #fff;
     margin-bottom: 20px;
+
+    ${ColorText} {
+        display: block;
+    }
 `
 
 const Text = styled.p`
@@ -52,15 +58,9 @@ const Text = styled.p`
     margin-bottom: 40px;
 `
 
-const ColorText = styled.span`
-    display: block;
-    color: #23ACD8;
-    font-weight: 800;
-`
-
 const ImageBox = styled.div`
     position: relative;
-    
+
     img {
         display: block;
         align-self: end;
@@ -70,7 +70,7 @@ const ImageBox = styled.div`
         height: auto;
         max-height: 100%;
     }
-    
+
     ${StyledIcon} {
         position: absolute;
         z-index: -1;
@@ -78,7 +78,7 @@ const ImageBox = styled.div`
         left: 50%;
         transform: translateX(-55%);
         width: 700px;
-        height: 620px; 
+        height: 620px;
     }
 `
 

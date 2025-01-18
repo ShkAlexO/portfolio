@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import {Card} from "./Card.tsx";
-import {skillsData, SkillPropsType} from "../../data/skillsData.ts";
-import {BoxWrapStyles} from "../BoxWrapStyles.ts";
+import {Card} from "@c/Skills/Card.tsx";
+import {skillsData, SkillPropsType} from "@/data/skillsData.ts";
+import {BoxWrapStyles} from "@c/BoxWrapStyles.ts";
 
 export const Skills = () => {
     return (
@@ -24,6 +24,7 @@ const StyledSkills = styled.div`
     background: linear-gradient(90deg, #1381a4 0%, #264B65 100%);
 `
 const Title = styled.h3`
+    color: inherit;
     width: fit-content;
 `
 

@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import {Typography} from "./Typography.ts";
+import {Typography} from "@/styles/Typography.ts";
 
 export const GlobalStyle = createGlobalStyle`
     ${Typography}

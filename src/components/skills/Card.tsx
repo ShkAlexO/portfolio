@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Icon, StyledIcon} from "../icon/Icon.tsx";
+import {Icon, StyledIcon} from "@c/Icon/Icon.tsx";
 
 type CardPropsType = {
     iconId: string

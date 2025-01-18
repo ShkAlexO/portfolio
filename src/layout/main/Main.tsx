@@ -1,78 +1,31 @@
-import styled from "styled-components";
-import {HomePage} from "../../pages/HomePage/HomePage.tsx";
+import {Routes, Route} from "react-router-dom";
+import {Container} from "@c/Container.tsx";
+import {ScrollBox} from "@c/ScrollBox.tsx";
+
+import {Home} from "@/pages/Home/Home.tsx";
+import {About} from "@/pages/About/About.tsx";
+import {Services} from "@/pages/Services/Services.tsx";
+import {Portfolio} from "@/pages/Portfolio/Portfolio.tsx";
+import {Blog} from "@/pages/Blog/Blog.tsx";
+import {Contact} from "@/pages/Contact/Contact.tsx";
+import {NotFound} from "@/pages/NotFound/NotFound.tsx";
+
 
 export const Main = () => {
-
     return (
-        <StyledMain>
-            <StyledMainWrap>
-            <StyledMainInner>
-                <HomePage/>
-            </StyledMainInner>
-                </StyledMainWrap>
-        </StyledMain>
+        <ScrollBox as="main">
+            <Container>
+                <Routes>
+                    <Route index element={<Home />}></Route>
+                    <Route path="about" element={<About />}></Route>
+                    <Route path="services" element={<Services />}></Route>
+                    <Route path="portfolio" element={<Portfolio />}></Route>
+                    <Route path="blog" element={<Blog />}></Route>
+                    <Route path="contact" element={<Contact />}></Route>
+                    <Route path="*" element={<NotFound />}></Route>
+                </Routes>
+            </Container>
+        </ScrollBox>
     );
 };
-
-const StyledMain = styled.main`
-    overflow: hidden;
-`
-
-const StyledMainWrap = styled.div`
-    position: relative;
-    height: 100%;
-    padding: 40px 5px;
-    border-radius: 8px;
-    border: 1px solid  #23ACD8;
-    background-color: rgba(29, 33, 45, .6);
-    &::before,
-    &::after {
-        content: '';
-        display: block;
-        border-radius: 8px;
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 80px;
-        background-color: rgb(29, 33, 45);
-    }
-    &::before {
-        top: 0;
-        background: linear-gradient( 0deg,rgba(29,33,45,0) 5%,rgba(29,33,45,0.63) 15%,rgba(29,33,45,1) 39% );
-    }
-    &::after {
-        bottom: 0;
-        background: linear-gradient( 180deg,rgba(29,33,45,0) 5%,rgba(29,33,45,0.63) 15%,rgba(29,33,45,1) 39% );
-    }
-`
-
-const StyledMainInner = styled.div` 
-    padding: 0 4vw;
-    height: 100%;
-    overflow-y: auto;
-
-    &:first-child {
-        padding-top: 40px;
-    }
-    &:last-child {
-        padding-bottom: 40px;
-    }
-
-    &::-webkit-scrollbar {
-        width: 7px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background: #23ACD8; 
-        border-radius: 8px; 
-        border: 2px solid transparent; 
-        background-clip: content-box; 
-    }
-
-    &::-webkit-scrollbar-track {
-        background: rgba(35, 65, 85, .5);
-        border-radius: 8px;  
-    }
-`
-
 

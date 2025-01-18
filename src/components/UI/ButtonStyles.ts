@@ -34,14 +34,6 @@ export const ButtonStyles = css`
            opacity: 0;
        }
     }
-
-    &:active {
-        
-    }
-
-    &:focus {
-        
-    }
 `;
 
 

@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/portfolio/',
+  base: process.env.NODE_ENV === 'production' ? '/portfolio/' : '/',
   plugins: [
     react({
       babel: {
@@ -13,6 +13,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': '/src',
+      '@c': '/src/components',
+      '@sbc': '/src/layout/sidebar/components',
     },
   },
 });
