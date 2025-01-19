@@ -29,7 +29,7 @@ const StyledPersonalDetails = styled.div`
         justify-content: space-between;
         gap: 30px;
         padding: 10px 12px;
-        border-radius: 8px;
+        border-radius: ${({theme}) => theme.radius};
         background: linear-gradient(to right,
         ${({theme}) => theme.colors.primaryDark} 30%,
         rgba(${({theme}) => theme.colors.primaryRgb}, .5) 100%);

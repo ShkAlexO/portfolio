@@ -1,6 +1,6 @@
 import certificate from '@/assets/images/certificate.jpg'
 
-export  type ProfessionalBackgroundPropsType = {
+export  type ProfBgPropsType = {
     id: number
     title: string
     subtitle: string
@@ -13,7 +13,7 @@ export  type ProfessionalBackgroundPropsType = {
     content?: string | undefined
 };
 
-export const educationData: ProfessionalBackgroundPropsType[] = [
+export const educationData: ProfBgPropsType[] = [
     {
         id: 1,
         title: 'HTML CSS',
@@ -60,7 +60,7 @@ export const educationData: ProfessionalBackgroundPropsType[] = [
     }
 ];
 
-export const workData: ProfessionalBackgroundPropsType[] = [
+export const workData: ProfBgPropsType[] = [
     {
         id: 1,
         title: 'Wordpress Developer',

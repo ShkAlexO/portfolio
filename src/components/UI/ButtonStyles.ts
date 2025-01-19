@@ -13,7 +13,7 @@ export const ButtonStyles = css`
     max-width: 220px;
     width: 100%;
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: ${({theme}) => theme.radius};
     overflow: hidden;
     background-color: transparent;
     border: 1px solid ${({ theme }) => theme.colors.primary};

@@ -4,31 +4,39 @@ import {Skills} from "@c/Skills/Skills.tsx";
 import {Icon, StyledIcon} from "@c/Icon/Icon.tsx";
 import {ButtonLink} from "@c/UI/ButtonLink.ts";
 import {ColorText} from "@c/ColorText.ts";
+import {Container} from "@c/Container.tsx";
 
 export const Hero = () => {
     return (
         <StyledHero>
-            <Content>
-                <Title>I’m Nick. <ColorText colorName="primary" fontWeight="800">Front-End Developer</ColorText> Focused on
-                    Clean Code</Title>
+            <Container>
+                <Inner>
+                    <Content>
+                        <Title>I’m Nick. <ColorText colorName="primary" fontWeight="800">Front-End
+                            Developer</ColorText> Focused on
+                            Clean Code</Title>
 
-                <Text>
-                    Dedicated to building modern, responsive, and visually engaging web solutions that prioritize
-                    usability and design.
-                </Text>
-                <ButtonLink to="/about">About me</ButtonLink>
-            </Content>
-
-            <ImageBox>
-                <img src={heroImage} alt="Hero Image"/>
-                <Icon iconId='decoration-svg'/>
-            </ImageBox>
-            <Skills/>
+                        <Text>
+                            Dedicated to building modern, responsive, and visually engaging web solutions that
+                            prioritize
+                            usability and design.
+                        </Text>
+                        <ButtonLink to="/about">About me</ButtonLink>
+                    </Content>
+                    <ImageBox>
+                        <img src={heroImage} alt="Hero Image"/>
+                        <Icon iconId='decoration-svg'/>
+                    </ImageBox>
+                    <Skills/>
+                </Inner>
+            </Container>
         </StyledHero>
     );
 }
 
-const StyledHero = styled.section`
+const StyledHero = styled.section``
+
+const Inner = styled.div`
     padding: 0;
     display: grid;
     grid-template-columns: 1.3fr 1fr;
@@ -79,7 +87,7 @@ const ImageBox = styled.div`
         transform: translateX(-55%);
         width: 700px;
         height: 620px;
-        stroke: ${({ theme }) => theme.colors.primary};
+        stroke: ${({theme}) => theme.colors.primary};
     }
 `
 

@@ -14,7 +14,7 @@ export const Container = ({children}:ContainerPropsType) =>  {
 }
 
 const StyledContainer = styled.div`
-    max-width: 1440px;
+    max-width: 1260px;
     padding: 0 15px;
     margin: 0 auto;
 `

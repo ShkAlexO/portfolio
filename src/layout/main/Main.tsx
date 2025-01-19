@@ -1,5 +1,5 @@
 import {Routes, Route} from "react-router-dom";
-import {Container} from "@c/Container.tsx";
+// import {Container} from "@c/Container.tsx";
 import {ScrollBox} from "@c/ScrollBox.tsx";
 
 import {Home} from "@/pages/Home/Home.tsx";
@@ -11,10 +11,11 @@ import {Contact} from "@/pages/Contact/Contact.tsx";
 import {NotFound} from "@/pages/NotFound/NotFound.tsx";
 
 
+
 export const Main = () => {
     return (
         <ScrollBox as="main">
-            <Container>
+            {/*<Container>*/}
                 <Routes>
                     <Route index element={<Home />}></Route>
                     <Route path="about" element={<About />}></Route>
@@ -24,8 +25,10 @@ export const Main = () => {
                     <Route path="contact" element={<Contact />}></Route>
                     <Route path="*" element={<NotFound />}></Route>
                 </Routes>
-            </Container>
+            {/*</Container>*/}
         </ScrollBox>
     );
 };
+
+
 

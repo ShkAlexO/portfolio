@@ -12,6 +12,9 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 
     body {
@@ -21,7 +24,10 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     section {
-        padding: 60px 0;
+        margin: 70px 0;
+        &:first-of-type {
+            margin-top: 0;
+        }
     }
 `;
 

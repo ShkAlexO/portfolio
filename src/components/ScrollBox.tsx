@@ -30,32 +30,31 @@ export const StyledScrollBox = styled.div`
 const Wrap = styled.div`
     position: relative;
     height: 100%;
-    border-radius: 8px;
-    padding: 40px 5px;
+    border-radius: ${({theme}) => theme.radius};
     border: 1px solid ${({ theme }) => theme.colors.primary};
     background-color: rgba(${({theme}) => theme.colors.darkRgb}, .6);
-
+    
     &::before,
     &::after {
         content: '';
         display: block;
-        border-radius: 8px;
+        border-radius: ${({theme}) => theme.radius};
         position: absolute;
         z-index: 2;
         left: 0;
-        width: 100%;
-        height: 80px;
+        width: 100%; 
+        height: var(--scroll-box-padding);
         background-color: rgb(${({theme}) => theme.colors.darkRgb});
     }
 
     &::before {
         top: 0;
-        background: linear-gradient(0deg, rgba(${({theme}) => theme.colors.darkRgb}, 0) 5%, rgba(${({theme}) => theme.colors.darkRgb}, 0.63) 15%, rgba(${({theme}) => theme.colors.darkRgb}, 1) 39%);
+        background: linear-gradient(0deg, rgba(${({theme}) => theme.colors.darkRgb}, 0) 0%, rgba(${({theme}) => theme.colors.darkRgb}, 0.63) 15%, rgba(${({theme}) => theme.colors.darkRgb}, 1) 50%);
     }
 
     &::after {
         bottom: 0;
-        background: linear-gradient(180deg, rgba(${({theme}) => theme.colors.darkRgb}, 0) 5%, rgba(${({theme}) => theme.colors.darkRgb}, 0.63) 15%, rgba(${({theme}) => theme.colors.darkRgb}, 1) 39%);
+        background: linear-gradient(180deg, rgba(${({theme}) => theme.colors.darkRgb}, 0) 0%, rgba(${({theme}) => theme.colors.darkRgb}, 0.63) 15%, rgba(${({theme}) => theme.colors.darkRgb}, 1) 50%);
     }
 `
 
@@ -64,12 +63,12 @@ export const Inner = styled.div<InnerPropsType>`
     overflow-x: hidden;
     overflow-y: auto;
 
-    &:first-child {
-        padding-top: 40px;
+    > :first-child {
+        padding-top: var(--scroll-box-padding);
     }
 
-    &:last-child {
-        padding-bottom: 40px;
+    > :last-child {
+        padding-bottom: var(--scroll-box-padding);
     }
 
     &::-webkit-scrollbar {
@@ -77,18 +76,18 @@ export const Inner = styled.div<InnerPropsType>`
     }
 
     &::-webkit-scrollbar-thumb {
-        background: ${({ theme }) => theme.colors.primary};
-        border-radius: 8px;
+        background: ${({theme}) => theme.colors.primary};
+        border-radius: ${({theme}) => theme.radius};
         border: 2px solid transparent;
         background-clip: content-box;
     }
 
     &::-webkit-scrollbar-track {
-        background: rgba(${({ theme }) => theme.colors.primaryDarkRgb}, .4);
-        border-radius: 8px;
+        background: rgba(${({theme}) => theme.colors.primaryDarkRgb}, .4);
+        border-radius: ${({theme}) => theme.radius};
     }
 
-    ${({ customStyles }) => customStyles && customStyles}
+    ${({customStyles}) => customStyles && customStyles}
 `
 
 

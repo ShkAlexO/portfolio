@@ -12,5 +12,6 @@ export const theme = {
         darkRgb: "29, 33, 45",
         white: "#fff",
         whiteRgb: "255, 255, 255",
-    }
+    },
+    radius: "8px"
 }
