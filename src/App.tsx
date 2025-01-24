@@ -1,29 +1,37 @@
 import {BrowserRouter} from 'react-router-dom';
+import {useSelector} from "react-redux";
+import {RootState} from "@/redux/store.ts";
+
 import styled from "styled-components";
 import {ThemeProvider} from "styled-components";
-import {theme} from "@/styles/Theme.ts";
+import {media, theme} from "@/styles/Theme.ts";
 import {GlobalStyle} from "@/styles/GlobalStyles.ts";
+import './App.css';
+
 import {Header} from "@/layout/header/Header";
 import {Main} from "@/layout/main/Main.tsx";
 import {Footer} from "@/layout/footer/Footer.tsx";
 import {Sidebar} from "@/layout/sidebar/Sidebar.tsx";
-import './App.css';
+import {MainWrap, StyledMainWrap} from "@c/MainWrap.tsx";
 
 function App() {
     const baseUrl = process.env.NODE_ENV === 'production' ? '/portfolio/' : '/';
+    const isSidebarOpen = useSelector((state: RootState) => state.sidebar.isOpen);
 
     return (
-        <ThemeProvider theme={theme}>
-            <BrowserRouter basename={baseUrl}>
-                <StyledApp>
-                    <GlobalStyle/>
-                    <Header/>
-                    <Main/>
-                    <Sidebar/>
-                    <Footer/>
-                </StyledApp>
-            </BrowserRouter>
-        </ThemeProvider>
+            <ThemeProvider theme={theme}>
+                <BrowserRouter basename={baseUrl}>
+                    <StyledApp className={isSidebarOpen ? 'js-open-sidebar' : ''}>
+                        <GlobalStyle/>
+                        <Header/>
+                        <MainWrap>
+                            <Main/>
+                            <Sidebar/>
+                        </MainWrap>
+                        <Footer/>
+                    </StyledApp>
+                </BrowserRouter>
+            </ThemeProvider>
     );
 }
 
@@ -31,25 +39,41 @@ const StyledApp = styled.div`
     position: relative;
     display: grid;
     grid-template-rows: 1fr auto;
-    grid-template-columns:  400px 1fr auto;
-    gap: 15px;
-    padding: 15px;
+    grid-template-columns:  var(--width-sidebar) 1fr var(--width-header);
+    gap: var(--gap);
+    padding: var(--gap);
     height: 100vh;
 
+    ${media.max('xl')} {
+        grid-template-columns:  1fr var(--width-header);
+    }
+
     header {
-        grid-area: 1 / 3 / 1 / -1;
+        ${media.min('xl')} {
+            grid-area: 1 / 3 / 1 / -1;
+        }
+    }
+
+    ${StyledMainWrap} {
+        ${media.max('xl')} {
+            grid-area: 1 / 1 / 2 / 2;
+        }
     }
 
     main {
-        grid-area: 1 / 2 / 2 / 3;
+        ${media.min('xl')} {
+            grid-area: 1 / 2 / 2 / 3;
+        }
     }
 
     aside {
-        grid-area: 1 / 1 / 2 / 2;
+        ${media.min('xl')} {
+            grid-area: 1 / 1 / 2 / 2;
+        }
     }
 
     footer {
-        grid-area: 2 / 1 / 3 / -1;
+        grid-area: 2 / 1 / -1 / -1;
     }
 `;
 

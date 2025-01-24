@@ -1,21 +1,18 @@
 import styled from "styled-components";
 import {Link} from "react-router-dom";
-import {BoxWrapStyles} from "@c/BoxWrapStyles.ts";
-import {Heading} from "@c/Heading.tsx";
 
+import {BoxWrapStyles} from "@c/ComponentStyles.ts";
+import {Heading} from "@c/UI/Heading.tsx";
+import {media} from "@/styles/Theme.ts";
 
-type CardGridPropsType = {
-    list: PostCardPropsType[]
-}
-
-type PostCardPropsType = {
+export type PostCardPropsType = {
     id: string | number
     image: string
     title: string
     text: string
 }
 
-const PostCard = ({image, title, text}: PostCardPropsType) => {
+export const PostCard = ({image, title, text}: PostCardPropsType) => {
     return (
         <StyledPostCard>
             <img src={image} alt={title}/>
@@ -27,20 +24,6 @@ const PostCard = ({image, title, text}: PostCardPropsType) => {
         </StyledPostCard>
     )
 }
-
-export const CardGrid = ({list}: CardGridPropsType) => {
-    return (
-        list && <StyledCardGrid>
-            {list.map((item: PostCardPropsType) => <PostCard key={item.id} {...item}/>)}
-        </StyledCardGrid>
-    )
-}
-
-const StyledCardGrid = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px 20px;
-`
 
 const StyledPostCard = styled.div`
     ${BoxWrapStyles};
@@ -58,8 +41,21 @@ const StyledPostCard = styled.div`
         width: 100%;
         height: 250px;
         object-fit: cover;
+        ${media.max('xxl')} { 
+            height: 14vw;
+        }
+        ${media.max('xxl')} {
+            height: 14vw;
+        }
+        ${media.max('xl')} {
+            height: 16.5vw;
+        }
+        ${media.max('lg')} {
+            height: 18vw;
+        }
     }
 `
+
 const Info = styled.div`
     display: flex;
     flex-direction: column;
@@ -94,7 +90,3 @@ const InfoLink = styled(Link)`
     width: fit-content;
     margin-top: auto;
 `
-
-
-
-

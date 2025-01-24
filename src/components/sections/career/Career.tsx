@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import {Container} from "@c/Container.tsx";
+import {Container} from "@c/UI/Container.tsx";
 import {SectionHeading, SectionHeadingPropsType} from "@c/SectionHeading.tsx";
-import {Item} from "@/pages/Home/sections/career/Item.tsx";
-import {BoxWrapStyles} from "@c/BoxWrapStyles.ts";
+import {Item} from "@c/sections/career/Item.tsx";
+import {BoxWrapStyles} from "@c/ComponentStyles.ts";
 import {ProfBgPropsType} from '@/data/profBgData.ts'
+import {media} from "@/styles/Theme.ts";
 
 type CareerPropsType = SectionHeadingPropsType & {
     list: ProfBgPropsType[]
@@ -31,7 +32,10 @@ const StyledWorkHistory = styled.section`
 
 const List = styled.div`
     ${BoxWrapStyles};
-    padding: 50px;
+    padding: 40px 20px;
+    ${media.min('full')} {
+        padding: 50px;
+    }
 `
 
 

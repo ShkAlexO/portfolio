@@ -1,4 +1,13 @@
 export const theme = {
+    breakpoint: {
+        xs: 576,
+        sm: 768,
+        md: 1024,
+        lg: 1200,
+        xl: 1440,
+        xxl: 1680,
+        full: 1920,
+    },
     colors: {
         primary: "#23ACD8",
         primaryRgb: "35, 172, 216",
@@ -15,3 +24,14 @@ export const theme = {
     },
     radius: "8px"
 }
+
+export const media = {
+    min: (size: keyof typeof theme.breakpoint) => `@media (min-width: ${theme.breakpoint[size]}px)`,
+    max: (size: keyof typeof theme.breakpoint) => `@media (max-width: ${theme.breakpoint[size] - 1}px)`,
+    range: (minSize: keyof typeof theme.breakpoint, maxSize: keyof typeof theme.breakpoint) =>
+        `@media (min-width: ${theme.breakpoint[minSize]}px) and (max-width: ${theme.breakpoint[maxSize] - 1}px)`,
+};
+
+// ${media.max('')} { }
+// ${media.min('')} { }
+// ${media.range('sm', 'lg')} { }

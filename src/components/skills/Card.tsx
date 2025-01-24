@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import {Icon, StyledIcon} from "@c/Icon/Icon.tsx";
+import {Icon, StyledIcon} from "@c/UI/Icon.tsx";
+import {media} from "@/styles/Theme.ts";
 
 type CardPropsType = {
     iconId: string
@@ -19,10 +20,13 @@ const StyledCard = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
-
+    max-width: 100px;
     ${StyledIcon} {
         height: 60px;
         width: auto;
+        ${media.max('xxl')} {
+            height: 45px;
+        }
     }
 `
 

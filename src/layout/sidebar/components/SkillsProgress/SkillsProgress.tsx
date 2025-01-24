@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {SkillItem} from "@sbc/SkillsProgress/SkillItem.tsx";
 import {SkillLangItemPropsType} from "@/data/userData.ts";
-import {Heading} from "@c/Heading.tsx";
+import {Heading} from "@c/UI/Heading.tsx";
 
 type SkillProgressPropsType = {
     title: string

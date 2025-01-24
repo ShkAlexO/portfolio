@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import heroImage from '@/assets/images/man.webp';
 import {Skills} from "@c/Skills/Skills.tsx";
-import {Icon, StyledIcon} from "@c/Icon/Icon.tsx";
-import {ButtonLink} from "@c/UI/ButtonLink.ts";
-import {ColorText} from "@c/ColorText.ts";
-import {Container} from "@c/Container.tsx";
+import {Icon, StyledIcon} from "@c/UI/Icon.tsx";
+import {ButtonLink} from "@c/ComponentStyles.ts";
+import {ColorText} from "@c/ComponentStyles.ts";
+import {Container} from "@c/UI/Container.tsx";
+import {media} from "@/styles/Theme.ts";
 
 export const Hero = () => {
     return (
@@ -46,6 +47,9 @@ const Inner = styled.div`
 const Content = styled.div`
     align-content: center;
     padding: 35px;
+    ${media.max('md')} { 
+        padding: 30px 0;
+    }
 `
 
 const Title = styled.h1`
@@ -54,6 +58,9 @@ const Title = styled.h1`
     line-height: 1.2;
     color: ${({theme}) => theme.colors.white};
     margin-bottom: 20px;
+    ${media.max('xxl')} {
+        font-size: 36px;
+    }
 
     ${ColorText} {
         display: block;
@@ -74,9 +81,8 @@ const ImageBox = styled.div`
         display: block;
         width: 100%;
         max-width: 380px;
-        margin: 0 auto;
         height: auto;
-        max-height: 100%;
+        margin: 0 auto;
     }
 
     ${StyledIcon} {

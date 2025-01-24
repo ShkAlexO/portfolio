@@ -36,28 +36,28 @@ export const educationData: ProfBgPropsType[] = [
         headline: 'Building Interactive Web Experiences with JavaScript',
         content: 'Through this course, I acquired a strong foundation in JavaScript, including working with variables, functions, loops, and arrays. I learned how to manipulate the DOM and create interactive elements on web pages. Additionally, I delved into asynchronous JavaScript (Promises, async/await) and began working with APIs, enabling me to build dynamic web applications.'
     },
-    {
-        id: 3,
-        title: 'React',
-        subtitle: 'Bootcamp',
-        course: true,
-        start: 'aug. 2023',
-        end: 'oct. 2023',
-        certificate: certificate,
-        headline: 'Creating Dynamic Interfaces with React',
-        content: 'During the React course, I gained hands-on experience with building reusable components, managing state using React hooks (useState, useEffect), and routing with React Router. I also learned how to work with context for state management and understand the principles of component lifecycle. These skills allowed me to efficiently develop complex user interfaces.'
-    },
-    {
-        id: 4,
-        title: 'React Native',
-        subtitle: 'ByteMasters',
-        course: true,
-        start: 'jan. 2024',
-        end: 'mar. 2024',
-        certificate: certificate,
-        headline: 'Developing Cross-Platform Apps with React Native',
-        content: 'In this course, I learned how to build cross-platform mobile applications using React Native. I acquired skills in integrating native device features, working with navigation libraries (React Navigation), and managing state with Redux. I also explored performance optimization techniques and the process of deploying apps to both the iOS and Android app stores.'
-    }
+    // {
+    //     id: 3,
+    //     title: 'React',
+    //     subtitle: 'Bootcamp',
+    //     course: true,
+    //     start: 'aug. 2023',
+    //     end: 'oct. 2023',
+    //     certificate: certificate,
+    //     headline: 'Creating Dynamic Interfaces with React',
+    //     content: 'During the React course, I gained hands-on experience with building reusable components, managing state using React hooks (useState, useEffect), and routing with React Router. I also learned how to work with context for state management and understand the principles of component lifecycle. These skills allowed me to efficiently develop complex user interfaces.'
+    // },
+    // {
+    //     id: 4,
+    //     title: 'React Native',
+    //     subtitle: 'ByteMasters',
+    //     course: true,
+    //     start: 'jan. 2024',
+    //     end: 'mar. 2024',
+    //     certificate: certificate,
+    //     headline: 'Developing Cross-Platform Apps with React Native',
+    //     content: 'In this course, I learned how to build cross-platform mobile applications using React Native. I acquired skills in integrating native device features, working with navigation libraries (React Navigation), and managing state with Redux. I also explored performance optimization techniques and the process of deploying apps to both the iOS and Android app stores.'
+    // }
 ];
 
 export const workData: ProfBgPropsType[] = [

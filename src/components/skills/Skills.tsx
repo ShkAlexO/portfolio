@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import {Card} from "@c/Skills/Card.tsx";
 import {skillsData, SkillPropsType} from "@/data/skillsData.ts";
-import {BoxWrapStyles} from "@c/BoxWrapStyles.ts";
+import {BoxWrapStyles} from "@c/ComponentStyles.ts";
+import {media} from "@/styles/Theme.ts";
 
 export const Skills = () => {
     return (
@@ -36,6 +37,9 @@ const StyledSkillsInner = styled.div`
     margin: 0 auto;
     align-items: center;
     gap: 70px;
+    ${media.max('xxl')} {
+        gap: 35px;
+    }
 `
 
 const StyledSkillsList = styled.div`
@@ -43,4 +47,7 @@ const StyledSkillsList = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
+    ${media.max('xxl')} {
+        gap: 30px;
+    }
 `

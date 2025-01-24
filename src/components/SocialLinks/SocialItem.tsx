@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import {SocialItemPropsType} from "@/data/userData.ts";
 import {FACEBOOK, GITHUB, INSTAGRAM, LINKEDIN, TELEGRAM, YOUTUBE} from "@/constants/socials.ts";
 import {FaLinkedinIn, FaGithub, FaFacebookF, FaRegPaperPlane, FaInstagram, FaYoutube} from "react-icons/fa";
-import {RoundIconStyles} from "@c/RoundIconStyles.ts";
+import {RoundIconStyles} from "@c/ComponentStyles.ts";
 
 const iconMap = {
     [LINKEDIN]: FaLinkedinIn,

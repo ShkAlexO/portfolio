@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import {BoxWrapStyles} from "@c/BoxWrapStyles.ts";
+import {BoxWrapStyles} from "@c/ComponentStyles.ts";
 import aboutMeImage from "@/assets/images/about_me.jpg";
-import {Container} from "@c/Container.tsx";
+import {Container} from "@c/UI/Container.tsx";
 
 export const About = () => {
     return(

@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import {SectionHeading, SectionHeadingPropsType} from "@c/SectionHeading.tsx";
-import {ButtonLink} from "@c/UI/ButtonLink.ts";
-import {CardGrid} from "@c/CardGrid.tsx";
-import {Container} from "@c/Container.tsx";
+import {ButtonLink} from "@c/ComponentStyles.ts";
+import {ColumnGrid} from "@c/UI/ColumnGrid.tsx";
+import {Container} from "@c/UI/Container.tsx";
+import {media} from "@/styles/Theme.ts";
 
 const postsData = [
     {
@@ -31,7 +32,7 @@ export const Blog = ({title, subtitle}: SectionHeadingPropsType) => {
         <StyledBlog>
             <Container>
                 <SectionHeading title={title} subtitle={subtitle}/>
-                <CardGrid list={postsData}/>
+                <ColumnGrid list={postsData}/>
                 <ButtonLink to='/blog'>Go to Blog</ButtonLink>
             </Container>
         </StyledBlog>
@@ -41,6 +42,10 @@ export const Blog = ({title, subtitle}: SectionHeadingPropsType) => {
 const StyledBlog = styled.section`
     ${ButtonLink} {
         margin: 60px auto 0;
+
+        ${media.max('lg')} {
+            margin-top: 40px;
+        }
     }
 `
 

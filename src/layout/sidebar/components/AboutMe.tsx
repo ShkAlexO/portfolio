@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import {SocialLinks, StyledSocialLinks} from "@c/SocialLinks/SocialLinks.tsx";
 import { GITHUB, INSTAGRAM, LINKEDIN, TELEGRAM} from "@/constants/socials.ts";
-import {BoxWrapStyles} from "@c/BoxWrapStyles.ts";
+import {BoxWrapStyles} from "@c/ComponentStyles.ts";
 import {userData} from "@/data/userData.ts";
 import {StyledSocialItem} from "@c/SocialLinks/SocialItem.tsx";
-import {Heading} from "@c/Heading.tsx";
+import {Heading} from "@c/UI/Heading.tsx";
+import {media} from "@/styles/Theme.ts";
 
 export const AboutMe = () => {
     const sidebarSocials = [GITHUB, LINKEDIN, TELEGRAM, INSTAGRAM];
@@ -53,6 +54,9 @@ const Image = styled.div`
     padding: 0;
     overflow: hidden;
     margin: 0 auto 20px;
+    ${media.max('xxl')} {
+        width: 160px;
+    }
 
     img {
         width: 100%;

@@ -9,8 +9,22 @@ body {
 
 :root {
   --scroll-box-padding: 46px;
+  --width-header: 70px;
+  --width-sidebar: 360px;
+  --width-scrollbar: 7px;
+  --gap: 15px;
   @media (max-width: 1500px) {
     --scroll-box-padding: 40px;
+  }
+  @media (max-width: 1439px) {
+    --width-sidebar: 320px;
+  }
+  @media (max-width: 1199px) {
+    --gap: 10px;
+  }
+  @media (max-width: 1023px) {
+    --width-header: 60px;
+    --gap: 5px;
   }
 }
 

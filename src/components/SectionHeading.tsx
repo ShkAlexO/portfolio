@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {media} from "@/styles/Theme.ts";
 
 export type SectionHeadingPropsType = {
     title?: string
@@ -23,6 +24,9 @@ export const Title = styled.h2`
    font-size: 36px;
     padding-bottom: 10px;
     margin-bottom: 20px;
+    ${media.max('xxl')} {
+        font-size: 32px;
+    } 
     &::after {
         content: '';
         display: block;

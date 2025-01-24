@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import {Heading} from "@c/Heading.tsx";
-import {ColorText} from "@c/ColorText.ts";
+import {Heading} from "@c/UI/Heading.tsx";
+import {ColorText} from "@c/ComponentStyles.ts";
 import {ProfBgPropsType} from "@/data/profBgData.ts";
+import {media} from "@/styles/Theme.ts";
 
 export type ItemPropsType = ProfBgPropsType & {
     listType: 'education' | 'work'
@@ -12,7 +13,7 @@ const InfoEducation = ({title, subtitle, start, end}: ProfBgPropsType) => {
     return (
         <StyledInfoEducation>
             <InfoTitle as='h3'>
-                {title} <ColorText colorName='white' fontWeight='400'>course</ColorText>
+                <span>{title}</span> <ColorText colorName='white' fontWeight='400'>course</ColorText>
             </InfoTitle>
             <Company as='h4' fontSize='h5'>
                 <CompanyName> {subtitle}</CompanyName>
@@ -28,12 +29,11 @@ const InfoWork = ({title, subtitle, mode, start, end}: ProfBgPropsType) => {
     return (
         <StyledInfoWork>
             <InfoTitle as='h3'>
-                <ColorText colorName='white'>Position</ColorText> {title}
+                <ColorText colorName='white'>Position</ColorText><span>{title}</span>
             </InfoTitle>
             <Company as='h4' fontSize='h5'>
                 <CompanyName> {subtitle}</CompanyName>
-                <hr/>
-                <Mode>{mode}</Mode>
+                <Mode>({mode})</Mode>
             </Company>
             <Period>
                 <span>{start}</span> - <span>{end}</span>
@@ -43,11 +43,13 @@ const InfoWork = ({title, subtitle, mode, start, end}: ProfBgPropsType) => {
 }
 
 export const Item = ({listType, content, headline, ...props}: ItemPropsType) => {
-    const InfoComponent = listType === 'education' ? InfoEducation : InfoWork;
+    const CurComponent = listType === 'education' ? InfoEducation : InfoWork;
 
     return (
         <StyledItem>
-            <InfoComponent {...props} />
+            <Info>
+                <CurComponent {...props}/>
+            </Info>
 
             <Content>
                 <Heading as='h5' fontSize='h3'>{headline}</Heading>
@@ -59,54 +61,81 @@ export const Item = ({listType, content, headline, ...props}: ItemPropsType) => 
 }
 
 const StyledItem = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 50px;
+    display: flex; 
+    gap: 35px;
     padding: 35px 25px;
-    border-bottom: 1px solid ${({ theme }) => theme.colors.primary};
+    border-bottom: 1px solid ${({theme}) => theme.colors.primary};
+    ${media.max('md')} {
+        flex-direction: column;
+    }
+    
     &:first-of-type {
         padding-top: 0;
     }
+
     &:last-of-type {
         border-bottom: none;
         padding-bottom: 0;
     }
 `
 
-const StyledInfoEducation = styled.div`
-    max-width: 250px;
+const InfoTitle = styled(Heading)`
+    margin-bottom: 15px;
+`
+
+const Info = styled.div`
+    max-width: 330px;
     width: 100%;
     flex-shrink: 0;
+    ${media.max('xxl')} {
+        max-width: 270px;
+    }
+    ${media.max('md')} {
+        max-width: initial;
+    }
 `
 
 const StyledInfoWork = styled.div`
-    max-width: 360px;
-    width: 100%;
-    flex-shrink: 0;
+    ${InfoTitle} {
+        display: flex;
+        flex-direction: column;
+        ${ColorText} {
+            font-size: .8em;
+            font-weight: 400;
+        }
+    }
+
+    ${media.range('sm', 'md')} {
+        display: grid;
+        grid-template: repeat(2, auto) / 1fr auto;
+        grid-auto-flow: column;
+        column-gap: 30px;
+    }
 `
 
-const InfoTitle = styled(Heading)`
-    margin-bottom: 10px;
+const StyledInfoEducation = styled.div`
+    ${media.range('sm', 'md')} {
+        display: grid;
+        grid-template: repeat(2, auto) / 1fr auto;
+        grid-auto-flow: column;
+        column-gap: 30px;
+    }
 `
 
 const Company = styled(Heading)`
     display: flex;
     align-items: baseline;
-    gap: 10px;
+    gap: 2px 10px;
     margin-bottom: 30px;
-
+    ${media.max('xxl')} { 
+        flex-direction: column;
+    }
+    ${media.range('sm', 'md')} {
+        margin-bottom: 0;
+    }
+    
     span {
         display: block;
-    }
-
-    hr {
-        width: 5px;
-        height: 5px;
-        margin: 0;
-       transform: translateY(-3px);
-        border: none;
-        border-radius: 50%;
-        background-color: currentColor;
     }
 `
 
@@ -117,6 +146,7 @@ const CompanyName = styled.span`
 const Mode = styled.span`
     font-size: .8em;
     text-transform: capitalize;
+    text-wrap: nowrap;
 `
 
 const Period = styled.div`
@@ -125,28 +155,31 @@ const Period = styled.div`
     width: fit-content;
     font-size: .9rem;
     padding: 8px 20px;
-    border: 1px solid ${({ theme }) => theme.colors.primary};
+    border: 1px solid ${({theme}) => theme.colors.primary};
     border-radius: ${({theme}) => theme.radius};
-    
+    ${media.range('sm', 'md')} {
+        align-self: flex-start;
+    }
     span {
         text-transform: capitalize;
     }
 `
 
 const Content = styled.div`
-${Heading} {
-    position: relative;
-    padding-bottom: 10px;
-    &::after {
-        content: '';
-        display: block;
-        width: 200px;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        border-bottom: 1px solid ${({ theme }) => theme.colors.primary};
+    ${Heading} {
+        position: relative;
+        padding-bottom: 10px;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 200px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            border-bottom: 1px solid ${({theme}) => theme.colors.primary};
+        }
     }
-}
 `
 
 const Text = styled.p`
