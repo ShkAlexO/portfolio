@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import {userData} from "@/data/userData.ts";
+import {userData} from "@/data/userData";
+import {media} from "@/styles/Theme";
 
 const formatPhoneNumber = (phone: string) => {
     return phone.replace(/[^0-9+]/g, '');
@@ -33,6 +34,9 @@ const StyledPersonalDetails = styled.div`
         background: linear-gradient(to right,
         ${({theme}) => theme.colors.primaryDark} 30%,
         rgba(${({theme}) => theme.colors.primaryRgb}, .5) 100%);
+        ${media.max('em')} {
+            gap: 20px;
+        }
     }
 
     a {

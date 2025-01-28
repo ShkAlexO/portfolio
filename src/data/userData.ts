@@ -1,5 +1,5 @@
 import avatar from '@/assets/images/man.webp'
-import {LINKEDIN, GITHUB, FACEBOOK, TELEGRAM, INSTAGRAM, YOUTUBE} from '../constants/socials.ts'
+import {LINKEDIN, GITHUB, FACEBOOK, TELEGRAM, INSTAGRAM, YOUTUBE} from '@/constants/socials'
 
 
 export type SocialItemPropsType = {

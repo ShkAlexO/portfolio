@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {media} from "@/styles/Theme.ts";
+import {media} from "@/styles/Theme";
 
 export type SectionHeadingPropsType = {
     title?: string
@@ -17,15 +17,18 @@ export const StyledSectionHeading = styled.div`
     text-align: center;
     max-width: 950px;
     margin: 0 auto 50px;
+    ${media.max('md')} { 
+        margin-bottom: 40px;
+    }
 `
 
 export const Title = styled.h2`
     position: relative;
-   font-size: 36px;
+   font-size: 34px;
     padding-bottom: 10px;
     margin-bottom: 20px;
     ${media.max('xxl')} {
-        font-size: 32px;
+        font-size: 30px;
     } 
     &::after {
         content: '';

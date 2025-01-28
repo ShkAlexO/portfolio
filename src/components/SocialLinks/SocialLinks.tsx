@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import {userData, SocialItemPropsType} from "@/data/userData.ts"
-import {SocialItem} from "@c/SocialLinks/SocialItem.tsx";
+import {userData, SocialItemPropsType} from "@/data/userData"
+import {SocialItem} from "@c/SocialLinks/SocialItem";
 
 const socials = userData.socials;
 

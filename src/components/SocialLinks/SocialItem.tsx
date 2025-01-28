@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import {Link} from "react-router-dom";
-import {SocialItemPropsType} from "@/data/userData.ts";
-import {FACEBOOK, GITHUB, INSTAGRAM, LINKEDIN, TELEGRAM, YOUTUBE} from "@/constants/socials.ts";
+import {SocialItemPropsType} from "@/data/userData";
+import {FACEBOOK, GITHUB, INSTAGRAM, LINKEDIN, TELEGRAM, YOUTUBE} from "@/constants/socials";
 import {FaLinkedinIn, FaGithub, FaFacebookF, FaRegPaperPlane, FaInstagram, FaYoutube} from "react-icons/fa";
-import {RoundIconStyles} from "@c/ComponentStyles.ts";
+import {RoundIconStyles} from "@c/ComponentStyles";
 
 const iconMap = {
     [LINKEDIN]: FaLinkedinIn,

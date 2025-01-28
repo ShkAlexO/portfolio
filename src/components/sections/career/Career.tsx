@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import {Container} from "@c/UI/Container.tsx";
-import {SectionHeading, SectionHeadingPropsType} from "@c/SectionHeading.tsx";
-import {Item} from "@c/sections/career/Item.tsx";
-import {BoxWrapStyles} from "@c/ComponentStyles.ts";
-import {ProfBgPropsType} from '@/data/profBgData.ts'
-import {media} from "@/styles/Theme.ts";
+import {Container} from "@c/UI/Container";
+import {SectionHeading, SectionHeadingPropsType} from "@c/SectionHeading";
+import {Item} from "@c/sections/career/Item";
+import {BoxWrapStyles} from "@c/ComponentStyles";
+import {ProfBgPropsType} from '@/data/profBgData'
+import {media} from "@/styles/Theme";
 
 type CareerPropsType = SectionHeadingPropsType & {
     list: ProfBgPropsType[]
@@ -35,6 +35,9 @@ const List = styled.div`
     padding: 40px 20px;
     ${media.min('full')} {
         padding: 50px;
+    }
+    ${media.max('xs')} {
+        padding: 20px 10px;
     }
 `
 

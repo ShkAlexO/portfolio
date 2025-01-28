@@ -1,6 +1,6 @@
 import { css }  from "styled-components";
-import {ButtonStyles} from "@c/ComponentStyles.ts";
-import {media} from "@/styles/Theme.ts";
+import {ButtonStyles} from "@c/ComponentStyles";
+import {media} from "@/styles/Theme";
 
 export const Typography = css`
     h1, h2, h3, h4, h5, h6 {

@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import styled from "styled-components";
-import {media} from "@/styles/Theme.ts";
+import {media} from "@/styles/Theme";
 
 type MainWrapPropsType = {
     children: ReactNode

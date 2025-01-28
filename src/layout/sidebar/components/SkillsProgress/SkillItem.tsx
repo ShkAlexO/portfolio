@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {SkillLangItemPropsType} from "@/data/userData.ts";
+import {SkillLangItemPropsType} from "@/data/userData";
 
 export const SkillItem = ({name, percentages}: SkillLangItemPropsType) => {
     return (

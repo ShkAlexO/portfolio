@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import {SocialLinks, StyledSocialLinks} from "@c/SocialLinks/SocialLinks.tsx";
-import { GITHUB, INSTAGRAM, LINKEDIN, TELEGRAM} from "@/constants/socials.ts";
-import {BoxWrapStyles} from "@c/ComponentStyles.ts";
-import {userData} from "@/data/userData.ts";
-import {StyledSocialItem} from "@c/SocialLinks/SocialItem.tsx";
-import {Heading} from "@c/UI/Heading.tsx";
-import {media} from "@/styles/Theme.ts";
+import {SocialLinks, StyledSocialLinks} from "@c/SocialLinks/SocialLinks";
+import { GITHUB, INSTAGRAM, LINKEDIN, TELEGRAM} from "@/constants/socials";
+import {BoxWrapStyles} from "@c/ComponentStyles";
+import {userData} from "@/data/userData";
+import {StyledSocialItem} from "@c/SocialLinks/SocialItem";
+import {Heading} from "@c/UI/Heading";
+import {media} from "@/styles/Theme";
 
 export const AboutMe = () => {
     const sidebarSocials = [GITHUB, LINKEDIN, TELEGRAM, INSTAGRAM];
@@ -39,7 +39,7 @@ const StyledAboutMe = styled.div`
     }
 
     ${StyledSocialItem} {
-      font-size: .9rem;
+        font-size: .9rem;
         width: 35px;
     }
 `

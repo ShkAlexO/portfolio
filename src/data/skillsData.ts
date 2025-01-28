@@ -10,8 +10,6 @@ export const skillsData: SkillPropsType[] = [
     { iconId: 'git-svg', title: 'Git' },
     { iconId: 'wordpress-svg', title: 'WordPress' },
     { iconId: 'js-svg', title: 'JavaScript' },
-    { iconId: 'js-svg', title: 'JavaScript' },
-    { iconId: 'js-svg', title: 'JavaScript' },
     // { iconId: 'react-svg', title: 'React' },
     // { iconId: 'redux-svg', title: 'Redux' }
 ];

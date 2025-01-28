@@ -1,12 +1,13 @@
 import styled, {css} from "styled-components";
 import {Link} from "react-router-dom";
+import {media} from "@/styles/Theme";
 
 export const ColorText = styled.span<{
-    colorName?: string
-    fontWeight?: string }>`
-    color: ${({theme, colorName}) => (
-    colorName ? theme.colors[colorName] : theme.colors.blue)};
-    font-weight: ${({fontWeight}) => fontWeight || 'inherit'};
+    $colorName?: string
+    $fontWeight?: string }>`
+    color: ${({theme, $colorName}) => (
+    $colorName ? theme.colors[$colorName] : theme.colors.blue)};
+    font-weight: ${({$fontWeight}) => $fontWeight || 'inherit'};
 `
 
 export const BoxWrapStyles = css`
@@ -45,7 +46,7 @@ export const RoundIconStyles = css`
 
     &:hover {
         color: currentColor;
-        box-shadow: 0px 0px 3px 2px rgba(${({theme}) => theme.colors.secondaryRgb},0.3);
+        box-shadow: 0 0 3px 2px rgba(${({theme}) => theme.colors.secondaryRgb},0.3);
 
         &::before {
             transform: rotate(45deg);
@@ -67,7 +68,6 @@ export const ButtonStyles = css`
     position: relative;
     display: block;
     isolation: isolate;
-    font-size: 20px;
     font-weight: 500;
     line-height: 1;
     color: ${({theme}) => theme.colors.white};
@@ -81,6 +81,13 @@ export const ButtonStyles = css`
     background-color: transparent;
     border: 1px solid ${({ theme }) => theme.colors.primary};
     transition: all .3s ease;
+    ${media.min('xl')} {
+        font-size: 20px;
+    }
+    ${media.max('md')} {
+        padding: 13px 22px;
+        max-width: 180px;
+    }
     &::before {
         content: '';
         display: block;

@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import styled from "styled-components";
+import {media} from "@/styles/Theme";
 
 type ContainerPropsType = {
     children: ReactNode
@@ -17,4 +18,7 @@ const StyledContainer = styled.div`
     max-width: 1430px;
     padding: 0 15px;
     margin: 0 auto;
+    ${media.max('xs')} { 
+        padding: 0 7px;
+    }
 `

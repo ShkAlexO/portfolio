@@ -1,15 +1,27 @@
-import styled from "styled-components";
-import {Menu} from "@c/Menu/Menu";
-import {BoxWrapStyles} from "@c/ComponentStyles.ts";
-import {SidebarToggle} from "@c/SidebarToggle.tsx";
-import {media} from "@/styles/Theme.ts";
+import {useDispatch} from "react-redux";
+import {toggleSidebar} from "@/redux/actions";
 
-export const Header = () => {
+import styled from "styled-components";
+import {media} from "@/styles/Theme";
+import {Menu} from "@c/Menu/Menu";
+import {SidebarToggle} from "@c/SidebarToggle";
+import {BoxWrapStyles} from "@c/ComponentStyles";
+
+type HeaderPropsType = {
+    toggleRef: React.RefObject<HTMLButtonElement>
+};
+
+export const Header = ({toggleRef}:HeaderPropsType) => {
+    const dispatch = useDispatch();
+
+    const handleSidebarToggle = () => {
+        dispatch(toggleSidebar());
+    };
 
     return (
         <StyledHeader>
             <SidebarToggleBox>
-                <SidebarToggle/>
+                <SidebarToggle ref={toggleRef} onClick={handleSidebarToggle}/>
             </SidebarToggleBox>
             <MenuBox>
                 <Menu/>
@@ -39,6 +51,12 @@ const SidebarToggleBox = styled.div`
     border-radius: ${({theme}) => theme.radius};
     ${media.min('xl')} {
         display: none;
+    }
+    ${media.max('sm')} {
+        padding: 5px 10px;
+    }
+    ${media.max('xs')} {
+        padding: 3px 6px;
     }
 `
 

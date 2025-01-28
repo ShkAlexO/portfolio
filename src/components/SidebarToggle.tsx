@@ -1,23 +1,21 @@
+import {forwardRef} from "react";
+
 import styled from "styled-components";
-import {useDispatch} from "react-redux";
-import {toggleSidebar} from "@/redux/actions.ts";
-import {media} from "@/styles/Theme.ts";
+import {media} from "@/styles/Theme";
 
-export const SidebarToggle = () => {
-    const dispatch = useDispatch();
-
-    const handleClick = () => {
-        dispatch(toggleSidebar());
-    };
-
-    return (
-        <StyledSidebarToggle onClick={handleClick}>
-            <Line/>
-            <Line/>
-            <Line/>
-        </StyledSidebarToggle>
-    )
+type SidebarTogglePropsType = {
+    onClick: () => void
 }
+
+export const SidebarToggle = forwardRef<HTMLButtonElement, SidebarTogglePropsType>(({ onClick }, toggleButtonRef) => {
+    return (
+        <StyledSidebarToggle onClick={onClick} ref={toggleButtonRef}>
+            <Line />
+            <Line />
+            <Line />
+        </StyledSidebarToggle>
+    );
+});
 
 const StyledSidebarToggle = styled.button`
     position: relative;

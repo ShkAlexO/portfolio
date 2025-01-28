@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import {PostCard, PostCardPropsType} from "@c/PostCard.tsx";
-import {media} from "@/styles/Theme.ts";
+import {PostCard, PostCardPropsType} from "@c/PostCard";
+import {media} from "@/styles/Theme";
 
 type ColumnGridPropsType = {
     list: PostCardPropsType[]
@@ -25,5 +25,8 @@ const StyledColumnGrid = styled.div`
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 1fr;
         overflow: hidden;
+    }
+    ${media.max('sm')} {
+        grid-template-columns: 1fr;
     }
 `

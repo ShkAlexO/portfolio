@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import {Heading} from "@c/UI/Heading.tsx";
-import {ColorText} from "@c/ComponentStyles.ts";
-import {ProfBgPropsType} from "@/data/profBgData.ts";
-import {media} from "@/styles/Theme.ts";
+import {Heading} from "@c/UI/Heading";
+import {ColorText} from "@c/ComponentStyles";
+import {ProfBgPropsType} from "@/data/profBgData";
+import {media} from "@/styles/Theme";
 
 export type ItemPropsType = ProfBgPropsType & {
     listType: 'education' | 'work'
@@ -13,7 +13,7 @@ const InfoEducation = ({title, subtitle, start, end}: ProfBgPropsType) => {
     return (
         <StyledInfoEducation>
             <InfoTitle as='h3'>
-                <span>{title}</span> <ColorText colorName='white' fontWeight='400'>course</ColorText>
+                <span>{title}</span> <ColorText $colorName='white' $fontWeight='400'>course</ColorText>
             </InfoTitle>
             <Company as='h4' fontSize='h5'>
                 <CompanyName> {subtitle}</CompanyName>
@@ -29,7 +29,7 @@ const InfoWork = ({title, subtitle, mode, start, end}: ProfBgPropsType) => {
     return (
         <StyledInfoWork>
             <InfoTitle as='h3'>
-                <ColorText colorName='white'>Position</ColorText><span>{title}</span>
+                <ColorText $colorName='white'>Position</ColorText><span>{title}</span>
             </InfoTitle>
             <Company as='h4' fontSize='h5'>
                 <CompanyName> {subtitle}</CompanyName>
@@ -67,6 +67,9 @@ const StyledItem = styled.div`
     border-bottom: 1px solid ${({theme}) => theme.colors.primary};
     ${media.max('md')} {
         flex-direction: column;
+    }
+    ${media.max('sm')} {
+        padding: 25px 0;
     }
     
     &:first-of-type {

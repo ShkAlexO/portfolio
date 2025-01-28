@@ -1,11 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
-import {Typography} from "@/styles/Typography.ts";
+import {Typography} from "@/styles/Typography";
+import {media} from "@/styles/Theme";
 
 export const GlobalStyle = createGlobalStyle`
     ${Typography};
 
     html {
         font-size: 18px;
+        ${media.max('md')} {
+            font-size: 16px;
+        }
     }
 
     * {
@@ -21,13 +25,16 @@ export const GlobalStyle = createGlobalStyle`
         position: relative;
         color: ${({theme}) => theme.colors.white};
         line-height: 1.5;
-        //background: linear-gradient(180deg, #05090E 20%, #031A28 30%, #002C45 58%, #04080D 95%);
         background:linear-gradient(180deg,#05090E 33%,#28999c 59%,#002C45 85%,#04080D 95%);
     }
    
 
     section {
         margin: 70px 0;
+        ${media.max('md')} {
+            margin: 50px 0;
+        }
+        
         &:first-of-type {
             margin-top: 0;
         }

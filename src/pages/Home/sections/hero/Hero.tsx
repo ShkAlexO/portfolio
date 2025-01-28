@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import heroImage from '@/assets/images/man.webp';
-import {Skills} from "@c/Skills/Skills.tsx";
-import {Icon, StyledIcon} from "@c/UI/Icon.tsx";
-import {ButtonLink} from "@c/ComponentStyles.ts";
-import {ColorText} from "@c/ComponentStyles.ts";
-import {Container} from "@c/UI/Container.tsx";
-import {media} from "@/styles/Theme.ts";
+import {Skills} from "@c/Skills/Skills";
+import {Icon, StyledIcon} from "@c/UI/Icon";
+import {ButtonLink} from "@c/ComponentStyles";
+import {ColorText} from "@c/ComponentStyles";
+import {Container} from "@c/UI/Container";
+import {media} from "@/styles/Theme";
 
 export const Hero = () => {
     return (
@@ -13,7 +13,7 @@ export const Hero = () => {
             <Container>
                 <Inner>
                     <Content>
-                        <Title>I’m Nick. <ColorText colorName="primary" fontWeight="800">Front-End
+                        <Title>I’m Nick. <ColorText $colorName="primary" $fontWeight="800">Front-End
                             Developer</ColorText> Focused on
                             Clean Code</Title>
 
@@ -22,13 +22,18 @@ export const Hero = () => {
                             prioritize
                             usability and design.
                         </Text>
+
                         <ButtonLink to="/about">About me</ButtonLink>
                     </Content>
+
                     <ImageBox>
                         <img src={heroImage} alt="Hero Image"/>
                         <Icon iconId='decoration-svg'/>
                     </ImageBox>
+
                     <Skills/>
+
+                    <ButtonLink to="/about">About me</ButtonLink>
                 </Inner>
             </Container>
         </StyledHero>
@@ -40,15 +45,36 @@ const StyledHero = styled.section``
 const Inner = styled.div`
     padding: 0;
     display: grid;
-    grid-template-columns: 1.3fr 1fr;
     margin-bottom: 50px;
+    ${media.min('sm')} {
+        grid-template-columns: 1.3fr 1fr;
+    }
+    
+    > ${ButtonLink} {
+        margin: 30px auto 0;
+        ${media.min('sm')} {
+            display: none;
+        }
+    }
 `
 
 const Content = styled.div`
     align-content: center;
     padding: 35px;
-    ${media.max('md')} { 
+
+    ${media.max('md')} {
         padding: 30px 0;
+    }
+
+    ${media.max('sm')} {
+        padding: 0;
+        margin-bottom: 15px;
+    }
+
+    ${ButtonLink} {
+        ${media.max('sm')} {
+            display: none;
+        }
     }
 `
 
@@ -58,9 +84,18 @@ const Title = styled.h1`
     line-height: 1.2;
     color: ${({theme}) => theme.colors.white};
     margin-bottom: 20px;
+
     ${media.max('xxl')} {
         font-size: 36px;
     }
+
+    ${media.max('md')} {
+        font-size: 30px;
+    }
+
+    ${media.max('xs')} { 
+        font-size: 28px;
+    }   
 
     ${ColorText} {
         display: block;
@@ -68,9 +103,12 @@ const Title = styled.h1`
 `
 
 const Text = styled.p`
-    font-size: 22px;
+    font-size: 1.2rem;
     max-width: 450px;
     margin-bottom: 40px;
+    ${media.max('sm')} {
+        margin-bottom: 0;
+    }
 `
 
 const ImageBox = styled.div`
@@ -83,6 +121,9 @@ const ImageBox = styled.div`
         max-width: 380px;
         height: auto;
         margin: 0 auto;
+        ${media.max('md')} {
+            max-width: 250px;
+        }
     }
 
     ${StyledIcon} {
@@ -94,6 +135,17 @@ const ImageBox = styled.div`
         width: 700px;
         height: 620px;
         stroke: ${({theme}) => theme.colors.primary};
+        ${media.max('md')} {
+            width: 390px;
+            height: 400px;
+            bottom: -100px;
+        }
+        ${media.max('sm')} {
+            width: 600px;
+            height: 600px;
+            bottom: -75px;
+            transform: translateX(-35%);
+        }
     }
 `
 

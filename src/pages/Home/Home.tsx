@@ -1,7 +1,8 @@
-import {Hero} from "@/pages/Home/sections/hero/Hero.tsx";
-import {Career} from "@c/sections/career/Career.tsx";
-import {educationData, workData} from "@/data/profBgData.ts";
-import {Blog} from "@c/sections/Blog.tsx";
+import {Hero} from "@/pages/Home/sections/hero/Hero";
+import {Career} from "@c/sections/career/Career";
+import {educationData, workData} from "@/data/profBgData";
+import {LastPosts} from "@c/sections/LastPosts";
+
 
 export const Home = () => {
     return (
@@ -19,7 +20,7 @@ export const Home = () => {
                 list={workData}
                 listType='work'
             />
-            <Blog title='Blog' subtitle='Explore development tips, project highlights, and industry trends.'/>
+            <LastPosts title='Blog' subtitle='Explore development tips, project highlights, and industry trends.'/>
         </>
     );
 };

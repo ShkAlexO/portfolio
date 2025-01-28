@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {media} from "@/styles/Theme.ts";
+import {media} from "@/styles/Theme";
 
 type HeadingPropsType = {
     as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";

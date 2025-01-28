@@ -1,17 +1,20 @@
+import { forwardRef } from "react";
 import styled, {css} from "styled-components";
-import {AboutMe} from "@sbc/AboutMe.tsx";
-import {PersonalDetails} from "@sbc/PersonalDetails.tsx";
-import {SkillsProgress} from "@sbc/SkillsProgress/SkillsProgress.tsx";
-import {userData} from "@/data/userData.ts";
-import { ScrollBox} from "@c/ScrollBox.tsx";
-import {media} from "@/styles/Theme.ts";
+import {media} from "@/styles/Theme";
 
-export const Sidebar = () => {
+import {AboutMe} from "@sbc/AboutMe";
+import {PersonalDetails} from "@sbc/PersonalDetails";
+import {SkillsProgress} from "@sbc/SkillsProgress/SkillsProgress";
+
+import {userData} from "@/data/userData";
+import { ScrollBox} from "@c/ScrollBox";
+
+export const Sidebar = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>((props, toggleButtonRef) => {
     const skills = userData.skills
     const languages = userData.languages
 
     return (
-        <ScrollBox as="aside" scrollBoxStyles={scrollBoxStyles} wrapStyles={wrapStyles} innerStyles={innerStyles}>
+        <ScrollBox as="aside" $scrollBoxStyles={scrollBoxStyles} $wrapStyles={wrapStyles} $innerStyles={innerStyles} ref={toggleButtonRef} {...props}>
             <SidebarInner>
                 <AboutMe/>
                 <PersonalDetails/>
@@ -20,12 +23,13 @@ export const Sidebar = () => {
             </SidebarInner>
         </ScrollBox>
     );
-};
+});
 
 const scrollBoxStyles = css`
     position: relative;
 
     ${media.max('xl')} {
+        width: var(--width-sidebar);
         position: absolute;
         top: -1px;
         left: 0;
@@ -33,9 +37,12 @@ const scrollBoxStyles = css`
         z-index: 2;
         transform: translateX(-100%);
         transition: transform .5s ease;
+        ${media.max('xs')} {
+            width: calc(100% + 2px);
+        }
 
         .js-open-sidebar & {
-            transform: translateX(0);
+            transform: translateX(-1px);
         }
     }
 `
@@ -61,6 +68,9 @@ const SidebarInner = styled.div`
     > div {
         padding: 25px 8px;
         border-bottom: 1px solid rgba(${({theme}) => theme.colors.whiteRgb} , .4);
+        ${media.max('em')} {
+            padding: 20px 0;
+        }
 
         &:first-of-type {
             padding-top: 0;

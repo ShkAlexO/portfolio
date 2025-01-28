@@ -1,6 +1,6 @@
 import styled, {css} from "styled-components";
-import {ElementType, ReactNode} from "react";
-import {ScrollbarStyles} from "@c/ComponentStyles.ts";
+import {ElementType, forwardRef, ReactNode} from "react";
+import {ScrollbarStyles} from "@c/ComponentStyles";
 
 type ScrollBoxPropsType = {
     as?: ElementType
@@ -10,43 +10,43 @@ type ScrollBoxPropsType = {
 type StyleValueType = ReturnType<typeof css>;
 
 type StyledScrollBoxPropsType = {
-    scrollBoxStyles?: StyleValueType
+    $scrollBoxStyles?: StyleValueType
 };
 
 type WrapPropsType = {
-    wrapStyles?: StyleValueType
+    $wrapStyles?: StyleValueType
 };
 
 type InnerPropsType = {
-    innerStyles?: StyleValueType
+    $innerStyles?: StyleValueType
 };
 
-export const ScrollBox = (
+export const ScrollBox = forwardRef<HTMLElement, ScrollBoxPropsType>((
     {
         as: Component = 'div',
         children,
-        scrollBoxStyles,
-        wrapStyles,
-        innerStyles
-    }: ScrollBoxPropsType) => {
+        $scrollBoxStyles,
+        $wrapStyles,
+        $innerStyles
+    }: ScrollBoxPropsType, ref) => {
     return (
-        <StyledScrollBox as={Component} scrollBoxStyles={scrollBoxStyles}>
-            <Wrap wrapStyles={wrapStyles}>
-                <Inner innerStyles={innerStyles}>
+        <StyledScrollBox as={Component} $scrollBoxStyles={$scrollBoxStyles} ref={ref}>
+            <Wrap $wrapStyles={$wrapStyles}>
+                <Inner $innerStyles={$innerStyles}>
                     {children}
                 </Inner>
             </Wrap>
         </StyledScrollBox>
     )
-}
+})
 
 export const StyledScrollBox = styled.div<StyledScrollBoxPropsType>`
-    ${({scrollBoxStyles}) => scrollBoxStyles && scrollBoxStyles}
+    ${({$scrollBoxStyles}) => $scrollBoxStyles && $scrollBoxStyles}
     overflow: hidden;
 `
 
 const Wrap = styled.div<WrapPropsType>`
-    ${({wrapStyles}) => wrapStyles && wrapStyles}
+    ${({$wrapStyles}) => $wrapStyles && $wrapStyles}
 
     position: relative;
     height: 100%;
@@ -57,7 +57,7 @@ const Wrap = styled.div<WrapPropsType>`
 
 export const Inner = styled.div<InnerPropsType>`
     ${ScrollbarStyles};
-    ${({innerStyles}) => innerStyles && innerStyles}
+    ${({$innerStyles}) => $innerStyles && $innerStyles}
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;

@@ -26,6 +26,13 @@ body {
     --width-header: 60px;
     --gap: 5px;
   }
+  @media (max-width: 767px) {
+    --width-header: 50px;
+  }
+  @media (max-width: 575px) {
+    --scroll-box-padding: 30px;
+    --width-header: 40px;
+  }
 }
 
 

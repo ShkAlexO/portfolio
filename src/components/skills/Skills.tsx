@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import {Card} from "@c/Skills/Card.tsx";
-import {skillsData, SkillPropsType} from "@/data/skillsData.ts";
-import {BoxWrapStyles} from "@c/ComponentStyles.ts";
-import {media} from "@/styles/Theme.ts";
+import {Card} from "@c/Skills/Card";
+import {skillsData, SkillPropsType} from "@/data/skillsData";
+import {BoxWrapStyles} from "@c/ComponentStyles";
+import {media} from "@/styles/Theme";
 
 export const Skills = () => {
     return (
@@ -27,7 +27,13 @@ const StyledSkills = styled.div`
 const Title = styled.h3`
     color: inherit;
     width: fit-content;
+    max-width: 200px;
     margin-bottom: 0;
+    ${media.max('md')} {
+        font-size: 18px;
+    }
+    ${media.max('sm')} {
+        margin: 0 auto;
 `
 
 const StyledSkillsInner = styled.div`
@@ -40,14 +46,28 @@ const StyledSkillsInner = styled.div`
     ${media.max('xxl')} {
         gap: 35px;
     }
+    ${media.max('md')} {
+        gap: 25px;
+    }
+    ${media.max('sm')} {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
 `
 
 const StyledSkillsList = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
+    gap: 15px 40px;
+    
     ${media.max('xxl')} {
-        gap: 30px;
+        column-gap: 30px;
+    }
+    ${media.max('em')} {
+        column-gap: 20px;
+    }
+    ${media.max('sm')} {
+        max-width: 400px;
     }
 `
