@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {media} from "@/styles/Theme";
 
 import {NavLink} from "react-router-dom";
-import {FaHouse, FaUserLarge, FaBriefcase, FaGlasses , FaBook, FaMapLocationDot} from "react-icons/fa6";
+import {FaHouse, FaUserLarge, FaBriefcase, FaBook} from "react-icons/fa6";
 
 import {RoundIconStyles, ScrollbarStyles} from "@c/ComponentStyles";
 
@@ -12,10 +12,8 @@ export const Menu = () => {
             <ul>
                 <li><NavLink to="/" title="Home"><FaHouse/></NavLink></li>
                 <li><NavLink to="/about" title="About"><FaUserLarge/></NavLink></li>
-                <li><NavLink to="/services" title="Services"><FaBriefcase/></NavLink></li>
-                <li><NavLink to="/portfolio" title="Portfolio"><FaGlasses /></NavLink></li>
+                <li><NavLink to="/portfolio" title="Portfolio"><FaBriefcase/></NavLink></li>
                 <li><NavLink to="/blog" title="Blog"><FaBook/></NavLink></li>
-                <li><NavLink to="/contact" title="Contact"><FaMapLocationDot/></NavLink></li>
             </ul>
         </StyledMenu>
     );

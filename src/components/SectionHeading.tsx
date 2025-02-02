@@ -15,7 +15,7 @@ export const SectionHeading = ({title, subtitle}:SectionHeadingPropsType) => {
 }
 export const StyledSectionHeading = styled.div`
     text-align: center;
-    max-width: 950px;
+    max-width: 650px;
     margin: 0 auto 50px;
     ${media.max('md')} { 
         margin-bottom: 40px;
@@ -24,12 +24,14 @@ export const StyledSectionHeading = styled.div`
 
 export const Title = styled.h2`
     position: relative;
-   font-size: 34px;
+    font-size: calc(${({theme}) => theme.titleFs.h2.default} * 1.2);
     padding-bottom: 10px;
     margin-bottom: 20px;
     ${media.max('xxl')} {
-        font-size: 30px;
+        font-size: calc(${({theme}) => theme.titleFs.h2.xxl} * 1.1);;
     } 
+    
+    
     &::after {
         content: '';
         display: block;
@@ -43,5 +45,8 @@ export const Title = styled.h2`
 `
 export const Subtitle = styled.p`
     font-size: 1.2rem;
-    margin-top: 10px;
+    margin: 10px auto 0;
+    ${media.min('xs')} {
+        max-width: 90%;
+    }
 `

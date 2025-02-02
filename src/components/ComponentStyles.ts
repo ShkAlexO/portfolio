@@ -40,13 +40,15 @@ export const RoundIconStyles = css`
         position: absolute;
         z-index: -1;
         inset: 0;
-        background: linear-gradient(90deg, ${({theme}) => theme.colors.darkBlue} 0%, ${({theme}) => theme.colors.primaryDark} 100%);
+        background: linear-gradient(90deg, 
+        ${({theme}) => theme.colors.darkBlue} 0%, 
+        ${({theme}) => theme.colors.primaryDark} 100%);
         transition: all .3s ease;
     }
 
     &:hover {
-        color: currentColor;
-        box-shadow: 0 0 3px 2px rgba(${({theme}) => theme.colors.secondaryRgb},0.3);
+        color: ${({theme}) => theme.colors.secondary};
+        box-shadow: 0 0 3px 2px rgba(${({theme}) => theme.colors.secondaryRgb}, 0.3);
 
         &::before {
             transform: rotate(45deg);
@@ -68,6 +70,7 @@ export const ButtonStyles = css`
     position: relative;
     display: block;
     isolation: isolate;
+    font-size: inherit;
     font-weight: 500;
     line-height: 1;
     color: ${({theme}) => theme.colors.white};
@@ -81,9 +84,6 @@ export const ButtonStyles = css`
     background-color: transparent;
     border: 1px solid ${({ theme }) => theme.colors.primary};
     transition: all .3s ease;
-    ${media.min('xl')} {
-        font-size: 20px;
-    }
     ${media.max('md')} {
         padding: 13px 22px;
         max-width: 180px;
@@ -98,6 +98,7 @@ export const ButtonStyles = css`
         transition: all .3s ease;
     }
 
+    &.buttonActive,
     &:hover {
         color: ${({theme}) => theme.colors.white};
        &::before {
@@ -153,6 +154,50 @@ export const ScrollbarStyles = css`
     }
 
     &::-webkit-scrollbar-track {
+        background: rgba(${({theme}) => theme.colors.primaryDarkRgb}, .4);
+        border-radius: ${({theme}) => theme.radius};
+    }
+`
+
+export const HorizontalScrollbarStyles = css`
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        z-index: 2;
+        width: var(--scroll-box-padding);
+        height: 100%;
+        background-color: rgb(${({theme}) => theme.colors.darkRgb});
+    }
+
+    &::before {
+        left: 0;
+        border-top-left-radius: ${({theme}) => theme.radius};
+        border-top-right-radius: ${({theme}) => theme.radius};
+        background: linear-gradient(270deg, rgba(${({theme}) => theme.colors.darkRgb}, 0) 0%, rgba(${({theme}) => theme.colors.darkRgb}, 0.63) 15%, rgba(${({theme}) => theme.colors.darkRgb}, 1) 50%);
+    }
+
+    &::after {
+        right: 0;
+        border-bottom-left-radius: ${({theme}) => theme.radius};
+        border-bottom-right-radius: ${({theme}) => theme.radius};
+        background: linear-gradient(90deg, rgba(${({theme}) => theme.colors.darkRgb}, 0) 0%, rgba(${({theme}) => theme.colors.darkRgb}, 0.63) 15%, rgba(${({theme}) => theme.colors.darkRgb}, 1) 50%);
+    }
+
+    &::-webkit-scrollbar {
+        height: var(--width-scrollbar);
+    }
+
+    &::-webkit-scrollbar-thumb:horizontal {
+        background: ${({theme}) => theme.colors.primary};
+        border-radius: ${({theme}) => theme.radius};
+        border: 2px solid transparent;
+        background-clip: content-box;
+    }
+
+    &::-webkit-scrollbar-track:horizontal {
         background: rgba(${({theme}) => theme.colors.primaryDarkRgb}, .4);
         border-radius: ${({theme}) => theme.radius};
     }

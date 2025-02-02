@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
 
     html {
         font-size: 18px;
-        ${media.max('md')} {
+        ${media.max('xxl')} {
             font-size: 16px;
         }
     }

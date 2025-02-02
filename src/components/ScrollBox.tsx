@@ -61,6 +61,7 @@ export const Inner = styled.div<InnerPropsType>`
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
+    scrollbar-gutter: stable;
 
     > :first-child {
         padding-top: calc(20px + var(--scroll-box-padding));

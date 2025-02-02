@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
-import {apiPosts, getPosts} from "@/services/postService";
+import {useState, useEffect} from "react";
+import {API, getPosts} from "@/services/postService";
 
-export const usePosts = (modifiedData = null) => {
+export const usePosts = (endpoint: string) => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const data = await getPosts(apiPosts);
+                const data = await getPosts(`${API}${endpoint}`);
                 setPosts(data);
             } catch (error) {
                 console.error(error);
@@ -20,7 +20,5 @@ export const usePosts = (modifiedData = null) => {
         fetchData();
     }, []);
 
-    const modifiedPosts = modifiedData ? posts.filter(modifiedData) : posts;
-
-    return { posts: modifiedPosts, loading };
+    return {posts, loading};
 }

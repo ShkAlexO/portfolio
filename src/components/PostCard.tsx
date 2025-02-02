@@ -20,7 +20,7 @@ export const PostCard = ({id, category, image, title, text}: PostCardPropsType) 
             <Info>
                 <Title as='h3' fontSize='h5'>{title}</Title>
                 <Text>{text}</Text>
-                <InfoLink to={`${category}/${id}`}>Continue Reading</InfoLink>
+                <InfoLink to={`/blog/${encodeURIComponent(category)}/${encodeURIComponent(id)}`}>Continue Reading</InfoLink>
             </Info>
         </StyledPostCard>
     )

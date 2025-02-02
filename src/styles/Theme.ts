@@ -23,7 +23,33 @@ export const theme = {
         white: "#fff",
         whiteRgb: "255, 255, 255",
     },
-    radius: "8px"
+    radius: "8px",
+    titleFs: {
+        h1: {
+            default: "28px",
+            xxl: "26px",
+        },
+        h2: {
+            default: "26px",
+            xxl: "24px",
+        },
+        h3: {
+            default: "24px",
+            xxl: "22px",
+        },
+        h4: {
+            default: "22px",
+            xxl: "20px",
+        },
+        h5: {
+            default: "20px",
+            xxl: "18px",
+        },
+        h6: {
+            default: "19px",
+            xxl: "17px",
+        },
+    }
 }
 
 export const media = {

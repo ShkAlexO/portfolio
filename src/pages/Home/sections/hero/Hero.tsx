@@ -79,23 +79,20 @@ const Content = styled.div`
 `
 
 const Title = styled.h1`
-    font-size: 42px;
+    font-size: calc(${({theme}) => theme.titleFs.h1.default} * 1.5);
     font-weight: 500;
     line-height: 1.2;
     color: ${({theme}) => theme.colors.white};
     margin-bottom: 20px;
-
     ${media.max('xxl')} {
-        font-size: 36px;
+        font-size: calc(${({theme}) => theme.titleFs.h1.xxl} * 1.4);;
     }
-
     ${media.max('md')} {
-        font-size: 30px;
+        font-size: calc(${({theme}) => theme.titleFs.h1.xxl} * 1.2);;
     }
-
-    ${media.max('xs')} { 
-        font-size: 28px;
-    }   
+    ${media.max('xs')} {
+        font-size: ${({theme}) => theme.titleFs.h1.xxl};
+    }
 
     ${ColorText} {
         display: block;

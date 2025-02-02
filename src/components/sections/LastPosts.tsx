@@ -6,30 +6,44 @@ import {Container} from "@c/UI/Container";
 import {media} from "@/styles/Theme";
 import {StyledPostCard} from "@c/PostCard";
 import {usePosts} from "@/hooks/usePosts";
+import {Preloader} from "@c/Preloader";
+import {BLOG_ENDPOINT} from "@/services/postService.ts";
 
-export const LastPosts = ({title, subtitle}: SectionHeadingPropsType) => {
-    const {posts, loading} = usePosts();
+type LastPostsPropsType = SectionHeadingPropsType & {
+    currentPostId?: string
+    currentCategory?: string;
+}
+export const LastPosts = ({title, subtitle, currentPostId, currentCategory}: LastPostsPropsType) => {
+    const {posts, loading} = usePosts(BLOG_ENDPOINT);
 
-    if (loading || !posts.length) {
+    if (!posts.length) {
         return null;
     }
 
-    const lastPosts = posts.slice(-3);
+    let filteredPosts = posts;
+
+    if (currentCategory) {
+        filteredPosts = posts
+            .filter(({category, id}) => category === currentCategory && id !== currentPostId)
+            .sort(() => Math.random() - 0.5)
+    }
+
+    const lastPosts = currentCategory ? filteredPosts.slice(0, 3) : posts.slice(-3);
 
     return (
-        loading
-            ? <div>Loading</div>
-            : <StyledLastPosts>
+        <Wrap>
+            {loading ? <Preloader/> : (
                 <Container>
                     <SectionHeading title={title} subtitle={subtitle}/>
                     <ColumnGrid list={lastPosts}/>
                     <ButtonLink to='/blog'>Go to Blog</ButtonLink>
                 </Container>
-            </StyledLastPosts>
+            )}
+        </Wrap>
     )
 }
 
-const StyledLastPosts = styled.section`
+const Wrap = styled.section`
     ${ButtonLink} {
         margin: 60px auto 0;
 

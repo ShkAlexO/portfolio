@@ -1,13 +1,15 @@
 import {Container} from "@c/UI/Container";
-import {SectionHeading, StyledSectionHeading} from "@c/SectionHeading";
+import {SectionHeading} from "@c/SectionHeading";
 import {ColumnGrid} from "@c/UI/ColumnGrid";
 import styled from "styled-components";
 import {usePosts} from "@/hooks/usePosts";
 import {useEffect, useState} from "react";
-import {CategoryTabs} from "@c/CategoryTabs.tsx";
+import {CategoryTabs} from "@c/CategoryTabs";
+import {Preloader, StyledPreloader} from "@c/Preloader";
+import {BLOG_ENDPOINT} from "@/services/postService.ts";
 
 export const Blog = () => {
-    const {posts, loading} = usePosts();
+    const {posts, loading} = usePosts(BLOG_ENDPOINT);
     const [filteredPosts, setFilteredPosts] = useState([]);
 
     useEffect(() => {
@@ -16,38 +18,48 @@ export const Blog = () => {
         }
     }, [posts]);
 
-    const filterPosts = (cat:string) => {
+    const filterPosts = (cat: string) => {
         const currentCat = cat;
         if (currentCat !== "all") {
-            setFilteredPosts(posts.filter(({ category }) => category === currentCat));
+            setFilteredPosts(posts.filter(({category}) => category === currentCat));
         } else {
             setFilteredPosts(posts);
         }
     };
 
     return (
-        <StyledBlog>
+        <Wrap>
             <Container>
-                <SectionHeading
-                    title='Tech Insights: A Blog on Development and IT Trends'
-                    subtitle='Latest articles, practical tips, and deep dives into modern technologies for developers and IT professionals.'
-                />
+                <Inner>
+                    <SectionHeading
+                        title="Tech Insights: A Blog on Development and IT Trends"
+                        subtitle="Latest articles, practical tips, and deep dives into modern technologies for developers and IT professionals."
+                    />
 
-                {posts.length > 0 && <CategoryTabs posts={posts} filterPosts={filterPosts}/>}
-
-                {loading
-                    ? <div>Loading...</div>
-                    : (filteredPosts.length > 0
-                        ? (<ColumnGrid list={filteredPosts}/>)
-                        : (<div>No posts available</div>))
-                }
+                    {loading ? <Preloader/> :
+                        (posts.length > 0
+                                ? (<>
+                                    <CategoryTabs posts={posts} filterPosts={filterPosts}/>
+                                    <ColumnGrid list={filteredPosts}/>
+                                </>)
+                                : <div>No posts available</div>
+                        )}
+                </Inner>
             </Container>
-        </StyledBlog>
-    )
+        </Wrap>
+    );
 }
 
-const StyledBlog = styled.div`
-    ${StyledSectionHeading} {
-        max-width: 650px;
+const Wrap = styled.div`
+    display: grid;
+    min-height: 100%;
+ 
+    ${StyledPreloader} {
+        margin: auto;
     }
+`
+const Inner = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 `
