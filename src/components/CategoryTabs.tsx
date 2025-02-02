@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {memo, useState} from "react";
-import {BoxWrapStyles, HorizontalScrollbarStyles} from "@c/ComponentStyles.ts";
+import {BoxWrapStyles, HorizontalScrollbarStyles} from "@c/ComponentStyles";
 
 type CategoryTabsProps = {
     posts: { id: string; category: string }[];

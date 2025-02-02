@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {BoxWrapStyles} from "@c/ComponentStyles.ts";
+import {BoxWrapStyles} from "@c/ComponentStyles";
 
 export type ProjectPropsType = {
     id: string

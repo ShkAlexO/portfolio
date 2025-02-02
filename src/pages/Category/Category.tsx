@@ -3,9 +3,9 @@ import {usePosts} from "@/hooks/usePosts";
 import {ColumnGrid} from "@c/UI/ColumnGrid";
 import {Preloader, StyledPreloader} from "@c/Preloader";
 import styled from "styled-components";
-import {Container} from "@c/UI/Container.tsx";
-import {SectionHeading} from "@c/SectionHeading.tsx";
-import {BLOG_ENDPOINT} from "@/services/postService.ts";
+import {Container} from "@c/UI/Container";
+import {SectionHeading} from "@c/SectionHeading";
+import {BLOG_ENDPOINT} from "@/services/postService";
 
 export const Category = () => {
     const {categoryId} = useParams();

@@ -1,11 +1,10 @@
 import {Container} from "@c/UI/Container";
 import {SectionHeading} from "@c/SectionHeading";
 import styled from "styled-components";
-import {usePosts} from "@/hooks/usePosts.ts";
-import {Preloader, StyledPreloader} from "@c/Preloader.tsx";
-import {PROJECTS_ENDPOINT} from "@/services/postService.ts";
-import {ProjectCard, ProjectPropsType} from "@c/ProjectCard.tsx";
-
+import {usePosts} from "@/hooks/usePosts";
+import {Preloader, StyledPreloader} from "@c/Preloader";
+import {PROJECTS_ENDPOINT} from "@/services/postService";
+import {ProjectCard, ProjectPropsType} from "@c/ProjectCard";
 
 export const Portfolio = () => {
     const {posts, loading} = usePosts(PROJECTS_ENDPOINT);

@@ -1,10 +1,8 @@
-import styled from "styled-components";
 import {Container} from "@c/UI/Container";
 import {SectionHeading, SectionHeadingPropsType} from "@c/SectionHeading";
 import {Item} from "@c/sections/career/Item";
-import {BoxWrapStyles} from "@c/ComponentStyles";
 import {ProfBgPropsType} from '@/data/profBgData'
-import {media} from "@/styles/Theme";
+import {S} from "./Career.styles.ts"
 
 type CareerPropsType = SectionHeadingPropsType & {
     list: ProfBgPropsType[]
@@ -13,32 +11,18 @@ type CareerPropsType = SectionHeadingPropsType & {
 
 export const Career = ({title, subtitle, list, listType}: CareerPropsType) => {
     return (
-        <StyledWorkHistory>
+        <S.Career>
             <Container>
                 <SectionHeading
                     title={title}
                     subtitle={subtitle}
                 />
-                <List>
+                <S.List>
                     {list.map(item => <Item key={item.id} listType={listType} {...item} content={item.content}/>)}
-                </List>
+                </S.List>
             </Container>
-        </StyledWorkHistory>
+        </S.Career>
     );
 };
-
-const StyledWorkHistory = styled.section`
-`
-
-const List = styled.div`
-    ${BoxWrapStyles};
-    padding: 40px 20px;
-    ${media.min('full')} {
-        padding: 50px;
-    }
-    ${media.max('xs')} {
-        padding: 20px 10px;
-    }
-`
 
 

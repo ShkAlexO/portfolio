@@ -1,13 +1,13 @@
 import {useParams} from "react-router-dom";
 import {Container} from "@c/UI/Container";
-import {usePosts} from "@/hooks/usePosts.ts";
+import {usePosts} from "@/hooks/usePosts";
 import {Preloader, StyledPreloader} from "@c/Preloader";
 import styled from "styled-components";
-import {Heading} from "@c/UI/Heading.tsx";
-import {media} from "@/styles/Theme.ts";
+import {Heading} from "@c/UI/Heading";
+import {media} from "@/styles/Theme";
 import {ButtonStyles} from "@c/ComponentStyles";
-import {LastPosts} from "@c/sections/LastPosts";
-import {BLOG_ENDPOINT} from "@/services/postService.ts";
+import {LastPosts} from "@c/sections/LastPosts/LastPosts.tsx";
+import {BLOG_ENDPOINT} from "@/services/postService";
 
 export const Post = () => {
     const {postId} = useParams<{ postId: string }>();

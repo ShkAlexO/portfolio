@@ -6,7 +6,7 @@ import {usePosts} from "@/hooks/usePosts";
 import {useEffect, useState} from "react";
 import {CategoryTabs} from "@c/CategoryTabs";
 import {Preloader, StyledPreloader} from "@c/Preloader";
-import {BLOG_ENDPOINT} from "@/services/postService.ts";
+import {BLOG_ENDPOINT} from "@/services/postService";
 
 export const Blog = () => {
     const {posts, loading} = usePosts(BLOG_ENDPOINT);

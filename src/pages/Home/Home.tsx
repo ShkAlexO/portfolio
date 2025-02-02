@@ -1,7 +1,7 @@
 import {Hero} from "@/pages/Home/sections/hero/Hero";
 import {Career} from "@c/sections/career/Career";
 import {educationData, workData} from "@/data/profBgData";
-import {LastPosts} from "@c/sections/LastPosts";
+import {LastPosts} from "@c/sections/LastPosts/LastPosts.tsx";
 
 
 export const Home = () => {
