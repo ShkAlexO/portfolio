@@ -1,8 +1,8 @@
 import {NavLink} from "react-router-dom";
 import {FaHouse, FaUserLarge, FaBriefcase, FaBook} from "react-icons/fa6";
-import {Nav} from "./Menu.styles"
+import {Nav} from "@c/Menu/Menu.styles";
 
-export const Menu= () => {
+export const Menu = () => {
     return (
         <Nav>
             <ul>

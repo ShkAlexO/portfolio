@@ -4,7 +4,7 @@ import {media} from "@/styles/Theme";
 import {Heading} from "@c/UI/Heading";
 import {ColorText} from "@c/ComponentStyles";
 
-const Item = styled.div`
+const CareerItemStyled = styled.div`
     display: flex;
     gap: 35px;
     padding: 35px 25px;
@@ -145,8 +145,9 @@ const Text = styled.p`
     margin-top: 10px;
 `
 
+export {CareerItemStyled}
+
 export const S = {
-    Item,
     InfoTitle,
     InfoColorText,
     Info,

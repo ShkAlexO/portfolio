@@ -1,16 +1,16 @@
 import styled from "styled-components";
 import {BoxWrapStyles} from "@c/ComponentStyles";
 import aboutMeImage from "@/assets/images/about_me.jpg";
-import {Container} from "@c/UI/Container";
+import {Container} from "@c/UI/Container/Container";
 
 export const About = () => {
-    return(
+    return (
         <StyledAbout>
             <Container>
-            <Inner>
-                <Image src={aboutMeImage} alt="About me"/>
+                <Inner>
+                    <Image src={aboutMeImage} alt="About me"/>
 
-            </Inner>
+                </Inner>
             </Container>
         </StyledAbout>
     )

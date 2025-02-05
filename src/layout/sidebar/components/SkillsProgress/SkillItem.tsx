@@ -1,46 +1,12 @@
-import styled from "styled-components";
 import {SkillLangItemPropsType} from "@/data/userData";
+import {SkillItemStyled, S} from "@sbc/SkillsProgress/SkillItem.styles";
 
 export const SkillItem = ({name, percentages}: SkillLangItemPropsType) => {
     return (
-        <StyledSkillItem>
-            <Technology>{name}</Technology>
-            <Percentages>{percentages}%</Percentages>
-            <Progress percentages={percentages}/>
-        </StyledSkillItem>
+        <SkillItemStyled>
+            <S.Technology>{name}</S.Technology>
+            <S.Percentages>{percentages}%</S.Percentages>
+            <S.Progress percentages={percentages}/>
+        </SkillItemStyled>
     )
 }
-
-const StyledSkillItem = styled.div`
-    display: grid;
-    grid-template: repeat(2, auto) / 1fr auto;
-    gap: 6px 50px;
-`
-
-const Technology = styled.span`
-    padding: 0 12px;
-`
-const Percentages = styled.span`
-    padding: 0 8px;
-`
-const Progress = styled.div<{ percentages: number }>`
-    position: relative;
-    padding: 2px;
-    border: 1px solid ${({theme}) => theme.colors.primary};
-    border-radius: 4px;
-    grid-column: 1/-1;
-
-    &::before {
-        content: '';
-        display: block;
-        width: ${({percentages}) => percentages}%;
-        height: 4px;
-        border-radius: 4px;
-        background: linear-gradient(
-                to right,
-                ${({theme}) => theme.colors.darkBlue} 90%,
-                ${({theme}) => theme.colors.primaryDark} 100%);
-    }
-`
-
-

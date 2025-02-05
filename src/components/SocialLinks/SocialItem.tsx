@@ -1,9 +1,17 @@
-import styled from "styled-components";
-import {Link} from "react-router-dom";
 import {SocialItemPropsType} from "@/data/userData";
+
+import {SocialItemStyled} from "@c/SocialLinks/SocialItem.styles"
+
 import {FACEBOOK, GITHUB, INSTAGRAM, LINKEDIN, TELEGRAM, YOUTUBE} from "@/constants/socials";
-import {FaLinkedinIn, FaGithub, FaFacebookF, FaRegPaperPlane, FaInstagram, FaYoutube} from "react-icons/fa";
-import {RoundIconStyles} from "@c/ComponentStyles";
+
+import {
+    FaLinkedinIn,
+    FaGithub,
+    FaFacebookF,
+    FaRegPaperPlane,
+    FaInstagram,
+    FaYoutube
+} from "react-icons/fa";
 
 const iconMap = {
     [LINKEDIN]: FaLinkedinIn,
@@ -20,13 +28,8 @@ export const SocialItem = ({name, url}: SocialItemPropsType) => {
     const IconComponent = iconMap[name as IconKey];
 
     return (
-        <StyledSocialItem to={url} aria-label={name} target='_blank'>
+        <SocialItemStyled to={url} aria-label={name} target='_blank'>
             <IconComponent/>
-        </StyledSocialItem>
+        </SocialItemStyled>
     )
 }
-
-export const StyledSocialItem = styled(Link)`
-    ${RoundIconStyles};
-`
-

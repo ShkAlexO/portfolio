@@ -1,12 +1,6 @@
 import styled from "styled-components";
 
-export const Preloader = () => {
-    return (
-        <StyledPreloader/>
-    )
-}
-
-export const StyledPreloader = styled.div`
+export const PreloaderStyled = styled.div`
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -14,7 +8,7 @@ export const StyledPreloader = styled.div`
     border-top-color: ${({theme}) => theme.colors.blue};
     animation: spiner 2s linear infinite;
     margin: 40px auto;
-    
+
     &:before {
         content: "";
         position: absolute;
@@ -50,9 +44,3 @@ export const StyledPreloader = styled.div`
         }
     }
 `
-
-
-
-
-
-

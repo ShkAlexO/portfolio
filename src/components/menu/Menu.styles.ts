@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import {RoundIconStyles, ScrollbarStyles} from "@c/ComponentStyles";
 import {media} from "@/styles/Theme";
+import {RoundIconStyles, ScrollbarStyles} from "@c/ComponentStyles";
 
 export const Nav = styled.nav`
     ${ScrollbarStyles};
@@ -8,6 +8,7 @@ export const Nav = styled.nav`
     padding: 50px 10px;
     align-content: center;
     overflow-y: auto;
+
     ${media.max('sm')} {
         padding: 50px 5px;
     }
@@ -27,6 +28,7 @@ export const Nav = styled.nav`
             ${RoundIconStyles};
             font-size: 1rem;
             width: 100%;
+
             ${media.max('xs')} {
                 font-size: .85rem;
             }

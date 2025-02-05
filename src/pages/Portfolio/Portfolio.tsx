@@ -1,18 +1,20 @@
-import {Container} from "@c/UI/Container";
-import {SectionHeading} from "@c/SectionHeading";
-import styled from "styled-components";
 import {usePosts} from "@/hooks/usePosts";
-import {Preloader, StyledPreloader} from "@c/Preloader";
 import {PROJECTS_ENDPOINT} from "@/services/postService";
-import {ProjectCard, ProjectPropsType} from "@c/ProjectCard";
+
+import {Preloader} from "@c/Preloader/Preloader";
+import {Container} from "@c/UI/Container/Container";
+import {SectionHeading} from "@c/SectionHeading/SectionHeading";
+import {ProjectCard, ProjectPropsType} from "@c/ProjectCard/ProjectCard";
+
+import {S} from "@/pages/Portfolio/Portfolio.styles"
 
 export const Portfolio = () => {
     const {posts, loading} = usePosts(PROJECTS_ENDPOINT);
 
     return (
-        <Wrap>
+        <S.Wrap>
             <Container>
-                <Inner>
+                <S.Inner>
                     <SectionHeading
                         title="My Latest Projects"
                         subtitle="Explore the websites I've developed, showcasing a variety of styles, functionality, and designs."
@@ -21,7 +23,7 @@ export const Portfolio = () => {
                     {loading ? <Preloader/> : (
                         posts.length > 0 ? (
                             posts.map((post: ProjectPropsType) => {
-                                const { id, ...rest } = post;
+                                const {id, ...rest} = post;
 
                                 return (
                                     <ProjectCard key={id} id={id} {...rest}/>
@@ -32,22 +34,8 @@ export const Portfolio = () => {
                         )
                     )}
 
-                </Inner>
+                </S.Inner>
             </Container>
-        </Wrap>
+        </S.Wrap>
     );
 }
-
-const Wrap = styled.div`
-    display: grid;
-    min-height: 100%;
-
-    ${StyledPreloader} {
-        margin: auto;
-    }
-`
-const Inner = styled.div`
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-`

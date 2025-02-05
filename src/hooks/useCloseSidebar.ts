@@ -1,19 +1,31 @@
-import { useEffect } from "react";
+import {useEffect, RefObject} from "react";
 
 type useCloseSidebarPropsType = {
-    ref: React.RefObject<HTMLElement>;
-    toggleRef: React.RefObject<HTMLElement>;
-    callback: () => void;
+    sidebarRef: RefObject<HTMLElement>;
+    headerBtnSidebarToggleRef: RefObject<HTMLElement>;
+    ignoreClickOnButton?: HTMLElement | null;
     condition: boolean;
+    callback: () => void;
 };
 
-export const useCloseSidebar = ({ ref, toggleRef, callback, condition }: useCloseSidebarPropsType) => {
+export const useCloseSidebar = (
+    {
+        sidebarRef,
+        headerBtnSidebarToggleRef,
+        ignoreClickOnButton,
+        condition,
+        callback
+    }: useCloseSidebarPropsType) => {
     useEffect(() => {
         const handleCloseSidebar = (event: MouseEvent) => {
+            if (ignoreClickOnButton && ignoreClickOnButton.contains(event.target as Node)) {
+                return;
+            }
+
             if (
-                ref.current &&
-                !ref.current.contains(event.target as Node) &&
-                !toggleRef.current?.contains(event.target as Node) &&
+                sidebarRef.current &&
+                !sidebarRef.current.contains(event.target as Node) &&
+                !headerBtnSidebarToggleRef.current?.contains(event.target as Node) &&
                 condition
             ) {
                 callback();
@@ -25,5 +37,5 @@ export const useCloseSidebar = ({ ref, toggleRef, callback, condition }: useClos
         return () => {
             document.removeEventListener('mousedown', handleCloseSidebar);
         };
-    }, [ref, toggleRef, callback, condition]);
+    }, [sidebarRef, headerBtnSidebarToggleRef, ignoreClickOnButton, condition, callback]);
 };

@@ -1,15 +1,16 @@
+import {ElementType, ReactNode} from "react";
+
 import styled, {css} from "styled-components";
-import {ElementType, forwardRef, ReactNode} from "react";
 import {ScrollbarStyles} from "@c/ComponentStyles";
 
-type ScrollBoxPropsType = {
+export type ScrollBoxPropsType = {
     as?: ElementType
     children: ReactNode
-} & StyledScrollBoxPropsType & InnerPropsType & WrapPropsType;
+} & ScrollBoxStyledPropsType & InnerPropsType & WrapPropsType;
 
 type StyleValueType = ReturnType<typeof css>;
 
-type StyledScrollBoxPropsType = {
+type ScrollBoxStyledPropsType = {
     $scrollBoxStyles?: StyleValueType
 };
 
@@ -21,26 +22,7 @@ type InnerPropsType = {
     $innerStyles?: StyleValueType
 };
 
-export const ScrollBox = forwardRef<HTMLElement, ScrollBoxPropsType>((
-    {
-        as: Component = 'div',
-        children,
-        $scrollBoxStyles,
-        $wrapStyles,
-        $innerStyles
-    }: ScrollBoxPropsType, ref) => {
-    return (
-        <StyledScrollBox as={Component} $scrollBoxStyles={$scrollBoxStyles} ref={ref}>
-            <Wrap $wrapStyles={$wrapStyles}>
-                <Inner $innerStyles={$innerStyles}>
-                    {children}
-                </Inner>
-            </Wrap>
-        </StyledScrollBox>
-    )
-})
-
-export const StyledScrollBox = styled.div<StyledScrollBoxPropsType>`
+const ScrollBoxStyled = styled.div<ScrollBoxStyledPropsType>`
     ${({$scrollBoxStyles}) => $scrollBoxStyles && $scrollBoxStyles}
     overflow: hidden;
 `
@@ -55,7 +37,7 @@ const Wrap = styled.div<WrapPropsType>`
     background-color: rgba(${({theme}) => theme.colors.darkRgb}, .6);
 `
 
-export const Inner = styled.div<InnerPropsType>`
+const Inner = styled.div<InnerPropsType>`
     ${ScrollbarStyles};
     ${({$innerStyles}) => $innerStyles && $innerStyles}
     height: 100%;
@@ -72,4 +54,8 @@ export const Inner = styled.div<InnerPropsType>`
     }
 `
 
+export {ScrollBoxStyled}
 
+export const S = {
+    Wrap, Inner
+}

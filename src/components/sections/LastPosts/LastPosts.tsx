@@ -1,12 +1,15 @@
 import {FC} from "react";
-import {SectionHeading, SectionHeadingPropsType} from "@c/SectionHeading.tsx";
-import {ButtonLink} from "@c/ComponentStyles";
-import {ColumnGrid} from "@c/UI/ColumnGrid";
-import {Container} from "@c/UI/Container";
 import {usePosts} from "@/hooks/usePosts";
-import {Preloader} from "@c/Preloader";
+
+import {SectionHeading, SectionHeadingPropsType} from "@c/SectionHeading/SectionHeading";
+import {ColumnGrid} from "@c/UI/ColumnGrid/ColumnGrid";
+import {Container} from "@c/UI/Container/Container";
+import {Preloader} from "@c/Preloader/Preloader";
+
+import {ButtonLink} from "@c/ComponentStyles";
+import {LastPostsStyled} from "@c/sections/LastPosts/LastPosts.styles"
+
 import {BLOG_ENDPOINT} from "@/services/postService";
-import {S} from "./LastPosts.styles";
 
 type LastPostsPropsType = SectionHeadingPropsType & {
     currentPostId?: string
@@ -37,7 +40,7 @@ export const LastPosts: FC<LastPostsPropsType> = (
         ? filteredPosts.slice(0, 3) : posts.slice(-3);
 
     return (
-        <S.LastPosts>
+        <LastPostsStyled>
             {loading ? <Preloader/> : (
                 <Container>
                     <SectionHeading title={title} subtitle={subtitle}/>
@@ -45,6 +48,6 @@ export const LastPosts: FC<LastPostsPropsType> = (
                     <ButtonLink to='/blog'>Go to Blog</ButtonLink>
                 </Container>
             )}
-        </S.LastPosts>
+        </LastPostsStyled>
     );
 }

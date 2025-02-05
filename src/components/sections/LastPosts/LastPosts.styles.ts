@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import {ButtonLink} from "@c/ComponentStyles";
 import {media} from "@/styles/Theme";
-import {StyledPostCard} from "@c/PostCard";
+import {ButtonLink} from "@c/ComponentStyles";
+import {PostCardStyled} from "@c/PostCard/PostCard.styles"
 
-const LastPosts = styled.section`
+export const LastPostsStyled = styled.section`
     ${ButtonLink} {
         margin: 60px auto 0;
 
@@ -12,7 +12,7 @@ const LastPosts = styled.section`
         }
     }
 
-    ${StyledPostCard} {
+    ${PostCardStyled} {
         &:nth-of-type(3) {
             ${media.max('md')} {
                 display: none;
@@ -20,5 +20,3 @@ const LastPosts = styled.section`
         }
     }
 `
-
-export const S = {LastPosts}

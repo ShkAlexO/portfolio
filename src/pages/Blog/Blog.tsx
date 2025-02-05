@@ -1,12 +1,15 @@
-import {Container} from "@c/UI/Container";
-import {SectionHeading} from "@c/SectionHeading";
-import {ColumnGrid} from "@c/UI/ColumnGrid";
-import styled from "styled-components";
-import {usePosts} from "@/hooks/usePosts";
 import {useEffect, useState} from "react";
-import {CategoryTabs} from "@c/CategoryTabs";
-import {Preloader, StyledPreloader} from "@c/Preloader";
+
+import {usePosts} from "@/hooks/usePosts";
 import {BLOG_ENDPOINT} from "@/services/postService";
+
+import {Container} from "@c/UI/Container/Container";
+import {SectionHeading} from "@c/SectionHeading/SectionHeading";
+import {ColumnGrid} from "@c/UI/ColumnGrid/ColumnGrid";
+import {CategoryTabs} from "@c/CategoryTabs/CategoryTabs";
+import {Preloader} from "@c/Preloader/Preloader";
+
+import {S} from "@/pages/Blog/Blog.styles"
 
 export const Blog = () => {
     const {posts, loading} = usePosts(BLOG_ENDPOINT);
@@ -28,9 +31,9 @@ export const Blog = () => {
     };
 
     return (
-        <Wrap>
+        <S.Wrap>
             <Container>
-                <Inner>
+                <S.Inner>
                     <SectionHeading
                         title="Tech Insights: A Blog on Development and IT Trends"
                         subtitle="Latest articles, practical tips, and deep dives into modern technologies for developers and IT professionals."
@@ -44,22 +47,8 @@ export const Blog = () => {
                                 </>)
                                 : <div>No posts available</div>
                         )}
-                </Inner>
+                </S.Inner>
             </Container>
-        </Wrap>
+        </S.Wrap>
     );
 }
-
-const Wrap = styled.div`
-    display: grid;
-    min-height: 100%;
- 
-    ${StyledPreloader} {
-        margin: auto;
-    }
-`
-const Inner = styled.div`
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-`

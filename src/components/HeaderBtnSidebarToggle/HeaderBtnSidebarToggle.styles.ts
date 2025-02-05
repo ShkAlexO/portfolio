@@ -1,23 +1,7 @@
-import {forwardRef} from "react";
-
 import styled from "styled-components";
 import {media} from "@/styles/Theme";
 
-type SidebarTogglePropsType = {
-    onClick: () => void
-}
-
-export const SidebarToggle = forwardRef<HTMLButtonElement, SidebarTogglePropsType>(({ onClick }, toggleButtonRef) => {
-    return (
-        <StyledSidebarToggle onClick={onClick} ref={toggleButtonRef}>
-            <Line />
-            <Line />
-            <Line />
-        </StyledSidebarToggle>
-    );
-});
-
-const StyledSidebarToggle = styled.button`
+const HeaderBtnSidebarToggleStyled = styled.button`
     position: relative;
     width: 100%;
     margin: 0 auto;
@@ -27,6 +11,7 @@ const StyledSidebarToggle = styled.button`
     background: transparent;
     padding: 0;
     border: none;
+
     &::before {
         content: none;
     }
@@ -40,7 +25,8 @@ const Line = styled.span`
     background: ${({theme}) => theme.colors.primary};
     border-radius: ${({theme}) => theme.radius};
     transition: all .3s ease;
-    ${media.min('xl')} { 
+
+    ${media.min('xl')} {
         display: none;
     }
 
@@ -87,3 +73,5 @@ const Line = styled.span`
         }
     }
 `
+
+export {HeaderBtnSidebarToggleStyled, Line}

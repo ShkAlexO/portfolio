@@ -1,12 +1,12 @@
-import styled, {css} from "styled-components";
 import {Link} from "react-router-dom";
+import styled, {css} from "styled-components";
 import {media} from "@/styles/Theme";
 
 export const ColorText = styled.span<{
     $colorName?: string
-    $fontWeight?: string }>`
-    color: ${({theme, $colorName}) => (
-    $colorName ? theme.colors[$colorName] : theme.colors.blue)};
+    $fontWeight?: string
+}>`
+    color: ${({theme, $colorName}) => ($colorName ? theme.colors[$colorName] : theme.colors.blue)};
     font-weight: ${({$fontWeight}) => $fontWeight || 'inherit'};
 `
 
@@ -15,8 +15,8 @@ export const BoxWrapStyles = css`
     border-radius: ${({theme}) => theme.radius};
     width: 100%;
     height: 100%;
-    border: 1px solid ${({ theme }) => theme.colors.primary};
-    background-color: rgba(${({theme}) => theme.colors.primaryDarkRgb} , .3);
+    border: 1px solid ${({theme}) => theme.colors.primary};
+    background-color: rgba(${({theme}) => theme.colors.primaryDarkRgb}, .3);
 `
 
 export const RoundIconStyles = css`
@@ -40,8 +40,8 @@ export const RoundIconStyles = css`
         position: absolute;
         z-index: -1;
         inset: 0;
-        background: linear-gradient(90deg, 
-        ${({theme}) => theme.colors.darkBlue} 0%, 
+        background: linear-gradient(90deg,
+        ${({theme}) => theme.colors.darkBlue} 0%,
         ${({theme}) => theme.colors.primaryDark} 100%);
         transition: all .3s ease;
     }
@@ -82,12 +82,14 @@ export const ButtonStyles = css`
     border-radius: ${({theme}) => theme.radius};
     overflow: hidden;
     background-color: transparent;
-    border: 1px solid ${({ theme }) => theme.colors.primary};
+    border: 1px solid ${({theme}) => theme.colors.primary};
     transition: all .3s ease;
+
     ${media.max('md')} {
         padding: 13px 22px;
         max-width: 180px;
     }
+
     &::before {
         content: '';
         display: block;
@@ -101,9 +103,10 @@ export const ButtonStyles = css`
     &.buttonActive,
     &:hover {
         color: ${({theme}) => theme.colors.white};
-       &::before {
-           opacity: 0;
-       }
+
+        &::before {
+            opacity: 0;
+        }
     }
 `;
 
@@ -112,7 +115,7 @@ export const Button = styled.button`
 `
 
 export const ButtonLink = styled(Link)`
-  ${ButtonStyles} 
+    ${ButtonStyles}
 `;
 
 export const ScrollbarStyles = css`

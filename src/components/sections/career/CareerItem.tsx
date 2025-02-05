@@ -1,7 +1,7 @@
-import {S} from "./Item.styles"
 import {ProfBgPropsType} from "@/data/profBgData";
+import {CareerItemStyled, S} from "@c/sections/Career/CareerItem.styles";
 
-export type ItemPropsType = ProfBgPropsType & {
+export type CareerItemPropsType = ProfBgPropsType & {
     listType: 'education' | 'work'
     content: string | undefined
 };
@@ -10,7 +10,8 @@ const InfoEducation = ({title, subtitle, start, end}: ProfBgPropsType) => {
     return (
         <S.InfoEducation>
             <S.InfoTitle as='h3'>
-                <span>{title}</span> <S.InfoColorText $colorName='white' $fontWeight='400'>course</S.InfoColorText>
+                <span>{title}</span> <S.InfoColorText $colorName='white'
+                                                      $fontWeight='400'>course</S.InfoColorText>
             </S.InfoTitle>
             <S.Company as='h4' fontSize='h5'>
                 <S.CompanyName> {subtitle}</S.CompanyName>
@@ -39,11 +40,11 @@ const InfoWork = ({title, subtitle, mode, start, end}: ProfBgPropsType) => {
     )
 }
 
-export const Item = ({listType, content, headline, ...props}: ItemPropsType) => {
+export const CareerItem = ({listType, content, headline, ...props}: CareerItemPropsType) => {
     const CurComponent = listType === 'education' ? InfoEducation : InfoWork;
-
+ 
     return (
-        <S.Item>
+        <CareerItemStyled>
             <S.Info>
                 <CurComponent {...props}/>
             </S.Info>
@@ -53,6 +54,6 @@ export const Item = ({listType, content, headline, ...props}: ItemPropsType) => 
 
                 <S.Text>{content}</S.Text>
             </S.Content>
-        </S.Item>
+        </CareerItemStyled>
     )
 }
