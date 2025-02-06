@@ -53,24 +53,26 @@ export const darkTheme = {
         white: "#fff",
         whiteRgb: "255, 255, 255",
     },
+    bodyGradient: "linear-gradient(180deg,#05090E 33%,#28999c 59%,#002C45 85%,#04080D 95%)",
     ...commonStyles
 }
 
 export const lightTheme = {
     colors: {
-        primary: "#FFD700",
-        primaryRgb: "255, 215, 0",
-        secondary: "#FFD700",
-        secondaryRgb: "255, 215, 0",
-        primaryDark: "#264B65",
-        primaryDarkRgb: "38, 75, 101",
-        blue: "#0066FF",
-        blueRgb: "0, 102, 255",
-        darkBlue: "#1E3D58",
-        darkRgb: "30, 61, 88",
-        white: "#f5f5f5",
-        whiteRgb: "245, 245, 245",
+        primary: "#61788e",
+        primaryRgb: "97, 120, 142",
+        secondary: "#017399",
+        secondaryRgb: "1, 115, 153",
+        primaryDark: "#9cbbd1",
+        primaryDarkRgb: "156, 187, 209",
+        blue: "#186c8d",
+        blueRgb: "24, 108, 141",
+        darkBlue: "#C8DCE6",
+        darkRgb: "200, 220, 230",
+        white: "#113c58",
+        whiteRgb: "17, 60, 88",
     },
+    bodyGradient: "linear-gradient(180deg, #d0e1e5 33%, #75a9db 59%, #bcd4de 85%, #efefef 95%)",
     ...commonStyles,
 };
 

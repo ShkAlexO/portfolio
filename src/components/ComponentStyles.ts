@@ -16,7 +16,7 @@ export const BoxWrapStyles = css`
     width: 100%;
     height: 100%;
     border: 1px solid ${({theme}) => theme.colors.primary};
-    background-color: rgba(${({theme}) => theme.colors.primaryDarkRgb}, .3);
+    background-color: rgba(${({theme}) => theme.colors.darkRgb}, .6);
 `
 
 export const RoundIconStyles = css`

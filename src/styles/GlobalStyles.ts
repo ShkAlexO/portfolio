@@ -25,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
         position: relative;
         color: ${({theme}) => theme.colors.white};
         line-height: 1.5;
-        background:linear-gradient(180deg,#05090E 33%,#28999c 59%,#002C45 85%,#04080D 95%);
+        background:${({theme}) => theme.bodyGradient};;
     }
    
 

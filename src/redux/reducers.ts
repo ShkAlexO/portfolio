@@ -12,7 +12,7 @@ export const sidebarVisibilityReducer = (state = initialSidebarState, action: { 
 };
 
 const initialThemeState = {
-    themeMode: "dark",
+    themeMode: "light",
 };
 
 export const themeModeReducer = (state = initialThemeState, action: { type: string }) => {

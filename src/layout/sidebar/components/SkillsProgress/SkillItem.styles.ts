@@ -29,7 +29,7 @@ const Progress = styled.div<{ percentages: number }>`
         border-radius: 4px;
         background: linear-gradient(
                 to right,
-                ${({theme}) => theme.colors.darkBlue} 90%,
+                ${({theme}) => theme.colors.primary} 90%,
                 ${({theme}) => theme.colors.primaryDark} 100%);
     }
 `
