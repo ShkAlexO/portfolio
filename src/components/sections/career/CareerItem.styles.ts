@@ -32,6 +32,11 @@ const InfoTitle = styled(Heading)`
     margin-bottom: 15px;
 `
 
+const Certificate = styled.a`
+    display: flex;
+    padding-top: 2px;
+`
+
 const Info = styled.div`
     max-width: 330px;
     width: 100%;
@@ -75,6 +80,11 @@ const InfoWork = styled.div`
 `
 
 const InfoEducation = styled.div`
+    ${InfoTitle} {
+        display: flex;
+        column-gap: 10px;
+    }
+
     ${media.range('sm', 'md')} {
         display: grid;
         grid-template: repeat(2, auto) / 1fr auto;
@@ -155,6 +165,7 @@ export {CareerItemStyled}
 
 export const S = {
     InfoTitle,
+    Certificate,
     InfoColorText,
     Position,
     Info,

@@ -7,8 +7,6 @@ import {SkillsProgress} from "@sbc/SkillsProgress/SkillsProgress";
 import {ExtraSkills} from "@sbc/ExtraSkills/ExtraSkills";
 import {DownloadButton} from "@c/DownloadButton/DownloadButton";
 
-import ResumeFile from "@/assets/Resume.pdf";
-
 import {userData} from "@/data/userData";
 import {S} from "@/layout/Sidebar/Sidebar.styles";
 
@@ -28,7 +26,7 @@ export const Sidebar = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>
             <S.SidebarInner>
                 <AboutMe/>
                 <S.DownloadButtonInner>
-                    <DownloadButton text='Download CV' file={ResumeFile}/>
+                    <DownloadButton text='Download CV' file="/assets/Resume.pdf"/>
                 </S.DownloadButtonInner>
                 <PersonalDetails/>
                 <SkillsProgress title='Skills' list={skills}/>

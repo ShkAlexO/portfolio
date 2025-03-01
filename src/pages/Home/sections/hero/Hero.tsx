@@ -1,5 +1,3 @@
-import heroImage from '@/assets/images/Alexander.png';
-
 import {Container} from "@c/UI/Container/Container";
 import {Skills} from "@c/Skills/Skills";
 import {Icon} from "@c/UI/Icon";
@@ -35,7 +33,7 @@ export const Hero = () => {
                     </S.Content>
 
                     <S.ImageBox>
-                        <S.Image src={heroImage} alt="Hero Image"/>
+                        <S.Image src="/assets/images/Alexander.webp" alt="Hero Image"/>
                         <Icon iconId='decoration-svg'/>
                     </S.ImageBox>
 

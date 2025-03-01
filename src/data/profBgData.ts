@@ -1,6 +1,7 @@
 export  type ProfBgPropsType = {
     id: number
     title: string
+    certificate?: string | undefined
     subtitle: string
     mode?: string | undefined
     start: string
@@ -13,6 +14,7 @@ export const educationData: ProfBgPropsType[] = [
     {
         id: 1,
         title: 'HTML CSS',
+        certificate: '',
         subtitle: 'Udemy',
         start: 'dec. 2020',
         end: 'jan. 2021',
@@ -22,6 +24,7 @@ export const educationData: ProfBgPropsType[] = [
     {
         id: 2,
         title: 'JavaScript',
+        certificate: '',
         subtitle: 'Udemy',
         start: 'jun. 2021',
         end: 'oct. 2021',
@@ -31,6 +34,7 @@ export const educationData: ProfBgPropsType[] = [
     {
         id: 3,
         title: 'React',
+        certificate: 'https://certificate.ithillel.ua/view/43422150',
         subtitle: 'Hillel School',
         start: 'aug. 2023',
         end: 'oct. 2023',
@@ -40,6 +44,7 @@ export const educationData: ProfBgPropsType[] = [
     {
         id: 4,
         title: 'React Native',
+        certificate: 'https://certificate.ithillel.ua/view/10911403',
         subtitle: 'Hillel School',
         start: 'jan. 2024',
         end: 'mar. 2024',

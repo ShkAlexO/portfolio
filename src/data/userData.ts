@@ -1,6 +1,4 @@
-import avatar from '@/assets/images/avatar.png'
 import {LINKEDIN, GITHUB, FACEBOOK, TELEGRAM, INSTAGRAM} from '@/constants/socials'
-
 
 export type SocialItemPropsType = {
     name: string
@@ -30,7 +28,7 @@ export  type UserPropsType = {
 };
 
 export const userData: UserPropsType = {
-    avatar: avatar,
+    avatar: '/assets/images/avatar.webp',
     name: 'Alexander',
     position: 'Front-end Developer',
     age: 33,

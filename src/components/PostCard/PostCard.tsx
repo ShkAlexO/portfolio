@@ -1,7 +1,7 @@
 import {FC} from "react";
 import {PostCardStyled, S} from "@c/PostCard/PostCard.styles"
 
-export type PostCardPropsType = {
+export type PostPropsType = {
     id: string | number
     category: string
     image: string
@@ -9,7 +9,7 @@ export type PostCardPropsType = {
     text: string
 }
 
-export const PostCard: FC<PostCardPropsType> = ({id, category, image, title, text}) => {
+export const PostCard: FC<PostPropsType> = ({id, category, image, title, text}) => {
     return (
         <PostCardStyled>
             <img src={image} alt={title}/>

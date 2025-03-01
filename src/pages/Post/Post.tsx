@@ -1,5 +1,7 @@
 import {useNavigate, useParams} from "react-router-dom";
+import {useEffect} from "react";
 import {usePosts} from "@/hooks/usePosts";
+
 import {BLOG_ENDPOINT} from "@/services/postService";
 import {ROUTES} from "@/constants/routes";
 
@@ -8,22 +10,24 @@ import {Container} from "@c/UI/Container/Container";
 import {LastPosts} from "@c/sections/LastPosts/LastPosts.tsx";
 
 import {S} from "@/pages/Post/Post.styles"
-import {useEffect} from "react";
+
+import {PostPropsType} from "@c/PostCard/PostCard";
 
 export const Post = () => {
-    const {postId} = useParams<{ postId: string }>();
-    const {posts, loading} = usePosts(BLOG_ENDPOINT);
+    const {categoryId, postId} = useParams<{ categoryId: string, postId: string }>();
     const navigate = useNavigate();
+    const {posts, loading}: { posts: PostPropsType[], loading: boolean } = usePosts(BLOG_ENDPOINT);
 
     const post = posts.find(({id}) => String(id) === postId);
+    const validCategory = post && post.category === categoryId;
 
     useEffect(() => {
-        if (!loading && !post) {
+        if (!loading && (!post || !validCategory)) {
             navigate(ROUTES.BLOG);
         }
-    }, [post, navigate, loading]);
+    }, [post, navigate, loading, validCategory]);
 
-    if (!post) {
+    if (!validCategory || !post) {
         return null;
     }
 
@@ -42,7 +46,7 @@ export const Post = () => {
                         </S.Content>}
                     </Container>
 
-                    <LastPosts currentPostId={id} currentCategory={category}
+                    <LastPosts currentPostId={String(id)} currentCategory={category}
                                title={`Similar Posts in "${category}"`}
                                subtitle='Catch up on the latest insights, updates, and trends from our blog.'/>
                 </S.Inner>}

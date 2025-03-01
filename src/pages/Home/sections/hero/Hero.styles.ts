@@ -25,6 +25,10 @@ const Content = styled.div`
     align-content: center;
     padding: 35px;
 
+    ${media.max('xxl')} {
+        min-height: 500px;
+    }
+
     ${media.max('md')} {
         padding: 0 0 30px;
         min-height: 365px;

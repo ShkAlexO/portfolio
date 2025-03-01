@@ -1,17 +1,22 @@
 import {FC} from "react";
 import {ProfBgPropsType} from "@/data/profBgData";
 import {CareerItemStyled, S} from "@c/sections/Career/CareerItem.styles";
+import {FaLink} from "react-icons/fa6";
 
 export type CareerItemPropsType = ProfBgPropsType & {
     listType: 'education' | 'work'
     content: string | undefined
 };
 
-const InfoEducation: FC<ProfBgPropsType> = ({title, subtitle, start, end}) => {
+const InfoEducation: FC<ProfBgPropsType> = ({title, subtitle, certificate, start, end}) => {
     return (
         <S.InfoEducation>
             <S.InfoTitle as='h3'>
                 <span>{title}</span>
+                {certificate &&
+                    <S.Certificate href={certificate} target="_blank">
+                        <FaLink/>
+                    </S.Certificate>}
             </S.InfoTitle>
             <S.Company as='h4' fontSize='h5'>
                 <S.CompanyName> {subtitle}</S.CompanyName>

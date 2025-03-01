@@ -1,6 +1,7 @@
 import {useNavigate, useParams} from 'react-router-dom';
-
+import {useEffect} from "react";
 import {usePosts} from "@/hooks/usePosts";
+
 import {BLOG_ENDPOINT} from "@/services/postService";
 import {ROUTES} from "@/constants/routes";
 
@@ -15,12 +16,17 @@ export const Category = () => {
     const {posts, loading} = usePosts(BLOG_ENDPOINT);
     const navigate = useNavigate();
 
+    useEffect(() => {
+        if (posts.length && !posts.some(({category}) => category === categoryId)) {
+            navigate(ROUTES.BLOG);
+        }
+    }, [categoryId, posts, navigate]);
+
     if (!posts.length) return null;
 
     const filteredPosts = posts.filter(({category}) => category === categoryId);
 
     if (filteredPosts.length === 0) {
-        navigate(ROUTES.BLOG);
         return null;
     }
 
