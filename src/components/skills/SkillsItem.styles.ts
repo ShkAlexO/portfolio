@@ -9,6 +9,10 @@ export const SkillsItemStyled = styled.div`
     text-align: center;
     max-width: 100px;
 
+    ${media.max('sm')} {
+        width: 45px;
+    }
+
     ${IconStyled} {
         height: 60px;
         width: auto;

@@ -1,20 +1,25 @@
-import heroImage from '@/assets/images/man.webp';
+import heroImage from '@/assets/images/Alexander.png';
 
 import {Container} from "@c/UI/Container/Container";
 import {Skills} from "@c/Skills/Skills";
 import {Icon} from "@c/UI/Icon";
+import {useResponsiveVisibility} from "@/hooks/useResponsiveVisibility";
 
+import {ROUTES} from "@/constants/routes";
 import {ButtonLink} from "@c/ComponentStyles";
 import {ColorText} from "@c/ComponentStyles";
 import {HeroStyled, S} from "@/pages/Home/sections/Hero/Hero.styles";
+import {commonStyles} from "@/styles/Theme";
 
 export const Hero = () => {
+    const isButtonVisible = useResponsiveVisibility(commonStyles.breakpoint.sm);
+
     return (
         <HeroStyled>
             <Container>
                 <S.Inner>
                     <S.Content>
-                        <S.Title>I’m Nick. <ColorText $colorName="primary" $fontWeight="800">Front-End
+                        <S.Title>I’m Alexander. <ColorText $colorName="primary" $fontWeight="800">Front-End
                             Developer</ColorText> Focused on
                             Clean Code</S.Title>
 
@@ -25,17 +30,18 @@ export const Hero = () => {
                             usability and design.
                         </S.Text>
 
-                        <ButtonLink to="/about">About me</ButtonLink>
+                        {!isButtonVisible &&
+                            <ButtonLink to={ROUTES.PORTFOLIO}>View My Portfolio</ButtonLink>}
                     </S.Content>
 
                     <S.ImageBox>
-                        <img src={heroImage} alt="Hero Image"/>
+                        <S.Image src={heroImage} alt="Hero Image"/>
                         <Icon iconId='decoration-svg'/>
                     </S.ImageBox>
 
                     <Skills/>
 
-                    <ButtonLink to="/about">About me</ButtonLink>
+                    {isButtonVisible && <ButtonLink to="/about">About me</ButtonLink>}
                 </S.Inner>
             </Container>
         </HeroStyled>

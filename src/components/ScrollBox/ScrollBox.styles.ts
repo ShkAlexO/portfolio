@@ -34,7 +34,7 @@ const Wrap = styled.div<WrapPropsType>`
     height: 100%;
     border-radius: ${({theme}) => theme.radius};
     border: 1px solid ${({theme}) => theme.colors.primary};
-    background-color: rgba(${({theme}) => theme.colors.darkRgb}, .6);
+    background-color: rgba(${({theme}) => theme.colors.colorStRGB}, .6);
 `
 
 const Inner = styled.div<InnerPropsType>`

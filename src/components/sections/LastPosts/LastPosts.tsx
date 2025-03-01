@@ -10,6 +10,9 @@ import {ButtonLink} from "@c/ComponentStyles";
 import {LastPostsStyled} from "@c/sections/LastPosts/LastPosts.styles"
 
 import {BLOG_ENDPOINT} from "@/services/postService";
+import {useResponsiveVisibility} from "@/hooks/useResponsiveVisibility";
+import {commonStyles} from "@/styles/Theme";
+import {ROUTES} from "@/constants/routes";
 
 type LastPostsPropsType = SectionHeadingPropsType & {
     currentPostId?: string
@@ -22,7 +25,9 @@ export const LastPosts: FC<LastPostsPropsType> = (
         currentPostId,
         currentCategory
     }: LastPostsPropsType) => {
+
     const {posts, loading} = usePosts(BLOG_ENDPOINT);
+    const isMobileView = useResponsiveVisibility(commonStyles.breakpoint.md);
 
     if (!posts.length) {
         return null;
@@ -37,15 +42,18 @@ export const LastPosts: FC<LastPostsPropsType> = (
     }
 
     const lastPosts = currentCategory
-        ? filteredPosts.slice(0, 3) : posts.slice(-3);
+        ? filteredPosts.slice(0, isMobileView ? 2 : 3)
+        : posts.slice(isMobileView ? -2 : -3);
 
     return (
         <LastPostsStyled>
             {loading ? <Preloader/> : (
                 <Container>
-                    <SectionHeading title={title} subtitle={subtitle}/>
+                    {!(currentCategory && lastPosts.length === 0) && (
+                        <SectionHeading title={title} subtitle={subtitle}/>
+                    )}
                     <ColumnGrid list={lastPosts}/>
-                    <ButtonLink to='/blog'>Go to Blog</ButtonLink>
+                    <ButtonLink to={ROUTES.BLOG}>Go to Blog</ButtonLink>
                 </Container>
             )}
         </LastPostsStyled>

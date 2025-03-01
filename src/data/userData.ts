@@ -1,5 +1,5 @@
-import avatar from '@/assets/images/man.webp'
-import {LINKEDIN, GITHUB, FACEBOOK, TELEGRAM, INSTAGRAM, YOUTUBE} from '@/constants/socials'
+import avatar from '@/assets/images/avatar.png'
+import {LINKEDIN, GITHUB, FACEBOOK, TELEGRAM, INSTAGRAM} from '@/constants/socials'
 
 
 export type SocialItemPropsType = {
@@ -7,9 +7,10 @@ export type SocialItemPropsType = {
     url: string
 };
 
-export type SkillLangItemPropsType = {
+export type TechAndLanguagesType = {
     name: string
     percentages: number
+    level?: string | undefined
 };
 
 export type ExtraSkillItemPropsType = string[]
@@ -23,57 +24,53 @@ export  type UserPropsType = {
     age: number | string
     address: string
     socials: SocialItemPropsType[]
-    skills: SkillLangItemPropsType[]
+    skills: TechAndLanguagesType[]
     extraSkills: ExtraSkillItemPropsType[]
-    languages: SkillLangItemPropsType[]
+    languages: TechAndLanguagesType[]
 };
 
 export const userData: UserPropsType = {
     avatar: avatar,
-    name: 'Rayan Adlrdard',
+    name: 'Alexander',
     position: 'Front-end Developer',
-    age: 29,
-    email: 'rayan.ad@example.com',
-    phone: '+1 (555) 123-4567',
-    address: 'Toronto, Canada',
+    age: 33,
+    email: 'shk.alex.o@gmail.com',
+    phone: '+38 (050) 080 49 91',
+    address: 'Odessa, Ukraine',
     socials: [
         {
             name: GITHUB,
-            url: 'https://github.com/',
+            url: 'https://github.com/ShkAlexO',
         },
         {
             name: LINKEDIN,
-            url: 'https://linkedin.com/',
+            url: 'https://www.linkedin.com/in/sano-shk',
         },
         {
             name: FACEBOOK,
-            url: 'https://www.facebook.com/',
+            url: 'https://www.facebook.com/sanya.s.a.o',
         },
         {
             name: INSTAGRAM,
-            url: 'https://www.instagram.com/',
-        },
-        {
-            name: YOUTUBE,
-            url: 'https://www.youtube.com/',
+            url: 'https://www.instagram.com/shk.a.o/',
         },
         {
             name: TELEGRAM,
-            url: 'https://web.telegram.org/',
+            url: 'https://t.me/Sano_shk',
         }
     ],
     skills: [
         {
             name: 'Html',
-            percentages: 95,
-        },
-        {
-            name: 'CSS',
             percentages: 92,
         },
         {
+            name: 'CSS',
+            percentages: 95,
+        },
+        {
             name: 'JS',
-            percentages: 74,
+            percentages: 71,
         },
         {
             name: 'PHP',
@@ -82,29 +79,32 @@ export const userData: UserPropsType = {
         {
             name: 'WordPress',
             percentages: 72,
+        },
+        {
+            name: 'React',
+            percentages: 74,
         }
     ],
     extraSkills: [
-        ['Bootstrap', 'Materialize'],
-        ['Stylus', 'Sass', 'Less'],
-        ['Gulp', 'Webpack', 'Grunt']
+        ['Redux', 'React Router', 'TypeScript'],
+        ['Sass', 'BEM', 'Styled-components'],
+        ['Gulp', 'Webpack', 'Vite']
     ],
     languages: [
         {
+            name: 'Ukrainian',
+            percentages: 100,
+            level: 'Native',
+        },
+        {
             name: 'Russian',
             percentages: 95,
+            level: 'C2',
         },
         {
             name: 'English',
-            percentages: 48,
-        },
-        {
-            name: 'German',
-            percentages: 45,
-        },
-        {
-            name: 'Spanish',
-            percentages: 35,
+            percentages: 40,
+            level: 'A2',
         }
     ]
 }

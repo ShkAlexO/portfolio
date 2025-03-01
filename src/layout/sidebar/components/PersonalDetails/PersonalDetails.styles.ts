@@ -17,12 +17,12 @@ const PersonalDetailsStyled = styled.div`
         rgba(${({theme}) => theme.colors.primaryRgb}, .5) 100%);
 
         ${media.max('em')} {
-            gap: 20px;
+            gap: 10px;
         }
     }
 
     a {
-        color: ${({theme}) => theme.colors.white};
+        color: ${({theme}) => theme.colors.colorSd};
 
         &:hover {
             color: ${({theme}) => theme.colors.secondary};

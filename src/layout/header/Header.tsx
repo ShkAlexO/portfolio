@@ -1,24 +1,29 @@
-import {RefObject} from "react"
+import {FC, RefObject} from "react"
 import {useDispatch} from "react-redux";
 import {toggleSidebarVisibility} from "@/redux/actions";
-import {ThemeSwitchButton} from "@c/ThemeSwitchButton/ThemeSwitchButton";
+
+import {useResponsiveVisibility} from "@/hooks/useResponsiveVisibility";
 
 import {Menu} from "@c/Menu/Menu";
+import {ThemeSwitchButton} from "@c/ThemeSwitchButton/ThemeSwitchButton";
 import {HeaderBtnSidebarToggle} from "@c/HeaderBtnSidebarToggle/HeaderBtnSidebarToggle";
 
+import {commonStyles} from "@/styles/Theme";
 import {
     HeaderStyled,
     MenuBox,
-    HeaderBtnSidebarToggleBox, ThemeSwitchButtonBox
-} from "@/layout/header/Header.styles";
+    Controls
+} from "@/layout/Header/Header.styles";
 
 type HeaderPropsType = {
     headerBtnSidebarToggleRef: RefObject<HTMLButtonElement>
     themeSwitchButtonRef: RefObject<HTMLButtonElement>
 };
 
-export const Header = ({headerBtnSidebarToggleRef, themeSwitchButtonRef}: HeaderPropsType) => {
+export const Header: FC<HeaderPropsType> = ({headerBtnSidebarToggleRef, themeSwitchButtonRef}) => {
     const dispatch = useDispatch();
+
+    const isSidebarBtnVisible = useResponsiveVisibility(commonStyles.breakpoint.xl);
 
     const handleSidebarToggle = () => {
         dispatch(toggleSidebarVisibility());
@@ -26,13 +31,16 @@ export const Header = ({headerBtnSidebarToggleRef, themeSwitchButtonRef}: Header
 
     return (
         <HeaderStyled>
-            <HeaderBtnSidebarToggleBox>
-                <HeaderBtnSidebarToggle ref={headerBtnSidebarToggleRef} onClick={handleSidebarToggle}/>
-            </HeaderBtnSidebarToggleBox>
-
-            <ThemeSwitchButtonBox>
+            <Controls>
                 <ThemeSwitchButton ref={themeSwitchButtonRef}/>
-            </ThemeSwitchButtonBox>
+
+                {isSidebarBtnVisible && (
+                    <HeaderBtnSidebarToggle
+                        ref={headerBtnSidebarToggleRef}
+                        onClick={handleSidebarToggle}
+                    />
+                )}
+            </Controls>
 
             <MenuBox>
                 <Menu/>

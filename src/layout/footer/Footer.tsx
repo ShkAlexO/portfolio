@@ -1,6 +1,6 @@
 import {SocialLinks} from "@c/SocialLinks/SocialLinks";
 import {Container} from "@c/UI/Container/Container";
-import {FooterStyled, Inner} from "@/layout/footer/Footer.styles";
+import {FooterStyled, Inner} from "@/layout/Footer/Footer.styles";
 
 export const Footer = () => {
     return (

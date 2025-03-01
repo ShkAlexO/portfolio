@@ -13,16 +13,19 @@ import {GlobalStyle} from "@/styles/GlobalStyles";
 import {AppStyled} from "@/App.styles";
 
 import {MainWrap} from "@c/MainWrap/MainWrap";
-import {Header} from "@/layout/header/Header";
-import {Main} from "@/layout/main/Main";
-import {Footer} from "@/layout/footer/Footer";
-import {Sidebar} from "@/layout/sidebar/Sidebar";
+import {ParticlesBackground} from "@c/ParticlesBackground/ParticlesBackground";
 
-type ThemeType = "light" | "dark";
+import {Header} from "@/layout/Header/Header";
+import {Main} from "@/layout/Main/Main";
+import {Footer} from "@/layout/Footer/Footer";
+import {Sidebar} from "@/layout/Sidebar/Sidebar";
+import {THEME_DARK, THEME_LIGHT} from "@/constants/themeConstants";
+
+export type ThemeType = typeof THEME_LIGHT | typeof THEME_DARK;
 
 const themes: Record<ThemeType, typeof lightTheme> = {
-    light: lightTheme,
-    dark: darkTheme,
+    [THEME_LIGHT]: lightTheme,
+    [THEME_DARK]: darkTheme,
 };
 
 export const App = () => {
@@ -46,9 +49,12 @@ export const App = () => {
     return (
         <ThemeProvider theme={themes[themeMode]}>
             <BrowserRouter basename={baseUrl}>
+                <ParticlesBackground/>
+
                 <AppStyled className={isSidebarOpen ? 'js-open-sidebar' : ''}>
                     <GlobalStyle/>
-                    <Header headerBtnSidebarToggleRef={headerBtnSidebarToggleRef} themeSwitchButtonRef={themeSwitchButtonRef}/>
+                    <Header headerBtnSidebarToggleRef={headerBtnSidebarToggleRef}
+                            themeSwitchButtonRef={themeSwitchButtonRef}/>
                     <MainWrap>
                         <Main/>
                         <Sidebar ref={sidebarRef}/>

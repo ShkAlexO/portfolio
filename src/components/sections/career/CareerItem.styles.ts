@@ -38,7 +38,7 @@ const Info = styled.div`
     flex-shrink: 0;
 
     ${media.max('xxl')} {
-        max-width: 270px;
+        max-width: 230px;
     }
 
     ${media.max('md')} {
@@ -47,6 +47,12 @@ const Info = styled.div`
 `
 
 const InfoColorText = styled(ColorText)`
+`
+
+const Position = styled.span`
+    span {
+        color: ${({theme}) => theme.colors.colorSd};
+    }
 `
 
 const InfoWork = styled.div`
@@ -150,6 +156,7 @@ export {CareerItemStyled}
 export const S = {
     InfoTitle,
     InfoColorText,
+    Position,
     Info,
     InfoWork,
     InfoEducation,

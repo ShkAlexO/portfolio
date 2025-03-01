@@ -5,7 +5,7 @@ import {BoxWrapStyles} from "@c/ComponentStyles";
 const SkillsStyled = styled.div`
     ${BoxWrapStyles};
     grid-column: 1 / -1;
-    background: linear-gradient(90deg, ${({theme}) => theme.colors.darkBlue} 0%, ${({theme}) => theme.colors.primaryDark} 100%);
+    background: linear-gradient(90deg, ${({theme}) => theme.colors.colorSt} 0%, ${({theme}) => theme.colors.primaryDark} 100%);
 `
 
 const Inner = styled.div`
@@ -52,6 +52,10 @@ const List = styled.div`
 
     ${media.max('xxl')} {
         column-gap: 30px;
+    }
+
+    ${media.max('sm')} {
+        column-gap: 25px;
     }
 
     ${media.max('em')} {

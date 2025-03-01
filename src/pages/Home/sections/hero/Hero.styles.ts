@@ -17,30 +17,23 @@ const Inner = styled.div`
 
     > ${ButtonLink} {
         margin: 30px auto 0;
-
-        ${media.min('sm')} {
-            display: none;
-        }
     }
 `
 
 const Content = styled.div`
+    min-height: 550px;
     align-content: center;
     padding: 35px;
 
     ${media.max('md')} {
-        padding: 30px 0;
+        padding: 0 0 30px;
+        min-height: 365px;
     }
 
     ${media.max('sm')} {
         padding: 0;
         margin-bottom: 15px;
-    }
-
-    ${ButtonLink} {
-        ${media.max('sm')} {
-            display: none;
-        }
+        min-height: auto;
     }
 `
 
@@ -48,7 +41,7 @@ const Title = styled.h1`
     font-size: calc(${({theme}) => theme.titleFs.h1.default} * 1.5);
     font-weight: 500;
     line-height: 1.2;
-    color: ${({theme}) => theme.colors.white};
+    color: ${({theme}) => theme.colors.colorSd};
     margin-bottom: 20px;
 
     ${media.max('xxl')} {
@@ -77,22 +70,30 @@ const Text = styled.p`
         margin-bottom: 0;
     }
 `
+const Image = styled.img`
+    display: block;
+    object-fit: contain;
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    margin: 0 auto;
+
+    ${media.min('sm')} {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        max-height: 100%;
+    }
+
+    ${media.max('md')} {
+        max-width: 250px;
+    }
+`
 
 const ImageBox = styled.div`
     position: relative;
-    align-self: end;
-
-    img {
-        display: block;
-        width: 100%;
-        max-width: 380px;
-        height: auto;
-        margin: 0 auto;
-
-        ${media.max('md')} {
-            max-width: 250px;
-        }
-    }
+    height: inherit;
 
     ${IconStyled} {
         position: absolute;
@@ -121,5 +122,5 @@ const ImageBox = styled.div`
 
 export {HeroStyled}
 export const S = {
-    Inner, Content, Title, Text, ImageBox
+    Inner, Content, Title, Text, ImageBox, Image
 }

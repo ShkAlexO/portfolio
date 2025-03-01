@@ -1,6 +1,9 @@
+import {FC} from "react";
+
 import {Container} from "@c/UI/Container/Container";
 import {SectionHeading, SectionHeadingPropsType} from "@c/SectionHeading/SectionHeading";
 import {CareerItem} from "@c/sections/Career/CareerItem";
+
 import {ProfBgPropsType} from '@/data/profBgData'
 import {CareerStyled, List} from "@c/sections/Career/Career.styles"
 
@@ -9,7 +12,7 @@ type CareerPropsType = SectionHeadingPropsType & {
     listType: 'education' | 'work'
 }
 
-export const Career = ({title, subtitle, list, listType}: CareerPropsType) => {
+export const Career: FC<CareerPropsType> = ({title, subtitle, list, listType}) => {
     return (
         <CareerStyled>
             <Container>
@@ -18,8 +21,12 @@ export const Career = ({title, subtitle, list, listType}: CareerPropsType) => {
                     subtitle={subtitle}
                 />
                 <List>
-                    {list.map(item => <CareerItem key={item.id} listType={listType} {...item}
-                                                  content={item.content}/>)}
+                    {list.map(item => <CareerItem
+                        key={item.id}
+                        listType={listType}
+                        content={item.content}
+                        {...item}
+                    />)}
                 </List>
             </Container>
         </CareerStyled>

@@ -1,3 +1,4 @@
+import {FC} from "react";
 import {SocialItem} from "@c/SocialLinks/SocialItem";
 import {userData, SocialItemPropsType} from "@/data/userData"
 
@@ -9,7 +10,7 @@ type SocialsListPropsType = {
     list?: Array<string>;
 };
 
-export const SocialLinks = ({list}: SocialsListPropsType) => {
+export const SocialLinks: FC<SocialsListPropsType> = ({list}) => {
     const filteredSocials = list ? socials.filter((item) => list.includes(item.name)) : socials;
 
     return (

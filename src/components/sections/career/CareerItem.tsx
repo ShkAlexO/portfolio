@@ -1,3 +1,4 @@
+import {FC} from "react";
 import {ProfBgPropsType} from "@/data/profBgData";
 import {CareerItemStyled, S} from "@c/sections/Career/CareerItem.styles";
 
@@ -6,12 +7,11 @@ export type CareerItemPropsType = ProfBgPropsType & {
     content: string | undefined
 };
 
-const InfoEducation = ({title, subtitle, start, end}: ProfBgPropsType) => {
+const InfoEducation: FC<ProfBgPropsType> = ({title, subtitle, start, end}) => {
     return (
         <S.InfoEducation>
             <S.InfoTitle as='h3'>
-                <span>{title}</span> <S.InfoColorText $colorName='white'
-                                                      $fontWeight='400'>course</S.InfoColorText>
+                <span>{title}</span>
             </S.InfoTitle>
             <S.Company as='h4' fontSize='h5'>
                 <S.CompanyName> {subtitle}</S.CompanyName>
@@ -23,11 +23,12 @@ const InfoEducation = ({title, subtitle, start, end}: ProfBgPropsType) => {
     )
 }
 
-const InfoWork = ({title, subtitle, mode, start, end}: ProfBgPropsType) => {
+const InfoWork: FC<ProfBgPropsType> = ({title, subtitle, mode, start, end}) => {
     return (
         <S.InfoWork>
             <S.InfoTitle as='h3'>
-                <S.InfoColorText $colorName='white'>Position</S.InfoColorText><span>{title}</span>
+                <S.InfoColorText $colorName='colorSd'>Position</S.InfoColorText>
+                <S.Position dangerouslySetInnerHTML={{__html: title}}/>
             </S.InfoTitle>
             <S.Company as='h4' fontSize='h5'>
                 <S.CompanyName> {subtitle}</S.CompanyName>
@@ -40,9 +41,9 @@ const InfoWork = ({title, subtitle, mode, start, end}: ProfBgPropsType) => {
     )
 }
 
-export const CareerItem = ({listType, content, headline, ...props}: CareerItemPropsType) => {
+export const CareerItem: FC<CareerItemPropsType> = ({listType, content, headline, ...props}) => {
     const CurComponent = listType === 'education' ? InfoEducation : InfoWork;
- 
+
     return (
         <CareerItemStyled>
             <S.Info>

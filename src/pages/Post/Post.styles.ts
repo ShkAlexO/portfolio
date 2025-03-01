@@ -31,6 +31,11 @@ const Category = styled(Heading)`
     border-radius: 20px;
     text-transform: capitalize;
 
+    ${media.max('md')} {
+        padding: 10px 20px;
+        max-width: fit-content;
+    }
+
     &:hover {
         &::before {
             opacity: 1;
@@ -48,6 +53,10 @@ const Content = styled.div`
         content: "";
         display: block;
         clear: both;
+    }
+
+    p {
+        margin-bottom: 1.5rem;
     }
 `
 

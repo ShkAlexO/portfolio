@@ -3,6 +3,7 @@ import {media} from "@/styles/Theme";
 
 const HeaderBtnSidebarToggleStyled = styled.button`
     position: relative;
+    max-width: 41px;
     width: 100%;
     margin: 0 auto;
     height: auto;
@@ -11,6 +12,19 @@ const HeaderBtnSidebarToggleStyled = styled.button`
     background: transparent;
     padding: 0;
     border: none;
+    border-radius: 0;
+
+    ${media.max('md')} {
+        max-width: 40px;
+    }
+
+    ${media.max('sm')} {
+        max-width: 37px;
+    }
+ 
+    ${media.max('xs')} {
+        max-width: 26px;
+    }
 
     &::before {
         content: none;
@@ -26,12 +40,8 @@ const Line = styled.span`
     border-radius: ${({theme}) => theme.radius};
     transition: all .3s ease;
 
-    ${media.min('xl')} {
-        display: none;
-    }
-
     &:nth-child(1) {
-        top: 19%;
+        top: 20%;
     }
 
     &:nth-child(2) {

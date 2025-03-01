@@ -33,7 +33,6 @@ export const Portfolio = () => {
                             <div>No posts available</div>
                         )
                     )}
-
                 </S.Inner>
             </Container>
         </S.Wrap>

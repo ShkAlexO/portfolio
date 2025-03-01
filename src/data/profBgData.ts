@@ -1,14 +1,10 @@
-import certificate from '@/assets/images/certificate.jpg'
-
 export  type ProfBgPropsType = {
     id: number
     title: string
     subtitle: string
-    course?: boolean | undefined
     mode?: string | undefined
     start: string
     end: string
-    certificate?: string | undefined
     headline?: string
     content?: string | undefined
 };
@@ -17,68 +13,60 @@ export const educationData: ProfBgPropsType[] = [
     {
         id: 1,
         title: 'HTML CSS',
-        subtitle: 'TechNova Academy',
-        course: true,
+        subtitle: 'Udemy',
         start: 'dec. 2020',
         end: 'jan. 2021',
-        certificate: certificate,
-        headline: 'Mastering Web Fundamentals with HTML & CSS',
-        content: 'During this course, I gained a solid understanding of HTML structure, CSS styling, and responsive design principles. I learned to create web pages that adapt to different screen sizes and devices, using Flexbox and Grid layout systems. The hands-on projects helped me develop attention to detail and improved my ability to create visually appealing websites.'
+        headline: 'Web Fundamentals with HTML & CSS',
+        content: 'In this course, I became familiar with HTML structure, CSS styling, and principles of responsive design. I learned to create websites that adapt to different devices, using Flexbox and Grid. The practical exercises helped me enhance my attention to detail and improved my skills in creating visually engaging websites.',
     },
     {
         id: 2,
         title: 'JavaScript',
-        subtitle: 'CodeCraft School',
-        course: true,
+        subtitle: 'Udemy',
         start: 'jun. 2021',
         end: 'oct. 2021',
-        certificate: certificate,
-        headline: 'Building Interactive Web Experiences with JavaScript',
-        content: 'Through this course, I acquired a strong foundation in JavaScript, including working with variables, functions, loops, and arrays. I learned how to manipulate the DOM and create interactive elements on web pages. Additionally, I delved into asynchronous JavaScript (Promises, async/await) and began working with APIs, enabling me to build dynamic web applications.'
+        headline: 'Diving into JavaScript: From Basics to Interactivity',
+        content: 'In this course, I mastered the basics of JavaScript, including working with variables, functions, loops, and arrays. I learned how to manipulate the DOM to create interactive elements. I also studied asynchronous operations using async/await, which allowed me to work with dynamic data on web pages.',
     },
-    // {
-    //     id: 3,
-    //     title: 'React',
-    //     subtitle: 'Bootcamp',
-    //     course: true,
-    //     start: 'aug. 2023',
-    //     end: 'oct. 2023',
-    //     certificate: certificate,
-    //     headline: 'Creating Dynamic Interfaces with React',
-    //     content: 'During the React course, I gained hands-on experience with building reusable components, managing state using React hooks (useState, useEffect), and routing with React Router. I also learned how to work with context for state management and understand the principles of component lifecycle. These skills allowed me to efficiently develop complex user interfaces.'
-    // },
-    // {
-    //     id: 4,
-    //     title: 'React Native',
-    //     subtitle: 'ByteMasters',
-    //     course: true,
-    //     start: 'jan. 2024',
-    //     end: 'mar. 2024',
-    //     certificate: certificate,
-    //     headline: 'Developing Cross-Platform Apps with React Native',
-    //     content: 'In this course, I learned how to build cross-platform mobile applications using React Native. I acquired skills in integrating native device features, working with navigation libraries (React Navigation), and managing state with Redux. I also explored performance optimization techniques and the process of deploying apps to both the iOS and Android app stores.'
-    // }
+    {
+        id: 3,
+        title: 'React',
+        subtitle: 'Hillel School',
+        start: 'aug. 2023',
+        end: 'oct. 2023',
+        headline: 'Development of Dynamic Interfaces with React',
+        content: 'In the React course, I learned to develop components, manage state with React hooks, use React Router for navigation, and implement Redux for state management in larger applications.',
+    },
+    {
+        id: 4,
+        title: 'React Native',
+        subtitle: 'Hillel School',
+        start: 'jan. 2024',
+        end: 'mar. 2024',
+        headline: 'Developing Cross-Platform Apps with React Native',
+        content: 'In the React Native course, I familiarized myself with the basics of mobile app development for iOS and Android. I explored the use of shared components and navigation tools, gaining a foundational understanding of cross-platform mobile development.',
+    }
 ];
 
 export const workData: ProfBgPropsType[] = [
     {
         id: 1,
-        title: 'Wordpress Developer',
-        subtitle: 'TechNova Solutions',
+        title: '<span>Middle</span> Wordpress Developer',
+        subtitle: 'White Label Agency',
         mode: 'full-time',
         start: 'feb. 2023',
         end: 'present',
-        headline: 'Customizing WordPress for Optimal Performance',
-        content: 'As a WordPress Developer, I gained experience in creating custom themes and plugins, as well as integrating third-party APIs. I developed strong skills in optimizing website performance, enhancing user experience, and ensuring the security of WordPress sites. I also became proficient in troubleshooting and resolving common issues related to site functionality and design.'
+        headline: 'Mastering WordPress Development with Modern Tools and Techniques',
+        content: 'As a WordPress Developer at White Label Agency, I have been actively involved in developing WordPress websites. To date, I have successfully delivered approximately 23 websites, utilizing tools such as Flexible Blocks, Gutenberg Blocks, Elementor, PHP, and jQuery. I also integrated custom features with AJAX to enhance functionality. My focus has been on building responsive, user-friendly websites while working from the office in a collaborative environment.'
     },
     {
         id: 2,
-        title: 'Wordpress Developer',
-        subtitle: 'InnoByte Technologies',
+        title: '<span>Junior</span> Wordpress Developer',
+        subtitle: 'Cyborg Studio',
         mode: 'full-time',
         start: 'dec. 2021',
         end: 'jan. 2023',
-        headline: 'Enhancing Website Functionality and SEO with WordPress',
-        content: 'During my time at InnoByte Technologies, I worked extensively with custom theme development, plugin customization, and content management on WordPress. I became adept at handling complex backend configurations and ensuring smooth front-end functionality. Additionally, I gained a deeper understanding of SEO practices, helping to improve the visibility and performance of websites.'
+        headline: 'Developing WordPress Websites and Landing Pages',
+        content: 'At Cyborg Studio, I was responsible for developing websites and landing pages using WordPress and JavaScript. Over the course of my time at the company, I successfully created 8 websites and 4 landing pages, focusing on delivering functional, user-friendly sites with an emphasis on front-end performance and intuitive user experience.'
     }
 ];

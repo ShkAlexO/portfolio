@@ -10,18 +10,19 @@ export const Home = () => {
             <Hero/>
             <Career
                 title='Education'
-                subtitle='An overview of the professional journey and key achievements.'
+                subtitle='Education and Skills Development.'
                 list={educationData}
                 listType='education'
             />
             <Career
                 title='Work History'
-                subtitle='Professional experience and career development.'
+                subtitle='Professional Roles and Companies'
                 list={workData}
                 listType='work'
             />
-            <LastPosts title='Blog'
-                       subtitle='Explore development tips, project highlights, and industry trends.'/>
+            <LastPosts
+                title='Blog'
+                subtitle='Explore development tips, project highlights, and industry trends.'/>
         </>
     );
 };

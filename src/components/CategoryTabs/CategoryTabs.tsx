@@ -1,13 +1,19 @@
-import {memo, useState} from "react";
-import {CategoryTabsStyled, Inner} from "./CategoryTabs.styles"
+import {FC, memo, useState} from "react";
+import {CategoryTabsStyled, Inner} from "@c/CategoryTabs/CategoryTabs.styles";
+
+
+type Post = {
+    id: string;
+    category: string;
+}
 
 type CategoryTabsProps = {
-    posts: { id: string; category: string }[];
+    posts: Post[];
     filterPosts: (category: string) => void;
 }
 
-export const CategoryTabs = memo(({posts, filterPosts}: CategoryTabsProps) => {
-    const [activeCategory, setActiveCategory] = useState("all");
+export const CategoryTabs: FC<CategoryTabsProps> = memo(({posts, filterPosts}) => {
+    const [activeCategory, setActiveCategory] = useState<string>("all");
 
     const handleClick = (category: string) => {
         filterPosts(category);

@@ -10,11 +10,11 @@ const Technology = styled.span`
     padding: 0 12px;
 `
 
-const Percentages = styled.span`
+const Level = styled.span`
     padding: 0 8px;
 `
 
-const Progress = styled.div<{ percentages: number }>`
+const Progress = styled.div<{ $percentages: number }>`
     position: relative;
     padding: 2px;
     border: 1px solid ${({theme}) => theme.colors.primary};
@@ -24,7 +24,7 @@ const Progress = styled.div<{ percentages: number }>`
     &::before {
         content: '';
         display: block;
-        width: ${({percentages}) => percentages}%;
+        width: ${({$percentages}) => $percentages}%;
         height: 4px;
         border-radius: 4px;
         background: linear-gradient(
@@ -36,5 +36,5 @@ const Progress = styled.div<{ percentages: number }>`
 
 export {SkillItemStyled}
 export const S = {
-    Technology, Percentages, Progress
+    Technology, Level, Progress
 }

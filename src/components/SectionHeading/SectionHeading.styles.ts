@@ -14,6 +14,7 @@ export const SectionHeadingStyled = styled.div`
 export const Title = styled.h2`
     position: relative;
     font-size: calc(${({theme}) => theme.titleFs.h2.default} * 1.2);
+    letter-spacing: 0.03rem;
     padding-bottom: 10px;
     margin-bottom: 20px;
 

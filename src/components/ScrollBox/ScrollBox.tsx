@@ -20,4 +20,4 @@ export const ScrollBox = forwardRef<HTMLElement, ScrollBoxPropsType>((
             </S.Wrap>
         </ScrollBoxStyled>
     )
-})
+});

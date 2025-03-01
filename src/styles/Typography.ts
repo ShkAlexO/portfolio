@@ -1,11 +1,11 @@
-import { css }  from "styled-components";
+import {css} from "styled-components";
 import {ButtonStyles} from "@c/ComponentStyles";
 import {media} from "@/styles/Theme";
 
 export const Typography = css`
     h1, h2, h3, h4, h5, h6 {
-        font-weight: 600;
-        color: ${({theme}) => theme.colors.blue};
+        font-weight: 500;
+        color: ${({theme}) => theme.colors.accent};
         line-height: 1.3;
         margin-bottom: .6em;
     }
@@ -58,54 +58,6 @@ export const Typography = css`
         }
     }
 
-    // h1 {
-    //     font-size: 28px;
-    //
-        //     ${media.max('xxl')} {
-    //         font-size: 26px;
-    //     }
-    // }
-    //
-    // h2 {
-    //     font-size: 26px;
-    //
-        //     ${media.max('xxl')} {
-    //         font-size: 24px;
-    //     }
-    // }
-    //
-    // h3 {
-    //     font-size: 24px;
-    //
-        //     ${media.max('xxl')} {
-    //         font-size: 22px;
-    //     }
-    // }
-    //
-    // h4 {
-    //     font-size: 22px;
-    //
-        //     ${media.max('xxl')} {
-    //         font-size: 20px;
-    //     }
-    // }
-    //
-    // h5 {
-    //     font-size: 20px;
-    //
-        //     ${media.max('xxl')} {
-    //         font-size: 18px;
-    //     }
-    // }
-    //
-    // h6 {
-    //     font-size: 19px;
-    //
-        //     ${media.max('xxl')} {
-    //         font-size: 17px;
-    //     }
-    // }
-
     button {
         ${ButtonStyles}
     }
@@ -116,7 +68,7 @@ export const Typography = css`
         transition: color .3s ease;
 
         &:hover {
-            color: ${({theme}) => theme.colors.blue};
+            color: ${({theme}) => theme.colors.accent};
         }
     }
 `

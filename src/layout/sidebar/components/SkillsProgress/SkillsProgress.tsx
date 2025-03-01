@@ -1,19 +1,23 @@
-import {SkillLangItemPropsType} from "@/data/userData";
+import {FC} from "react";
+import {TechAndLanguagesType} from "@/data/userData";
 
 import {SkillItem} from "@sbc/SkillsProgress/SkillItem";
+import {SidebarTitle} from "@sbc/SidebarTitle/SidebarTitle";
 import {SkillProgressStyled, S} from "@sbc/SkillsProgress/SkillsProgress.styles";
 
 type SkillProgressPropsType = {
     title: string
-    list?: SkillLangItemPropsType[];
+    list?: TechAndLanguagesType[];
 };
 
-export const SkillsProgress = ({title, list}: SkillProgressPropsType) => {
+export const SkillsProgress: FC<SkillProgressPropsType> = ({title, list}) => {
+    if (!list?.length) return null;
+
     return (
-        list && <SkillProgressStyled>
-            {title && <S.Title as='h3' fontSize='h6'>{title}</S.Title>}
+        <SkillProgressStyled>
+            {title && <SidebarTitle title={title}/>}
             <S.List>
-                {list.map((item: SkillLangItemPropsType) => <SkillItem key={item.name} {...item}/>)}
+                {list.map((item) => <SkillItem key={item.name} {...item}/>)}
             </S.List>
         </SkillProgressStyled>
     )

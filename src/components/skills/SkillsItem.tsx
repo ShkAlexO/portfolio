@@ -1,3 +1,4 @@
+import {FC} from "react";
 import {Icon} from "@c/UI/Icon";
 import {SkillsItemStyled} from "@c/Skills/SkillsItem.styles";
 
@@ -5,7 +6,7 @@ type SkillsItemPropsType = {
     iconId: string
     title: string
 }
-export const SkillsItem = ({iconId, title}: SkillsItemPropsType) => {
+export const SkillsItem: FC<SkillsItemPropsType> = ({iconId, title}) => {
     return (
         <SkillsItemStyled>
             <Icon iconId={iconId}/>

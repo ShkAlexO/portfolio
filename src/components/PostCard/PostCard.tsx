@@ -1,3 +1,4 @@
+import {FC} from "react";
 import {PostCardStyled, S} from "@c/PostCard/PostCard.styles"
 
 export type PostCardPropsType = {
@@ -8,13 +9,13 @@ export type PostCardPropsType = {
     text: string
 }
 
-export const PostCard = ({id, category, image, title, text}: PostCardPropsType) => {
+export const PostCard: FC<PostCardPropsType> = ({id, category, image, title, text}) => {
     return (
         <PostCardStyled>
             <img src={image} alt={title}/>
             <S.Info>
                 <S.Title as='h3' fontSize='h5'>{title}</S.Title>
-                <S.Text>{text}</S.Text>
+                <S.Text dangerouslySetInnerHTML={{__html: text}}/>
                 <S.InfoLink to={`/blog/${encodeURIComponent(category)}/${encodeURIComponent(id)}`}>Continue
                     Reading</S.InfoLink>
             </S.Info>

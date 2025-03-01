@@ -5,7 +5,7 @@ export const PreloaderStyled = styled.div`
     height: 50px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: ${({theme}) => theme.colors.blue};
+    border-top-color: ${({theme}) => theme.colors.accent};
     animation: spiner 2s linear infinite;
     margin: 40px auto;
 
@@ -31,7 +31,7 @@ export const PreloaderStyled = styled.div`
         bottom: 15px;
         border-radius: 50%;
         border: 3px solid transparent;
-        border-top-color: ${({theme}) => theme.colors.darkBlue};
+        border-top-color: ${({theme}) => theme.colors.colorSt};
         animation: spiner 1.5s linear infinite;
     }
 

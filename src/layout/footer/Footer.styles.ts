@@ -4,6 +4,7 @@ import {media} from "@/styles/Theme";
 import {BoxWrapStyles} from "@c/ComponentStyles";
 import {SocialLinksStyled} from "@c/SocialLinks/SocialLinks.styles";
 import {PostCardStyled} from "@c/PostCard/PostCard.styles";
+import {SocialItemStyled} from "@c/SocialLinks/SocialItem.styles";
 
 const FooterStyled = styled.footer`
     ${BoxWrapStyles};
@@ -23,7 +24,7 @@ const FooterStyled = styled.footer`
         padding-bottom: 10px;
     }
 
-    ${media.max('xs')} {
+    ${media.max('md')} {
         padding-top: 5px;
         padding-bottom: 5px;
     }
@@ -51,6 +52,18 @@ const Inner = styled.div`
 
         ${media.max('em')} {
             gap: 10px 13px;
+        }
+    }
+
+    ${SocialItemStyled} {
+        ${media.max('md')} {
+            width: 40px;
+            font-size: 1rem;
+        }
+
+        ${media.max('xs')} {
+            width: 35px;
+            font-size: .9rem;
         }
     }
 

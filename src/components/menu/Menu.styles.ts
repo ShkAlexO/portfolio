@@ -5,12 +5,28 @@ import {RoundIconStyles, ScrollbarStyles} from "@c/ComponentStyles";
 export const Nav = styled.nav`
     ${ScrollbarStyles};
     height: 100%;
-    padding: 50px 10px;
+    padding: var(--scroll-box-padding) 10px;
     align-content: center;
     overflow-y: auto;
 
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: var(--scroll-box-padding);
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        background-color: rgb(${({theme}) => theme.colors.colorStRGB});
+        background: linear-gradient(0deg, rgba(${({theme}) => theme.colors.colorStRGB}, 0) 0%, rgba(${({theme}) => theme.colors.colorStRGB}, 0.63) 15%, rgba(${({theme}) => theme.colors.colorStRGB}, 1) 50%);
+    }
+
     ${media.max('sm')} {
-        padding: 50px 5px;
+        padding-left: 5px;
+        padding-right: 5px;
     }
 
     ul {

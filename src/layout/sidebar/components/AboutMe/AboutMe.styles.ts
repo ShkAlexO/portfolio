@@ -13,7 +13,7 @@ const Name = styled(Heading)`
 
 const AboutMeStyled = styled.div`
     ${Name} {
-        color: ${({theme}) => theme.colors.white};
+        color: ${({theme}) => theme.colors.colorSd};
     }
 
     ${SocialLinksStyled} {
@@ -30,7 +30,7 @@ const AboutMeStyled = styled.div`
 const Image = styled.div`
     ${BoxWrapStyles};
     background-color: transparent;
-    box-shadow: 0px 3px 5px 0px rgba(${({theme}) => theme.colors.whiteRgb}, .3);
+    box-shadow: 0px 3px 5px 0px rgba(${({theme}) => theme.colors.colorSdRGB}, .3);
     border-width: 2px;
     border-radius: 100%;
     width: 200px;

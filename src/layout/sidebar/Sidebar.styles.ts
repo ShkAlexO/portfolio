@@ -1,5 +1,6 @@
 import styled, {css} from "styled-components";
 import {media} from "@/styles/Theme";
+import {DownloadButtonStyled} from "@c/DownloadButton/DownloadButton.styles";
 
 const scrollBoxStyles = css`
     position: relative;
@@ -26,7 +27,7 @@ const scrollBoxStyles = css`
 
 const wrapStyles = css`
     ${media.max('xl')} {
-        background-color: rgb(${({theme}) => theme.colors.darkRgb});
+        background-color: rgb(${({theme}) => theme.colors.colorStRGB});
     }
 `
 
@@ -46,7 +47,7 @@ const SidebarInner = styled.div`
 
     > div {
         padding: 25px 8px;
-        border-bottom: 1px solid rgba(${({theme}) => theme.colors.whiteRgb}, .4);
+        border-bottom: 1px solid rgba(${({theme}) => theme.colors.colorSdRGB}, .4);
 
         ${media.max('em')} {
             padding: 20px 0;
@@ -63,9 +64,21 @@ const SidebarInner = styled.div`
     }
 `
 
+const DownloadButtonInner = styled.div`
+    ${DownloadButtonStyled} {
+        max-width: 100%;
+
+        ${media.range('em', 'xs')} {
+            max-width: 270px;
+            margin: 0 auto;
+        }
+    }
+`
+
 export const S = {
     scrollBoxStyles,
     wrapStyles,
     innerStyles,
-    SidebarInner
+    SidebarInner,
+    DownloadButtonInner
 }

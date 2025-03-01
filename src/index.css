@@ -1,39 +1,38 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 :root {
-  --scroll-box-padding: 46px;
-  --width-header: 70px;
-  --width-sidebar: 360px;
-  --width-scrollbar: 7px;
-  --gap: 15px;
-  @media (max-width: 1500px) {
-    --scroll-box-padding: 40px;
-  }
-  @media (max-width: 1439px) {
-    --width-sidebar: 320px;
-  }
-  @media (max-width: 1199px) {
-    --gap: 10px;
-  }
-  @media (max-width: 1023px) {
-    --width-header: 60px;
-    --gap: 5px;
-  }
-  @media (max-width: 767px) {
-    --scroll-box-padding: 20px;
-    --width-header: 50px;
-  }
-  @media (max-width: 575px) {
-
-    --width-header: 40px;
-  }
+    --scroll-box-padding: 46px;
+    --width-header: 70px;
+    --width-sidebar: 360px;
+    --width-scrollbar: 7px;
+    --gap: 15px;
+    @media (max-width: 1500px) {
+        --scroll-box-padding: 40px;
+    }
+    @media (max-width: 1439px) {
+        --width-sidebar: 320px;
+    }
+    @media (max-width: 1199px) {
+        --gap: 10px;
+    }
+    @media (max-width: 1023px) {
+        --width-header: 60px;
+        --gap: 5px;
+    }
+    @media (max-width: 767px) {
+        --scroll-box-padding: 20px;
+        --width-header: 50px;
+    }
+    @media (max-width: 575px) {
+        --width-header: 40px;
+    }
 }
 
 
