@@ -27,6 +27,7 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         position: relative;
+        overscroll-behavior-y: none;
         font-family: "Inter", sans-serif;
         font-weight: 400;
         line-height: 1.5;
