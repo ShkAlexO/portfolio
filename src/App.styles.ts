@@ -9,7 +9,7 @@ export const AppStyled = styled.div`
     grid-template-columns:  var(--width-sidebar) 1fr var(--width-header);
     gap: var(--gap);
     padding: var(--gap);
-    height: 100vh;
+    height: 100dvh;
 
     ${media.max('xl')} {
         grid-template-columns:  1fr var(--width-header);
