@@ -1,3 +1,4 @@
+import {BASE_URL} from "@/constants/config";
 import {ProjectCardStyled, S} from "@c/ProjectCard/ProjectCard.styles";
 import {FC} from "react";
 
@@ -44,7 +45,7 @@ export const ProjectCard: FC<ProjectPropsType> = (
                 ))}
             </S.Content>
             <S.Image>
-                <img src={image} alt={description}/>
+                <img src={`${BASE_URL}${image}`} alt={description}/>
             </S.Image>
         </ProjectCardStyled>
     )

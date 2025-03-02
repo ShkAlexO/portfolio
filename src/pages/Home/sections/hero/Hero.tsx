@@ -3,6 +3,7 @@ import {Skills} from "@c/Skills/Skills";
 import {Icon} from "@c/UI/Icon";
 import {useResponsiveVisibility} from "@/hooks/useResponsiveVisibility";
 
+import {BASE_URL} from "@/constants/config";
 import {ROUTES} from "@/constants/routes";
 import {ButtonLink} from "@c/ComponentStyles";
 import {ColorText} from "@c/ComponentStyles";
@@ -29,17 +30,18 @@ export const Hero = () => {
                         </S.Text>
 
                         {!isButtonVisible &&
-                            <ButtonLink to={ROUTES.PORTFOLIO}>View My Portfolio</ButtonLink>}
+                            <ButtonLink to={ROUTES.PORTFOLIO}>My Portfolio</ButtonLink>}
                     </S.Content>
 
                     <S.ImageBox>
-                        <S.Image src="/assets/images/Alexander.webp" alt="Hero Image"/>
+                        <S.Image src={`${BASE_URL}assets/images/Alexander.webp`}
+                                 alt="Alexander"/>
                         <Icon iconId='decoration-svg'/>
                     </S.ImageBox>
 
                     <Skills/>
 
-                    {isButtonVisible && <ButtonLink to="/about">About me</ButtonLink>}
+                    {isButtonVisible && <ButtonLink to={ROUTES.PORTFOLIO}>My Portfolio</ButtonLink>}
                 </S.Inner>
             </Container>
         </HeroStyled>

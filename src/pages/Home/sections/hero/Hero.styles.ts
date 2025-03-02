@@ -76,19 +76,16 @@ const Text = styled.p`
 `
 const Image = styled.img`
     display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     object-fit: contain;
     width: 100%;
     max-width: 380px;
     height: auto;
     margin: 0 auto;
-
-    ${media.min('sm')} {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        max-height: 100%;
-    }
+    max-height: 100%;
 
     ${media.max('md')} {
         max-width: 250px;
@@ -98,6 +95,10 @@ const Image = styled.img`
 const ImageBox = styled.div`
     position: relative;
     height: inherit;
+
+    ${media.max('sm')} {
+        height: 375px;
+    }
 
     ${IconStyled} {
         position: absolute;

@@ -1,4 +1,5 @@
 import {FC} from "react";
+import {BASE_URL} from "@/constants/config";
 import styled from "styled-components";
 
 type IconPropsType = {
@@ -11,7 +12,7 @@ export const Icon: FC<IconPropsType> = ({iconId, width = '50', height = '50'}) =
     return (
         <IconStyled width={width} height={height} viewBox={`0 0 ${width} ${height}`} fill="none"
                     xmlns="http://www.w3.org/2000/svg">
-            <use xlinkHref={`/assets/icons-sprite.svg#${iconId}`}/>
+            <use xlinkHref={`${BASE_URL}assets/icons-sprite.svg#${iconId}`}/>
         </IconStyled>
     )
 }

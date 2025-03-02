@@ -7,14 +7,15 @@ import {RootState} from "@/redux/store";
 
 import {useCloseSidebar} from "@/hooks/useCloseSidebar";
 
+import {BASE_URL} from "@/constants/config";
 import {ThemeProvider} from "styled-components";
 import {lightTheme, darkTheme} from "@/styles/Theme";
 import {GlobalStyle} from "@/styles/GlobalStyles";
+
 import {AppStyled} from "@/App.styles";
-
 import {MainWrap} from "@c/MainWrap/MainWrap";
-import {ParticlesBackground} from "@c/ParticlesBackground/ParticlesBackground";
 
+import {ParticlesBackground} from "@c/ParticlesBackground/ParticlesBackground";
 import {Header} from "@/layout/Header/Header";
 import {Main} from "@/layout/Main/Main";
 import {Footer} from "@/layout/Footer/Footer";
@@ -29,7 +30,6 @@ const themes: Record<ThemeType, typeof lightTheme> = {
 };
 
 export const App = () => {
-    const baseUrl = process.env.NODE_ENV === 'production' ? '/portfolio/' : '/';
     const isSidebarOpen = useSelector((state: RootState) => state.sidebar.isOpen);
     const themeMode = useSelector((state: RootState) => state.theme.themeMode) as ThemeType;
 
@@ -48,7 +48,7 @@ export const App = () => {
 
     return (
         <ThemeProvider theme={themes[themeMode]}>
-            <BrowserRouter basename={baseUrl}>
+            <BrowserRouter basename={BASE_URL}>
                 <ParticlesBackground/>
 
                 <AppStyled className={isSidebarOpen ? 'js-open-sidebar' : ''}>

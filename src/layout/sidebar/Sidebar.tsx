@@ -1,3 +1,4 @@
+import {BASE_URL} from "@/constants/config";
 import {forwardRef, HTMLAttributes} from "react";
 
 import {ScrollBox} from "@c/ScrollBox/ScrollBox";
@@ -26,7 +27,7 @@ export const Sidebar = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>
             <S.SidebarInner>
                 <AboutMe/>
                 <S.DownloadButtonInner>
-                    <DownloadButton text='Download CV' file="/assets/Resume.pdf"/>
+                    <DownloadButton text='Download CV' file={`${BASE_URL}assets/Resume.pdf`}/>
                 </S.DownloadButtonInner>
                 <PersonalDetails/>
                 <SkillsProgress title='Skills' list={skills}/>

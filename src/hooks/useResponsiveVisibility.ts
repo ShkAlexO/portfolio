@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react";
 
 export const useResponsiveVisibility = (breakpoint: number) => {
-    const [isVisible, setIsVisible] = useState(false);
+    const [isVisible, setIsVisible] = useState(window.innerWidth < breakpoint);
 
     useEffect(() => {
         const handleResize = () => {

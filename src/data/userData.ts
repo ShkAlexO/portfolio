@@ -1,3 +1,4 @@
+import {BASE_URL} from "@/constants/config";
 import {LINKEDIN, GITHUB, FACEBOOK, TELEGRAM, INSTAGRAM} from '@/constants/socials'
 
 export type SocialItemPropsType = {
@@ -28,7 +29,7 @@ export  type UserPropsType = {
 };
 
 export const userData: UserPropsType = {
-    avatar: '/assets/images/avatar.webp',
+    avatar: `${BASE_URL}assets/images/avatar.webp`,
     name: 'Alexander',
     position: 'Front-end Developer',
     age: 33,
