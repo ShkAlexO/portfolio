@@ -1,6 +1,6 @@
 import {FC} from "react";
 import {Icon} from "@c/UI/Icon";
-import {SkillsItemStyled} from "@c/_Skills/SkillsItem.styles";
+import {SkillsItemStyled} from "@c/Skills/SkillsItem.styles";
 
 type SkillsItemPropsType = {
     iconId: string

@@ -9,7 +9,7 @@ import {ExtraSkills} from "@sbc/ExtraSkills/ExtraSkills";
 import {DownloadButton} from "@c/DownloadButton/DownloadButton";
 
 import {userData} from "@/data/userData";
-import {S} from "@/layout/_Sidebar/Sidebar.styles";
+import {S} from "@/layout/Sidebar/Sidebar.styles";
 
 export const Sidebar = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>((props, sidebarRef) => {
     const skills = userData.skills

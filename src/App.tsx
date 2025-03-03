@@ -16,10 +16,10 @@ import {AppStyled} from "@/App.styles";
 import {MainWrap} from "@c/MainWrap/MainWrap";
 
 import {ParticlesBackground} from "@c/ParticlesBackground/ParticlesBackground";
-import {Header} from "@/layout/_Header/Header";
-import {Main} from "@/layout/_Main/Main";
-import {Footer} from "@/layout/_Footer/Footer";
-import {Sidebar} from "@/layout/_Sidebar/Sidebar";
+import {Header} from "@/layout/Header/Header";
+import {Main} from "@/layout/Main/Main";
+import {Footer} from "@/layout/Footer/Footer";
+import {Sidebar} from "@/layout/Sidebar/Sidebar";
 import {THEME_DARK, THEME_LIGHT} from "@/constants/themeConstants";
 
 export type ThemeType = typeof THEME_LIGHT | typeof THEME_DARK;

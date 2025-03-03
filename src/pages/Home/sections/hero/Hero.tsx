@@ -1,5 +1,5 @@
 import {Container} from "@c/UI/Container/Container";
-import {Skills} from "@c/_Skills/Skills";
+import {Skills} from "@c/Skills/Skills";
 import {Icon} from "@c/UI/Icon";
 import {useResponsiveVisibility} from "@/hooks/useResponsiveVisibility";
 

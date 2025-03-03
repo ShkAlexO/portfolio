@@ -4,7 +4,7 @@ import {toggleSidebarVisibility} from "@/redux/actions";
 
 import {useResponsiveVisibility} from "@/hooks/useResponsiveVisibility";
 
-import {Menu} from "@c/_Menu/Menu";
+import {Menu} from "@c/Menu/Menu";
 import {ThemeSwitchButton} from "@c/ThemeSwitchButton/ThemeSwitchButton";
 import {HeaderBtnSidebarToggle} from "@c/HeaderBtnSidebarToggle/HeaderBtnSidebarToggle";
 
@@ -13,7 +13,7 @@ import {
     HeaderStyled,
     MenuBox,
     Controls
-} from "@/layout/_Header/Header.styles";
+} from "@/layout/Header/Header.styles";
 
 type HeaderPropsType = {
     headerBtnSidebarToggleRef: RefObject<HTMLButtonElement>

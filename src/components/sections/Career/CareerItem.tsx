@@ -1,6 +1,6 @@
 import {FC} from "react";
 import {ProfBgPropsType} from "@/data/profBgData";
-import {CareerItemStyled, S} from "@c/sections/_Career/CareerItem.styles";
+import {CareerItemStyled, S} from "@c/sections/Career/CareerItem.styles";
 import {FaLink} from "react-icons/fa6";
 
 export type CareerItemPropsType = ProfBgPropsType & {

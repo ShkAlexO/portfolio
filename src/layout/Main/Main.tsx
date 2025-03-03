@@ -11,7 +11,7 @@ import {Category} from "@/pages/Category/Category";
 
 import {ROUTES} from "@/constants/routes";
 
-import {innerStyles, scrollBoxStyles, wrapStyles} from "@/layout/_Main/Main.styles";
+import {innerStyles, scrollBoxStyles, wrapStyles} from "@/layout/Main/Main.styles";
 
 export const Main = () => {
     return (

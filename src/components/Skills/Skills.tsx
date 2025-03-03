@@ -1,5 +1,5 @@
-import {SkillsItem} from "@c/_Skills/SkillsItem";
-import {SkillsStyled, S} from "@c/_Skills/Skills.styles"
+import {SkillsItem} from "@c/Skills/SkillsItem";
+import {SkillsStyled, S} from "@c/Skills/Skills.styles"
 
 import {skillsData, SkillPropsType} from "@/data/skillsData";
 
