@@ -7,7 +7,7 @@ import {BASE_URL} from "@/constants/config";
 import {ROUTES} from "@/constants/routes";
 import {ButtonLink} from "@c/ComponentStyles";
 import {ColorText} from "@c/ComponentStyles";
-import {HeroStyled, S} from "@/pages/Home/sections/RenameHero/Hero.styles";
+import {HeroStyled, S} from "@/pages/Home/sections/Hero/Hero.styles";
 import {commonStyles} from "@/styles/Theme";
 
 export const Hero = () => {
