@@ -1,6 +1,6 @@
 import {educationData, workData} from "@/data/profBgData";
 
-import {Hero} from "@/pages/Home/sections/Hero/Hero";
+import {Hero} from "@/pages/Home/sections/RenameHero/Hero";
 import {Career} from "@c/sections/Career/Career";
 import {LastPosts} from "@c/sections/LastPosts/LastPosts";
 
