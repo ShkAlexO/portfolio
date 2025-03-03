@@ -2,10 +2,10 @@ import {FC} from "react";
 
 import {Container} from "@c/UI/Container/Container";
 import {SectionHeading, SectionHeadingPropsType} from "@c/SectionHeading/SectionHeading";
-import {CareerItem} from "@c/sections/Career/CareerItem";
+import {CareerItem} from "@c/sections/_Career/CareerItem";
 
 import {ProfBgPropsType} from '@/data/profBgData'
-import {CareerStyled, List} from "@c/sections/Career/Career.styles"
+import {CareerStyled, List} from "@c/sections/_Career/Career.styles"
 
 type CareerPropsType = SectionHeadingPropsType & {
     list: ProfBgPropsType[]

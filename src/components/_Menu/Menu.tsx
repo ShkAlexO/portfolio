@@ -1,6 +1,6 @@
 import {NavLink} from "react-router-dom";
 import {FaHouse, FaBriefcase, FaBook} from "react-icons/fa6";
-import {Nav} from "@c/Menu/Menu.styles";
+import {Nav} from "@c/_Menu/Menu.styles";
 import {ROUTES} from "@/constants/routes";
 
 export const Menu = () => {
